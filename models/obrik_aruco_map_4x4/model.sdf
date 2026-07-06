@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <model name="obrik_aruco_map_4x4">
+    <static>true</static>
+    <link name="link">
+        <visual name="marker_1">
+          <pose>0.336700 0.336700 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.400000 0.400000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_1.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_2">
+          <pose>-0.336700 -0.336700 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.400000 0.400000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_2.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_3">
+          <pose>-0.336700 0.336700 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.400000 0.400000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_3.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_4">
+          <pose>0.336700 -0.336700 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.400000 0.400000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_4.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_5">
+          <pose>0.000000 0.095100 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.060000 0.060000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_5.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_6">
+          <pose>0.000000 -0.095100 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.060000 0.060000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_6.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_7">
+          <pose>0.000000 0.249500 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.110000 0.110000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_7.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_8">
+          <pose>0.000000 -0.249500 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.110000 0.110000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_8.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_9">
+          <pose>0.000000 0.455000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_9.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_10">
+          <pose>0.000000 -0.455000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_10.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_11">
+          <pose>0.455000 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_11.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_12">
+          <pose>0.218400 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_12.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_13">
+          <pose>-0.455000 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_13.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_14">
+          <pose>-0.218400 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_14.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_15">
+          <pose>0.000000 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.015000 0.015000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_15.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_16">
+          <pose>1.010100 0.336700 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.400000 0.400000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_16.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_18">
+          <pose>1.010100 -0.336700 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.400000 0.400000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_18.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_20">
+          <pose>0.673400 0.095100 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.060000 0.060000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_20.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_21">
+          <pose>0.673400 -0.095100 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.060000 0.060000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_21.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_22">
+          <pose>0.673400 0.249500 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.110000 0.110000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_22.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_23">
+          <pose>0.673400 -0.249500 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.110000 0.110000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_23.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_24">
+          <pose>0.673400 0.455000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_24.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_25">
+          <pose>0.673400 -0.455000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_25.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_26">
+          <pose>1.128400 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_26.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_27">
+          <pose>0.891800 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_27.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_28">
+          <pose>0.673400 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.015000 0.015000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_28.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_29">
+          <pose>-1.010100 0.336700 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.400000 0.400000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_29.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_94">
+          <pose>-1.010100 -0.336700 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.400000 0.400000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_94.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_31">
+          <pose>-0.673400 0.095100 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.060000 0.060000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_31.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_32">
+          <pose>-0.673400 -0.095100 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.060000 0.060000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_32.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_33">
+          <pose>-0.673400 0.249500 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.110000 0.110000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_33.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_34">
+          <pose>-0.673400 -0.249500 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.110000 0.110000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_34.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_35">
+          <pose>-0.673400 0.455000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_35.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_36">
+          <pose>-0.673400 -0.455000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_36.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_92">
+          <pose>-1.128400 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_92.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_38">
+          <pose>-0.891800 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_38.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_39">
+          <pose>-0.673400 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.015000 0.015000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_39.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_40">
+          <pose>1.683500 0.336700 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.400000 0.400000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_40.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_97">
+          <pose>1.683500 -0.336700 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.400000 0.400000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_97.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_42">
+          <pose>1.346800 0.095100 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.060000 0.060000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_42.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_43">
+          <pose>1.346800 -0.095100 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.060000 0.060000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_43.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_44">
+          <pose>1.346800 0.249500 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.110000 0.110000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_44.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_45">
+          <pose>1.346800 -0.249500 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.110000 0.110000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_45.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_46">
+          <pose>1.346800 0.455000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_46.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_47">
+          <pose>1.346800 -0.455000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_47.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_48">
+          <pose>1.565200 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_48.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_49">
+          <pose>1.801800 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_49.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_50">
+          <pose>1.346800 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.015000 0.015000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_50.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_51">
+          <pose>2.356900 0.336700 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.400000 0.400000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_51.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_52">
+          <pose>2.356900 -0.336700 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.400000 0.400000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_52.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_53">
+          <pose>2.020200 0.095100 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.060000 0.060000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_53.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_54">
+          <pose>2.020200 -0.095100 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.060000 0.060000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_54.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_55">
+          <pose>2.020200 0.249500 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.110000 0.110000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_55.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_56">
+          <pose>2.020200 -0.249500 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.110000 0.110000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_56.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_57">
+          <pose>2.020200 0.455000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_57.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_58">
+          <pose>2.020200 -0.455000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_58.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_59">
+          <pose>2.238600 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_59.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_96">
+          <pose>2.475200 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.150000 0.150000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_96.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name="marker_61">
+          <pose>2.020200 0.000000 0.001000 0.000000 -0.000000 0.000000</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.015000 0.015000</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_61.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+    </link>
+  </model>
+</sdf>

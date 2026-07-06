@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='x500_obrik_three_rangefinders_30'>
+    <self_collide>false</self_collide>
+    <include merge='true'><uri>model://x500</uri></include>
+    <link name="obrik_body_visual_link">
+      <pose relative_to="base_link">0 0 0 0 0 0</pose>
+      <gravity>false</gravity>
+      <self_collide>false</self_collide>
+      <inertial><mass>0.00001</mass><inertia><ixx>1e-9</ixx><iyy>1e-9</iyy><izz>1e-9</izz></inertia></inertial>
+      <visual name="obrik_body_visual">
+        <geometry><mesh><scale>1 1 1</scale><uri>model://x500_obrik_three_rangefinders_30/meshes/obrik_three_rangefinders_30_clean.obj</uri></mesh></geometry>
+      </visual>
+    </link>
+    <joint name="obrik_body_visual_joint" type="fixed"><parent>base_link</parent><child>obrik_body_visual_link</child></joint>
+    <include merge='true'>
+      <uri>model://rpi_camera</uri>
+      <pose relative_to="base_link">0 -0.061500 0.003100 0 1.5707963 1.5707963</pose>
+      <name>rpi_camera</name>
+    </include>
+    <joint name="CameraJoint" type="fixed"><parent>base_link</parent><child>rpi_camera_link</child><pose relative_to="base_link">0 -0.061500 0.003100 0 1.5707963 1.5707963</pose></joint>
+    <joint name="obrik_rangefinder_down_joint" type="fixed"><parent>base_link</parent><child>obrik_rangefinder_down_link</child></joint>
+    <link name="obrik_rangefinder_down_link">
+      <pose relative_to="base_link">0 0.047500 -0.009000 0 1.5707963 0</pose>
+      <inertial><mass>0.001</mass><inertia><ixx>0.00001</ixx><iyy>0.00001</iyy><izz>0.00001</izz></inertia></inertial>
+      <sensor name="obrik_rangefinder_down" type="gpu_lidar">
+        <pose>0 0 0 0 0 0</pose>
+        <update_rate>50</update_rate>
+        <ray><scan><horizontal><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></horizontal><vertical><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></vertical></scan><range><min>0.03</min><max>4.0</max><resolution>0.001</resolution></range></ray>
+        <always_on>1</always_on>
+        <visualize>false</visualize>
+      </sensor>
+    </link>
+    <joint name="obrik_slam_rangefinder_center_joint" type="fixed"><parent>base_link</parent><child>obrik_slam_rangefinder_center_link</child></joint>
+    <link name="obrik_slam_rangefinder_center_link">
+      <pose relative_to="base_link">0 -0.085100 0.025600 0 0 -1.5707963</pose>
+      <inertial><mass>0.001</mass><inertia><ixx>0.00001</ixx><iyy>0.00001</iyy><izz>0.00001</izz></inertia></inertial>
+      <visual name="obrik_slam_rangefinder_center_visual">
+        <pose>0 0 0 -1.5707963 0 0</pose>
+        <geometry><mesh><scale>1 1 1</scale><uri>model://x500_obrik_three_rangefinders_30/meshes/vl53l0x_PCB.obj</uri></mesh></geometry>
+      </visual>
+      <sensor name="obrik_slam_rangefinder_center" type="gpu_lidar">
+        <pose>0 0 0 0 0 0</pose>
+        <update_rate>50</update_rate>
+        <ray><scan><horizontal><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></horizontal><vertical><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></vertical></scan><range><min>0.03</min><max>4.0</max><resolution>0.001</resolution></range></ray>
+        <always_on>1</always_on>
+        <visualize>true</visualize>
+      </sensor>
+    </link>
+    <joint name="obrik_slam_rangefinder_right_joint" type="fixed"><parent>base_link</parent><child>obrik_slam_rangefinder_right_link</child></joint>
+    <link name="obrik_slam_rangefinder_right_link">
+      <pose relative_to="base_link">0.025263 -0.078741 0.025600 0 0 -1.0471976</pose>
+      <inertial><mass>0.001</mass><inertia><ixx>0.00001</ixx><iyy>0.00001</iyy><izz>0.00001</izz></inertia></inertial>
+      <visual name="obrik_slam_rangefinder_right_visual">
+        <pose>0 0 0 -1.5707963 0 0</pose>
+        <geometry><mesh><scale>1 1 1</scale><uri>model://x500_obrik_three_rangefinders_30/meshes/vl53l0x_PCB.obj</uri></mesh></geometry>
+      </visual>
+      <sensor name="obrik_slam_rangefinder_right" type="gpu_lidar">
+        <pose>0 0 0 0 0 0</pose>
+        <update_rate>50</update_rate>
+        <ray><scan><horizontal><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></horizontal><vertical><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></vertical></scan><range><min>0.03</min><max>4.0</max><resolution>0.001</resolution></range></ray>
+        <always_on>1</always_on>
+        <visualize>true</visualize>
+      </sensor>
+    </link>
+    <joint name="obrik_slam_rangefinder_left_joint" type="fixed"><parent>base_link</parent><child>obrik_slam_rangefinder_left_link</child></joint>
+    <link name="obrik_slam_rangefinder_left_link">
+      <pose relative_to="base_link">-0.025263 -0.078741 0.025600 0 0 -2.0943951</pose>
+      <inertial><mass>0.001</mass><inertia><ixx>0.00001</ixx><iyy>0.00001</iyy><izz>0.00001</izz></inertia></inertial>
+      <visual name="obrik_slam_rangefinder_left_visual">
+        <pose>0 0 0 -1.5707963 0 0</pose>
+        <geometry><mesh><scale>1 1 1</scale><uri>model://x500_obrik_three_rangefinders_30/meshes/vl53l0x_PCB.obj</uri></mesh></geometry>
+      </visual>
+      <sensor name="obrik_slam_rangefinder_left" type="gpu_lidar">
+        <pose>0 0 0 0 0 0</pose>
+        <update_rate>50</update_rate>
+        <ray><scan><horizontal><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></horizontal><vertical><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></vertical></scan><range><min>0.03</min><max>4.0</max><resolution>0.001</resolution></range></ray>
+        <always_on>1</always_on>
+        <visualize>true</visualize>
+      </sensor>
+    </link>
+  </model>
+</sdf>

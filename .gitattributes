@@ -1,0 +1,10 @@
+* text=auto
+
+*.sdf    text eol=lf
+*.config text eol=lf
+*.xml    text eol=lf
+*.md     text eol=lf
+*.obj    text eol=lf
+*.mtl    text eol=lf
+
+*.png binary
