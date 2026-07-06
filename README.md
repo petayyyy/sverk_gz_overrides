@@ -1,7 +1,7 @@
 # sverk_gz_overrides
 
 Gazebo (Harmonic) модели дронов Obrik, сенсоров и SITL-мир с ArUco-картой,
-используемые для симуляции стека [sverk-ros2](https://github.com/petayyyy/sverk-ros2)
+используемые для симуляции стека [sverk-ros2](https://github.com/sverk-tech/sverk-ros2)
 поверх стандартного PX4 SITL.
 
 Репозиторий не самостоятелен — это набор override/дополнительных моделей PX4
