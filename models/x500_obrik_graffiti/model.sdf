@@ -98,7 +98,19 @@
       <patch_spacing>0.02</patch_spacing>
       <paint_interval_steps>10</paint_interval_steps>
       <enable_particle_emitter>true</enable_particle_emitter>
-    </plugin>    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+    </plugin>
+    <plugin filename="libGraffitiServoKinematics.so" name="sverk::sim::GraffitiServoKinematics">
+      <topic>/spray/servo/travel</topic>
+      <gear_joint>gear_joint</gear_joint>
+      <lever_joint>lever_joint</lever_joint>
+      <cap_joint>can_cap_joint</cap_joint>
+      <gear_max_rad>1.82</gear_max_rad>
+      <lever_max_rad>-0.62</lever_max_rad>
+      <cap_max_m>0.003</cap_max_m>
+      <cap_start_travel>0.6193103797</cap_start_travel>
+      <reverse_travel_fraction>0.6666666667</reverse_travel_fraction>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>rotor_0_joint</jointName>
       <linkName>rotor_0</linkName>
       <turningDirection>ccw</turningDirection>
@@ -162,5 +174,5 @@
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <motorType>velocity</motorType>
     </plugin>
-  </model>
+</model>
 </sdf>
