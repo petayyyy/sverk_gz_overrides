@@ -2,35 +2,15 @@
 <sdf version='1.9'>
   <model name='x500_obrik_base'>
     <self_collide>false</self_collide>
+    <!-- The obrik body visual is NOT added here: model://x500 merges
+         model://x500_base, whose base_link already carries visual
+         "obrik_body_visual" with meshes/obrik_base_clean.obj (82k faces,
+         248 material sections). A second copy of that link/joint here used
+         to render the mesh TWICE in every pass (camera sensor, lidar, GUI)
+         and z-fight with itself. -->
     <include merge='true'>
       <uri>model://x500</uri>
     </include>
-    <link name="obrik_body_visual_link">
-      <pose relative_to="base_link">0 0 0 0 0 0</pose>
-      <gravity>false</gravity>
-      <self_collide>false</self_collide>
-      <inertial>
-        <mass>0.00001</mass>
-        <inertia>
-          <ixx>1e-9</ixx>
-          <iyy>1e-9</iyy>
-          <izz>1e-9</izz>
-        </inertia>
-      </inertial>
-      <visual name="obrik_body_visual">
-        <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>1 1 1</scale>
-            <uri>model://x500_obrik_base/meshes/obrik_base_clean.obj</uri>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-    <joint name="obrik_body_visual_joint" type="fixed">
-      <parent>base_link</parent>
-      <child>obrik_body_visual_link</child>
-    </joint>
     <include merge='true'>
       <uri>model://rpi_camera</uri>
       <pose relative_to="base_link">0 -0.061500 0.003100 0 1.5707963 1.5707963</pose>
@@ -60,7 +40,10 @@
       </inertial>
       <sensor name="obrik_rangefinder_down" type="gpu_lidar">
         <pose>0 0 0 0 0 0</pose>
-        <update_rate>50</update_rate>
+        <!-- gpu_lidar is a RENDER sensor: even 1x1 samples force a render pass
+             per update. 20 Hz is plenty for EKF2 range fusion and cuts
+             render-thread wakeups by 60% vs the old 50 Hz. -->
+        <update_rate>20</update_rate>
         <ray>
           <scan>
             <horizontal>

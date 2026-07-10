@@ -36,12 +36,17 @@
           </image>
           <clip>
             <near>0.05</near>
-            <far>3000</far>
+            <!-- 50 m is plenty for the indoor/маркерная SITL scene; a 3000 m
+                 far plane only wastes depth precision and culling work. -->
+            <far>50</far>
           </clip>
         </camera>
         <always_on>1</always_on>
-        <update_rate>30</update_rate>
-        <visualize>true</visualize>
+        <!-- 15 Hz halves the per-second sensor render cost vs 30 Hz — the camera
+             is the most expensive sensor when the SITL server renders on
+             llvmpipe (CPU). ArUco VPE fusion is comfortable at 10-15 Hz. -->
+        <update_rate>15</update_rate>
+        <visualize>false</visualize>
       </sensor>
     </link>
   </model>
