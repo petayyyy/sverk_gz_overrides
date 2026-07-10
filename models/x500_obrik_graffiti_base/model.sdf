@@ -421,6 +421,19 @@
     <!-- BEGIN generated Obrik LED point preview from C:/Users/evk41/Documents/leds_graffiti.dxf -->
     <link name="obrik_led_points_link">
       <pose relative_to="base_link">0 0.068033 0 0 0 0</pose>
+      <gravity>false</gravity>
+      <self_collide>false</self_collide>
+      <inertial>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>1e-9</ixx>
+          <iyy>1e-9</iyy>
+          <izz>1e-9</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
     <visual name="obrik_led_point_000">
       <pose>-0.046242 -0.138433 0.018040 0 0 0</pose>
       <geometry>
