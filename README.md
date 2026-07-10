@@ -12,8 +12,13 @@ Gazebo (Harmonic) модели дронов Obrik, сенсоров и SITL-ми
 
 ```
 sverk_gz_overrides/
+├── scripts/
+│   └── update_overrides.sh          # установка моделей/миров/ROS-нод по местам (см. ниже)
 ├── worlds/
 │   └── obrik_aruco.sdf              # SITL-мир с картой ArUco-маркеров
+├── ros_nodes/                       # colcon-пакеты, нужные ТОЛЬКО симуляции;
+│   ├── graffiti_servo_gz_plugin/    #   gz-plugin кинематики серво опрыскивателя
+│   └── graffiti_servo_sim/          #   ROS 2 нода-симулятор серво
 └── models/
     ├── x500/                        # PX4 x500 wrapper (доп. визуальные joint'ы винтов)
     ├── x500_base/                   # физика NXP HoverGames x500 (апстрим PX4/Rudis Labs)
@@ -47,36 +52,45 @@ sverk_gz_overrides/
 
 ## Использование в sverk-ros2
 
-Этот репозиторий подключается как git submodule в корень `sverk-ros2`
-(`px4_gz_overrides/`) и монтируется bind-mount'ом прямо в дерево PX4 внутри
-SITL-контейнера — см. `scripts/sitl/docker-compose.sitl.yml`:
+Единая точка входа — `scripts/update_overrides.sh`. Он раскладывает всё по
+местам, где артефакты ждёт SITL-стек:
 
-```yaml
-volumes:
-  - ../../px4_gz_overrides/models/x500:/home/sverk/PX4-Autopilot/Tools/simulation/gz/models/x500:ro
-  - ../../px4_gz_overrides/worlds/obrik_aruco.sdf:/home/sverk/PX4-Autopilot/Tools/simulation/gz/worlds/obrik_aruco.sdf:ro
-  # ...остальные модели аналогично
-```
+- `models/` → `$PX4_DIR/Tools/simulation/gz/models` (резолвятся через
+  `GZ_SIM_RESOURCE_PATH`);
+- `worlds/*.sdf` → `$PX4_DIR/Tools/simulation/gz/worlds`;
+- `ros_nodes/<pkg>/` → `$ROS_NODES_DIR` (по умолчанию
+  `~/sverk_ws/src/sverk_drone/simulation`) — после этого пакеты собираются
+  обычным `colcon build`.
 
-Подключение как submodule:
-
-```bash
-git submodule add https://github.com/petayyyy/sverk_gz_overrides.git px4_gz_overrides
-git submodule update --init --recursive
-```
-
-Обновление на актуальную версию моделей:
+Три сценария запуска:
 
 ```bash
-cd px4_gz_overrides
-git pull origin main
-cd ..
-git add px4_gz_overrides
-git commit -m "chore: bump sverk_gz_overrides"
+# 1. При сборке SITL-образа (так делает sverk-ros2/scripts/sitl/Dockerfile.sitl):
+#    репозиторий клонируется по тегу GZ_OVERRIDES_REF и скрипт запускается с --src.
+
+# 2. Из checkout'а (скрипт сам поймёт, что лежит внутри репозитория):
+git clone https://github.com/petayyyy/sverk_gz_overrides.git && cd sverk_gz_overrides
+bash scripts/update_overrides.sh
+
+# 3. «Ниоткуда» — например, внутри работающего контейнера sverk_sitl,
+#    чтобы подтянуть свежие модели без пересборки образа
+#    (скрипт сам сделает git clone, по умолчанию ветку main):
+bash <(curl -fsSL https://raw.githubusercontent.com/petayyyy/sverk_gz_overrides/main/scripts/update_overrides.sh)
+cd ~/sverk_ws && colcon build --packages-select graffiti_servo_gz_plugin graffiti_servo_sim
 ```
+
+Пути и источник переопределяются флагами `--src/--repo/--ref/--px4-dir/--ros-nodes-dir`
+или переменными `GZ_OVERRIDES_REPO/GZ_OVERRIDES_REF/PX4_DIR/ROS_NODES_DIR`
+(`--help` покажет всё).
+
+В образ SITL модели и ноды запекаются на этапе сборки: `Dockerfile.sitl`
+клонирует репозиторий по **тегу** (`ARG GZ_OVERRIDES_REF`) и вызывает этот
+скрипт. Чтобы новая версия моделей попала в образ — создайте тег здесь и
+поднимите `GZ_OVERRIDES_REF` в `Dockerfile.sitl` (значение ARG входит в ключ
+docker-кэша, поэтому bump тега гарантированно перекачивает клон).
 
 Выбор модели и мира при запуске SITL — через launch-аргументы
-`full_system_sitl_cam.launch.py` (`obrik_config`, `gz_world`), подробнее в
+`full_system_sitl.launch.py` (`obrik_config`, `gz_world`), подробнее в
 [docs/dev/doc_docker_sitl.md](https://github.com/petayyyy/sverk-ros2/blob/main/docs/dev/doc_docker_sitl.md)
 основного репозитория.
 
