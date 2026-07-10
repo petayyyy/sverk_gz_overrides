@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>graffiti_servo_gz_plugin</name>
+  <version>0.0.1</version>
+  <description>Gazebo Sim system plugin for synchronized graffiti servo kinematics.</description>
+  <maintainer email="petayyyy@gmail.com">sverk</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <build_depend>gz-cmake3</build_depend>
+  <build_depend>gz-sim8-dev</build_depend>
+  <build_depend>gz-plugin2-dev</build_depend>
+  <build_depend>gz-transport13-dev</build_depend>
+  <build_depend>gz-msgs10-dev</build_depend>
+
+  <exec_depend>gz-cmake3</exec_depend>
+  <exec_depend>gz-sim8-dev</exec_depend>
+  <exec_depend>gz-plugin2-dev</exec_depend>
+  <exec_depend>gz-transport13-dev</exec_depend>
+  <exec_depend>gz-msgs10-dev</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
