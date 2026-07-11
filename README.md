@@ -18,7 +18,9 @@ sverk_gz_overrides/
 │   └── obrik_aruco.sdf              # SITL-мир с картой ArUco-маркеров
 ├── ros_nodes/                       # colcon-пакеты, нужные ТОЛЬКО симуляции;
 │   ├── graffiti_servo_gz_plugin/    #   gz-plugin кинематики серво опрыскивателя
-│   └── graffiti_servo_sim/          #   ROS 2 нода-симулятор серво
+│   ├── graffiti_servo_sim/          #   ROS 2 нода-симулятор серво
+│   ├── led_strip_gz_plugin/        #   gz-plugin рендера светодиодных орбов
+│   └── led_strip_sim/              #   ROS 2 симулятор эффектов светодиодной ленты
 └── models/
     ├── x500/                        # PX4 x500 wrapper (доп. визуальные joint'ы винтов)
     ├── x500_base/                   # физика NXP HoverGames x500 (апстрим PX4/Rudis Labs)
@@ -76,7 +78,9 @@ bash scripts/update_overrides.sh
 #    чтобы подтянуть свежие модели без пересборки образа
 #    (скрипт сам сделает git clone, по умолчанию ветку main):
 bash <(curl -fsSL https://raw.githubusercontent.com/petayyyy/sverk_gz_overrides/main/scripts/update_overrides.sh)
-cd ~/sverk_ws && colcon build --packages-select graffiti_servo_gz_plugin graffiti_servo_sim
+cd ~/sverk_ws && colcon build --packages-select \
+  graffiti_servo_gz_plugin graffiti_servo_sim \
+  led_strip_gz_plugin led_strip_sim
 ```
 
 Пути и источник переопределяются флагами `--src/--repo/--ref/--px4-dir/--ros-nodes-dir`

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>led_strip_sim</name>
+  <version>0.1.0</version>
+  <description>Simulation-only port of led_control with an in-memory LED backend.</description>
+  <maintainer email="petayyyy@gmail.com">sverk</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>ament_python</buildtool_depend>
+  <depend>rclpy</depend>
+  <depend>rcl_interfaces</depend>
+  <depend>std_msgs</depend>
+  <depend>px4_msgs</depend>
+  <depend>led_interfaces</depend>
+  <export><build_type>ament_python</build_type></export>
+</package>

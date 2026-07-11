@@ -1,0 +1,38 @@
+led_strip_sim_node:
+  ros__parameters:
+    # Same logical strip size and brightness as the real wide frame.
+    led_count: 112
+    brightness: 30.0
+    brightness_low_battery: 1.0
+    state_publish_rate: 10.0
+    animation_rate: 30.0
+    led_notify: true
+    fmu_out_prefix: "/fmu/out"
+    vehicle_status_timeout: 2.0
+    battery_min_voltage_per_cell: 3.5
+    battery_min_voltage: 6.0
+    events: |
+      startup:        { r: 255, g: 255, b: 255 }
+      connected:      { effect: rainbow }
+      disconnected:   { effect: blink, r: 255, g: 50, b: 50 }
+      armed:          { effect: none }
+      disarmed:       { effect: none }
+      acro:           { r: 245, g: 155, b: 0 }
+      stabilized:     { r: 30, g: 180, b: 50 }
+      altctl:         { r: 255, g: 255, b: 40 }
+      posctl:         { r: 50, g: 100, b: 220 }
+      offboard:       { r: 220, g: 20, b: 250 }
+      mission:        { effect: none }
+      rtl:            { effect: none }
+      land:           { r: 255, g: 200, b: 0 }
+      orbit:          { effect: none }
+      takeoff:        { effect: none }
+      position_slow:  { effect: none }
+      altitude_cruise: { effect: none }
+      descend:        { r: 255, g: 180, b: 100 }
+      termination:    { effect: blink, r: 255, g: 0, b: 0 }
+      follow_target:  { effect: none }
+      precland:       { r: 255, g: 228, b: 196 }
+      vtol_takeoff:   { effect: none }
+      error:          { effect: flash, r: 255, g: 0, b: 0 }
+      low_battery:    { threshold: 3.5, effect: blink_fast, r: 255, g: 0, b: 0 }
