@@ -206,7 +206,7 @@
         </inertia>
       </inertial>
       <visual name="obrik_can_cap_visual">
-        <pose>0 0 0 3.14159265 0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -447,8 +447,10 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
     <visual name="obrik_led_point_001">
-      <pose>-0.046242 -0.138433 0.018040 0 0 0</pose>
+      <pose>0.046242 -0.138433 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -460,8 +462,10 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
     <visual name="obrik_led_point_002">
-      <pose>-0.046242 -0.138433 0.018040 0 0 0</pose>
+      <pose>-0.039131 -0.137749 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -473,73 +477,85 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_003">
-      <pose>0.046242 -0.138433 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_004">
-      <pose>0.046242 -0.138433 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_005">
-      <pose>0.046242 -0.138433 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_006">
-      <pose>-0.039131 -0.137749 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_007">
-      <pose>-0.039131 -0.137749 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_008">
       <pose>0.039131 -0.137749 0.018040 0 0 0</pose>
+      <geometry>
+        <sphere>
+          <radius>0.0020</radius>
+        </sphere>
+      </geometry>
+      <material>
+        <ambient>0.0 1.0 0.85 0.18</ambient>
+        <diffuse>0.0 1.0 0.85 0.18</diffuse>
+        <emissive>0.0 1.0 0.85 0.42</emissive>
+      </material>
+    </visual>
+
+
+
+    <visual name="obrik_led_point_004">
+      <pose>-0.053351 -0.137735 0.018040 0 0 0</pose>
+      <geometry>
+        <sphere>
+          <radius>0.0020</radius>
+        </sphere>
+      </geometry>
+      <material>
+        <ambient>0.0 1.0 0.85 0.18</ambient>
+        <diffuse>0.0 1.0 0.85 0.18</diffuse>
+        <emissive>0.0 1.0 0.85 0.42</emissive>
+      </material>
+    </visual>
+
+    <visual name="obrik_led_point_005">
+      <pose>0.053351 -0.137735 0.018040 0 0 0</pose>
+      <geometry>
+        <sphere>
+          <radius>0.0020</radius>
+        </sphere>
+      </geometry>
+      <material>
+        <ambient>0.0 1.0 0.85 0.18</ambient>
+        <diffuse>0.0 1.0 0.85 0.18</diffuse>
+        <emissive>0.0 1.0 0.85 0.42</emissive>
+      </material>
+    </visual>
+
+
+
+    <visual name="obrik_led_point_006">
+      <pose>-0.032286 -0.135708 0.018040 0 0 0</pose>
+      <geometry>
+        <sphere>
+          <radius>0.0020</radius>
+        </sphere>
+      </geometry>
+      <material>
+        <ambient>0.0 1.0 0.85 0.18</ambient>
+        <diffuse>0.0 1.0 0.85 0.18</diffuse>
+        <emissive>0.0 1.0 0.85 0.42</emissive>
+      </material>
+    </visual>
+
+    <visual name="obrik_led_point_007">
+      <pose>0.032286 -0.135708 0.018040 0 0 0</pose>
+      <geometry>
+        <sphere>
+          <radius>0.0020</radius>
+        </sphere>
+      </geometry>
+      <material>
+        <ambient>0.0 1.0 0.85 0.18</ambient>
+        <diffuse>0.0 1.0 0.85 0.18</diffuse>
+        <emissive>0.0 1.0 0.85 0.42</emissive>
+      </material>
+    </visual>
+
+
+
+    <visual name="obrik_led_point_008">
+      <pose>-0.060192 -0.135679 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -552,7 +568,7 @@
       </material>
     </visual>
     <visual name="obrik_led_point_009">
-      <pose>0.039131 -0.137749 0.018040 0 0 0</pose>
+      <pose>0.060192 -0.135679 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -564,8 +580,12 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
+
     <visual name="obrik_led_point_010">
-      <pose>-0.039131 -0.137749 0.018040 0 0 0</pose>
+      <pose>-0.025962 -0.132386 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -577,8 +597,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_011">
-      <pose>0.039131 -0.137749 0.018040 0 0 0</pose>
+      <pose>0.025962 -0.132386 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -590,8 +611,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_012">
-      <pose>-0.053351 -0.137735 0.018040 0 0 0</pose>
+      <pose>-0.066509 -0.132344 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -603,8 +627,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_013">
-      <pose>-0.053351 -0.137735 0.018040 0 0 0</pose>
+      <pose>0.066509 -0.132344 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -616,8 +641,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_014">
-      <pose>0.053351 -0.137735 0.018040 0 0 0</pose>
+      <pose>-0.072065 -0.127854 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -629,8 +657,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_015">
-      <pose>0.053351 -0.137735 0.018040 0 0 0</pose>
+      <pose>0.072065 -0.127854 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -642,8 +671,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_016">
-      <pose>-0.053351 -0.137735 0.018040 0 0 0</pose>
+      <pose>-0.076652 -0.122378 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -656,7 +688,7 @@
       </material>
     </visual>
     <visual name="obrik_led_point_017">
-      <pose>0.053351 -0.137735 0.018040 0 0 0</pose>
+      <pose>0.076652 -0.122378 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -668,8 +700,12 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
+
     <visual name="obrik_led_point_018">
-      <pose>-0.032286 -0.135708 0.018040 0 0 0</pose>
+      <pose>-0.080098 -0.116121 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -681,8 +717,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_019">
-      <pose>-0.032286 -0.135708 0.018040 0 0 0</pose>
+      <pose>0.080098 -0.116121 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -694,8 +731,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_020">
-      <pose>0.032286 -0.135708 0.018040 0 0 0</pose>
+      <pose>-0.082273 -0.109317 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -708,7 +748,7 @@
       </material>
     </visual>
     <visual name="obrik_led_point_021">
-      <pose>0.032286 -0.135708 0.018040 0 0 0</pose>
+      <pose>0.082273 -0.109317 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -720,8 +760,12 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
+
     <visual name="obrik_led_point_022">
-      <pose>-0.032286 -0.135708 0.018040 0 0 0</pose>
+      <pose>-0.083097 -0.102221 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -733,8 +777,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_023">
-      <pose>0.032286 -0.135708 0.018040 0 0 0</pose>
+      <pose>0.083097 -0.102221 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -746,8 +791,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_024">
-      <pose>-0.060192 -0.135679 0.018040 0 0 0</pose>
+      <pose>-0.082538 -0.095100 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -759,8 +807,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_025">
-      <pose>0.060192 -0.135679 0.018040 0 0 0</pose>
+      <pose>0.082538 -0.095100 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -772,8 +821,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_026">
-      <pose>-0.060192 -0.135679 0.018040 0 0 0</pose>
+      <pose>-0.080618 -0.088219 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -786,7 +838,7 @@
       </material>
     </visual>
     <visual name="obrik_led_point_027">
-      <pose>-0.060192 -0.135679 0.018040 0 0 0</pose>
+      <pose>0.080618 -0.088219 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -798,8 +850,12 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
+
     <visual name="obrik_led_point_028">
-      <pose>0.060192 -0.135679 0.018040 0 0 0</pose>
+      <pose>-0.077408 -0.081838 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -812,7 +868,7 @@
       </material>
     </visual>
     <visual name="obrik_led_point_029">
-      <pose>0.060192 -0.135679 0.018040 0 0 0</pose>
+      <pose>0.077408 -0.081838 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -824,8 +880,12 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
+
     <visual name="obrik_led_point_030">
-      <pose>-0.025962 -0.132386 0.018040 0 0 0</pose>
+      <pose>-0.073028 -0.076195 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -837,8 +897,10 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
     <visual name="obrik_led_point_031">
-      <pose>-0.025962 -0.132386 0.018040 0 0 0</pose>
+      <pose>0.073028 -0.076195 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -850,8 +912,10 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
     <visual name="obrik_led_point_032">
-      <pose>0.025962 -0.132386 0.018040 0 0 0</pose>
+      <pose>-0.069342 -0.071058 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -864,7 +928,7 @@
       </material>
     </visual>
     <visual name="obrik_led_point_033">
-      <pose>0.025962 -0.132386 0.018040 0 0 0</pose>
+      <pose>0.069342 -0.071058 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -876,8 +940,12 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
+
     <visual name="obrik_led_point_034">
-      <pose>-0.025962 -0.132386 0.018040 0 0 0</pose>
+      <pose>-0.069342 -0.065009 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -889,8 +957,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_035">
-      <pose>0.025962 -0.132386 0.018040 0 0 0</pose>
+      <pose>0.069342 -0.065009 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -902,8 +971,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_036">
-      <pose>-0.066509 -0.132344 0.018040 0 0 0</pose>
+      <pose>-0.073028 -0.059872 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -916,7 +988,7 @@
       </material>
     </visual>
     <visual name="obrik_led_point_037">
-      <pose>-0.066509 -0.132344 0.018040 0 0 0</pose>
+      <pose>0.073028 -0.059872 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -928,8 +1000,12 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
+
     <visual name="obrik_led_point_038">
-      <pose>0.066509 -0.132344 0.018040 0 0 0</pose>
+      <pose>-0.077408 -0.054229 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -941,8 +1017,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_039">
-      <pose>0.066509 -0.132344 0.018040 0 0 0</pose>
+      <pose>0.077408 -0.054229 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -954,8 +1031,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_040">
-      <pose>-0.066509 -0.132344 0.018040 0 0 0</pose>
+      <pose>-0.080618 -0.047848 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -967,8 +1047,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_041">
-      <pose>0.066509 -0.132344 0.018040 0 0 0</pose>
+      <pose>0.080618 -0.047848 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -980,8 +1061,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_042">
-      <pose>-0.072065 -0.127854 0.018040 0 0 0</pose>
+      <pose>-0.082538 -0.040967 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -994,7 +1078,7 @@
       </material>
     </visual>
     <visual name="obrik_led_point_043">
-      <pose>-0.072065 -0.127854 0.018040 0 0 0</pose>
+      <pose>0.082538 -0.040967 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1006,8 +1090,12 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
+
     <visual name="obrik_led_point_044">
-      <pose>0.072065 -0.127854 0.018040 0 0 0</pose>
+      <pose>-0.083097 -0.033846 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1019,8 +1107,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_045">
-      <pose>0.072065 -0.127854 0.018040 0 0 0</pose>
+      <pose>0.083097 -0.033846 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1032,8 +1121,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_046">
-      <pose>-0.072065 -0.127854 0.018040 0 0 0</pose>
+      <pose>-0.082274 -0.026750 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1045,8 +1137,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_047">
-      <pose>0.072065 -0.127854 0.018040 0 0 0</pose>
+      <pose>0.082274 -0.026750 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1058,8 +1151,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_048">
-      <pose>-0.076652 -0.122378 0.018040 0 0 0</pose>
+      <pose>-0.080098 -0.019946 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1071,8 +1167,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_049">
-      <pose>0.076652 -0.122378 0.018040 0 0 0</pose>
+      <pose>0.080098 -0.019946 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1084,8 +1181,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_050">
-      <pose>-0.076652 -0.122378 0.018040 0 0 0</pose>
+      <pose>-0.076652 -0.013689 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1098,7 +1198,7 @@
       </material>
     </visual>
     <visual name="obrik_led_point_051">
-      <pose>-0.076652 -0.122378 0.018040 0 0 0</pose>
+      <pose>0.076652 -0.013689 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1110,8 +1210,12 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
+
     <visual name="obrik_led_point_052">
-      <pose>0.076652 -0.122378 0.018040 0 0 0</pose>
+      <pose>-0.072066 -0.008213 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1124,7 +1228,7 @@
       </material>
     </visual>
     <visual name="obrik_led_point_053">
-      <pose>0.076652 -0.122378 0.018040 0 0 0</pose>
+      <pose>0.072066 -0.008213 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1136,8 +1240,12 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
+
     <visual name="obrik_led_point_054">
-      <pose>-0.080098 -0.116121 0.018040 0 0 0</pose>
+      <pose>-0.066510 -0.003723 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1149,8 +1257,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_055">
-      <pose>-0.080098 -0.116121 0.018040 0 0 0</pose>
+      <pose>0.066510 -0.003723 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1162,8 +1271,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_056">
-      <pose>0.080098 -0.116121 0.018040 0 0 0</pose>
+      <pose>-0.025962 -0.003681 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1176,7 +1288,7 @@
       </material>
     </visual>
     <visual name="obrik_led_point_057">
-      <pose>0.080098 -0.116121 0.018040 0 0 0</pose>
+      <pose>0.025962 -0.003681 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1188,8 +1300,12 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
+
     <visual name="obrik_led_point_058">
-      <pose>-0.080098 -0.116121 0.018040 0 0 0</pose>
+      <pose>-0.060193 -0.000388 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1201,8 +1317,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_059">
-      <pose>0.080098 -0.116121 0.018040 0 0 0</pose>
+      <pose>0.060193 -0.000388 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1214,8 +1331,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_060">
-      <pose>-0.082273 -0.109317 0.018040 0 0 0</pose>
+      <pose>-0.032286 -0.000359 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1228,7 +1348,7 @@
       </material>
     </visual>
     <visual name="obrik_led_point_061">
-      <pose>0.082273 -0.109317 0.018040 0 0 0</pose>
+      <pose>0.032286 -0.000359 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1240,8 +1360,12 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
+
     <visual name="obrik_led_point_062">
-      <pose>-0.082273 -0.109317 0.018040 0 0 0</pose>
+      <pose>-0.053351 0.001668 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1253,8 +1377,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_063">
-      <pose>-0.082273 -0.109317 0.018040 0 0 0</pose>
+      <pose>0.053351 0.001668 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1266,8 +1391,11 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
     <visual name="obrik_led_point_064">
-      <pose>0.082273 -0.109317 0.018040 0 0 0</pose>
+      <pose>-0.039132 0.001683 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1280,7 +1408,7 @@
       </material>
     </visual>
     <visual name="obrik_led_point_065">
-      <pose>0.082273 -0.109317 0.018040 0 0 0</pose>
+      <pose>0.039132 0.001683 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1292,8 +1420,12 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
+
+
+
     <visual name="obrik_led_point_066">
-      <pose>-0.083097 -0.102221 0.018040 0 0 0</pose>
+      <pose>-0.046242 0.002367 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
           <radius>0.0020</radius>
@@ -1305,1736 +1437,8 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
+
     <visual name="obrik_led_point_067">
-      <pose>-0.083097 -0.102221 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_068">
-      <pose>0.083097 -0.102221 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_069">
-      <pose>0.083097 -0.102221 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_070">
-      <pose>-0.083097 -0.102221 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_071">
-      <pose>0.083097 -0.102221 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_072">
-      <pose>-0.082538 -0.095100 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_073">
-      <pose>-0.082538 -0.095100 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_074">
-      <pose>0.082538 -0.095100 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_075">
-      <pose>0.082538 -0.095100 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_076">
-      <pose>-0.082538 -0.095100 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_077">
-      <pose>0.082538 -0.095100 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_078">
-      <pose>-0.080618 -0.088219 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_079">
-      <pose>0.080618 -0.088219 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_080">
-      <pose>-0.080618 -0.088219 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_081">
-      <pose>-0.080618 -0.088219 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_082">
-      <pose>0.080618 -0.088219 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_083">
-      <pose>0.080618 -0.088219 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_084">
-      <pose>-0.077408 -0.081838 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_085">
-      <pose>0.077408 -0.081838 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_086">
-      <pose>-0.077408 -0.081838 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_087">
-      <pose>-0.077408 -0.081838 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_088">
-      <pose>0.077408 -0.081838 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_089">
-      <pose>0.077408 -0.081838 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_090">
-      <pose>-0.073028 -0.076195 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_091">
-      <pose>-0.073028 -0.076195 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_092">
-      <pose>-0.073028 -0.076195 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_093">
-      <pose>0.073028 -0.076195 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_094">
-      <pose>0.073028 -0.076195 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_095">
-      <pose>0.073028 -0.076195 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_096">
-      <pose>-0.069342 -0.071058 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_097">
-      <pose>0.069342 -0.071058 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_098">
-      <pose>-0.069342 -0.071058 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_099">
-      <pose>-0.069342 -0.071058 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_100">
-      <pose>0.069342 -0.071058 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_101">
-      <pose>0.069342 -0.071058 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_102">
-      <pose>-0.069342 -0.065009 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_103">
-      <pose>-0.069342 -0.065009 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_104">
-      <pose>0.069342 -0.065009 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_105">
-      <pose>0.069342 -0.065009 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_106">
-      <pose>-0.069342 -0.065009 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_107">
-      <pose>0.069342 -0.065009 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_108">
-      <pose>-0.073028 -0.059872 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_109">
-      <pose>0.073028 -0.059872 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_110">
-      <pose>-0.073028 -0.059872 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_111">
-      <pose>-0.073028 -0.059872 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_112">
-      <pose>0.073028 -0.059872 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_113">
-      <pose>0.073028 -0.059872 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_114">
-      <pose>-0.077408 -0.054229 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_115">
-      <pose>-0.077408 -0.054229 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_116">
-      <pose>0.077408 -0.054229 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_117">
-      <pose>0.077408 -0.054229 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_118">
-      <pose>-0.077408 -0.054229 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_119">
-      <pose>0.077408 -0.054229 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_120">
-      <pose>-0.080618 -0.047848 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_121">
-      <pose>-0.080618 -0.047848 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_122">
-      <pose>0.080618 -0.047848 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_123">
-      <pose>0.080618 -0.047848 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_124">
-      <pose>-0.080618 -0.047848 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_125">
-      <pose>0.080618 -0.047848 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_126">
-      <pose>-0.082538 -0.040967 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_127">
-      <pose>0.082538 -0.040967 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_128">
-      <pose>-0.082538 -0.040967 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_129">
-      <pose>-0.082538 -0.040967 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_130">
-      <pose>0.082538 -0.040967 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_131">
-      <pose>0.082538 -0.040967 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_132">
-      <pose>-0.083097 -0.033846 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_133">
-      <pose>-0.083097 -0.033846 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_134">
-      <pose>0.083097 -0.033846 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_135">
-      <pose>0.083097 -0.033846 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_136">
-      <pose>-0.083097 -0.033846 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_137">
-      <pose>0.083097 -0.033846 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_138">
-      <pose>-0.082274 -0.026750 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_139">
-      <pose>-0.082274 -0.026750 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_140">
-      <pose>0.082274 -0.026750 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_141">
-      <pose>0.082274 -0.026750 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_142">
-      <pose>-0.082274 -0.026750 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_143">
-      <pose>0.082274 -0.026750 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_144">
-      <pose>-0.080098 -0.019946 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_145">
-      <pose>-0.080098 -0.019946 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_146">
-      <pose>0.080098 -0.019946 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_147">
-      <pose>0.080098 -0.019946 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_148">
-      <pose>-0.080098 -0.019946 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_149">
-      <pose>0.080098 -0.019946 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_150">
-      <pose>-0.076652 -0.013689 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_151">
-      <pose>0.076652 -0.013689 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_152">
-      <pose>-0.076652 -0.013689 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_153">
-      <pose>-0.076652 -0.013689 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_154">
-      <pose>0.076652 -0.013689 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_155">
-      <pose>0.076652 -0.013689 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_156">
-      <pose>-0.072066 -0.008213 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_157">
-      <pose>0.072066 -0.008213 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_158">
-      <pose>-0.072066 -0.008213 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_159">
-      <pose>-0.072066 -0.008213 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_160">
-      <pose>0.072066 -0.008213 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_161">
-      <pose>0.072066 -0.008213 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_162">
-      <pose>-0.066510 -0.003723 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_163">
-      <pose>-0.066510 -0.003723 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_164">
-      <pose>0.066510 -0.003723 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_165">
-      <pose>0.066510 -0.003723 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_166">
-      <pose>-0.066510 -0.003723 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_167">
-      <pose>0.066510 -0.003723 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_168">
-      <pose>-0.025962 -0.003681 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_169">
-      <pose>0.025962 -0.003681 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_170">
-      <pose>-0.025962 -0.003681 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_171">
-      <pose>-0.025962 -0.003681 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_172">
-      <pose>0.025962 -0.003681 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_173">
-      <pose>0.025962 -0.003681 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_174">
-      <pose>-0.060193 -0.000388 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_175">
-      <pose>-0.060193 -0.000388 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_176">
-      <pose>0.060193 -0.000388 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_177">
-      <pose>0.060193 -0.000388 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_178">
-      <pose>-0.060193 -0.000388 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_179">
-      <pose>0.060193 -0.000388 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_180">
-      <pose>-0.032286 -0.000359 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_181">
-      <pose>0.032286 -0.000359 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_182">
-      <pose>-0.032286 -0.000359 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_183">
-      <pose>-0.032286 -0.000359 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_184">
-      <pose>0.032286 -0.000359 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_185">
-      <pose>0.032286 -0.000359 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_186">
-      <pose>-0.053351 0.001668 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_187">
-      <pose>-0.053351 0.001668 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_188">
-      <pose>0.053351 0.001668 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_189">
-      <pose>0.053351 0.001668 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_190">
-      <pose>-0.053351 0.001668 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_191">
-      <pose>0.053351 0.001668 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_192">
-      <pose>-0.039132 0.001683 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_193">
-      <pose>0.039132 0.001683 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_194">
-      <pose>-0.039132 0.001683 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_195">
-      <pose>-0.039132 0.001683 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_196">
-      <pose>0.039132 0.001683 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_197">
-      <pose>0.039132 0.001683 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_198">
-      <pose>-0.046242 0.002367 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_199">
-      <pose>-0.046242 0.002367 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_200">
       <pose>0.046242 0.002367 0.018040 0 0 0</pose>
       <geometry>
         <sphere>
@@ -3047,45 +1451,9 @@
         <emissive>0.0 1.0 0.85 0.42</emissive>
       </material>
     </visual>
-    <visual name="obrik_led_point_201">
-      <pose>0.046242 0.002367 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_202">
-      <pose>-0.046242 0.002367 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
-    <visual name="obrik_led_point_203">
-      <pose>0.046242 0.002367 0.018040 0 0 0</pose>
-      <geometry>
-        <sphere>
-          <radius>0.0020</radius>
-        </sphere>
-      </geometry>
-      <material>
-        <ambient>0.0 1.0 0.85 0.18</ambient>
-        <diffuse>0.0 1.0 0.85 0.18</diffuse>
-        <emissive>0.0 1.0 0.85 0.42</emissive>
-      </material>
-    </visual>
+
+
+
     </link>
     <joint name="obrik_led_points_fixed" type="fixed">
       <parent>base_link</parent>

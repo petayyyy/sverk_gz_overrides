@@ -110,6 +110,12 @@
       <cap_start_travel>0.6193103797</cap_start_travel>
       <reverse_travel_fraction>0.6666666667</reverse_travel_fraction>
     </plugin>
+    <plugin filename="libLedStripVisualization.so" name="sverk::sim::LedStripVisualization">
+      <led_link>obrik_led_points_link</led_link>
+      <visual_prefix>obrik_led_point_</visual_prefix>
+      <frame_topic>/led/sim/frame</frame_topic>
+      <brightness_topic>/led/sim/brightness</brightness_topic>
+    </plugin>
     <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>rotor_0_joint</jointName>
       <linkName>rotor_0</linkName>
