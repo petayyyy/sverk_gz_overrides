@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='x500_obrik_gigaobrik'>
+    <include merge='true'>
+      <uri>model://x500_obrik_gigaobrik_base</uri>
+    </include>
+    <!--
+      MTF-01 is integrated into the Gigaobrik frame.  Its real optical
+      outputs are not rendered separately: the camera below is only the
+      internal image source required by PX4's Gazebo optical-flow system.
+      PX4 GZBridge requires the flow_link/optical_flow names.
+    -->
+    <link name="flow_link">
+      <pose relative_to="base_link">0 0.081000 -0.015801 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.00001</ixx><iyy>0.00001</iyy><izz>0.00001</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <sensor name="flow_camera" type="camera">
+        <pose>0 0 0 0 1.5707963 0</pose>
+        <camera>
+          <horizontal_fov>0.733038</horizontal_fov>
+          <image>
+            <width>100</width>
+            <height>100</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>30</far>
+          </clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>50</update_rate>
+        <visualize>false</visualize>
+      </sensor>
+      <sensor name="optical_flow" type="custom" gz:type="optical_flow">
+        <always_on>1</always_on>
+        <update_rate>50</update_rate>
+        <visualize>false</visualize>
+      </sensor>
+    </link>
+    <joint name="optical_flow_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>flow_link</child>
+    </joint>
+    <!--
+      PX4 GZBridge requires the lidar_sensor_link/lidar names.  This is the
+      same physical MTF-01 position as flow_link, with a ray directed down.
+    -->
+    <link name="lidar_sensor_link">
+      <pose relative_to="base_link">0 0.081000 -0.015801 0 1.5707963 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.00001</ixx><iyy>0.00001</iyy><izz>0.00001</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <sensor name="lidar" type="gpu_lidar">
+        <pose>0 0 0 3.1415926 0 0</pose>
+        <update_rate>50</update_rate>
+        <ray>
+          <scan>
+            <horizontal><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></horizontal>
+            <vertical><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></vertical>
+          </scan>
+          <range><min>0.03</min><max>4.0</max><resolution>0.001</resolution></range>
+        </ray>
+        <always_on>1</always_on>
+        <visualize>false</visualize>
+      </sensor>
+    </link>
+    <joint name="lidar_sensor_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>lidar_sensor_link</child>
+    </joint>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_0_joint</jointName>
+      <linkName>rotor_0</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.37e-07</motorConstant>
+      <momentConstant>0.0035</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>0</motorNumber>
+      <rotorDragCoefficient>7.9e-06</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-07</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_1_joint</jointName>
+      <linkName>rotor_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.37e-07</motorConstant>
+      <momentConstant>0.0035</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>1</motorNumber>
+      <rotorDragCoefficient>7.9e-06</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-07</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_2_joint</jointName>
+      <linkName>rotor_2</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.37e-07</motorConstant>
+      <momentConstant>0.0035</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>2</motorNumber>
+      <rotorDragCoefficient>7.9e-06</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-07</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_3_joint</jointName>
+      <linkName>rotor_3</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.37e-07</motorConstant>
+      <momentConstant>0.0035</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>3</motorNumber>
+      <rotorDragCoefficient>7.9e-06</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-07</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+  </model>
+</sdf>

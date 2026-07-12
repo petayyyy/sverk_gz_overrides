@@ -5,6 +5,7 @@
 #   models/          -> $PX4_DIR/Tools/simulation/gz/models   (GZ_SIM_RESOURCE_PATH)
 #   worlds/*.sdf     -> $PX4_DIR/Tools/simulation/gz/worlds
 #   ros_nodes/<pkg>/ -> $ROS_NODES_DIR/<pkg>                  (colcon-пакеты симуляции)
+#   px4/*.patch       -> $PX4_DIR                             (настройки PX4, например DDS-топики)
 #
 # Источник берётся так (по убыванию приоритета):
 #   1. --src <dir>        — готовый checkout (так вызывает Dockerfile.sitl);
@@ -67,6 +68,27 @@ mkdir -p "$PX4_DIR/Tools/simulation/gz/models" "$PX4_DIR/Tools/simulation/gz/wor
 cp -r "$SRC/models/." "$PX4_DIR/Tools/simulation/gz/models/"
 cp "$SRC"/worlds/*.sdf "$PX4_DIR/Tools/simulation/gz/worlds/"
 echo ">> models/worlds -> $PX4_DIR/Tools/simulation/gz"
+
+# --- PX4 settings -------------------------------------------------------------
+# The patch is deliberately kept small rather than copying PX4's complete DDS
+# profile: this makes the override reviewable and avoids overwriting unrelated
+# upstream additions. It is idempotent for a normal PX4 v1.16 checkout.
+DDS_PATCH="$SRC/px4/uxrce_dds_topics.patch"
+DDS_TOPICS="$PX4_DIR/src/modules/uxrce_dds_client/dds_topics.yaml"
+if [ -f "$DDS_PATCH" ]; then
+  if [ ! -f "$DDS_TOPICS" ]; then
+    echo "error: PX4 DDS profile not found: $DDS_TOPICS" >&2
+    exit 1
+  fi
+
+  if grep -Fq '/fmu/out/distance_sensor' "$DDS_TOPICS" \
+    && grep -Fq '/fmu/out/vehicle_optical_flow_vel' "$DDS_TOPICS"; then
+    echo ">> PX4 DDS sensor outputs already configured"
+  else
+    patch --batch --forward --directory="$PX4_DIR" -p1 < "$DDS_PATCH"
+    echo ">> PX4 DDS sensor outputs configured"
+  fi
+fi
 
 # --- ros_nodes -> workspace (каждый каталог = colcon-пакет) -------------------
 installed=0

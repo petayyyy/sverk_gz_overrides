@@ -14,8 +14,11 @@ Gazebo (Harmonic) модели дронов Obrik, сенсоров и SITL-ми
 sverk_gz_overrides/
 ├── scripts/
 │   └── update_overrides.sh          # установка моделей/миров/ROS-нод по местам (см. ниже)
+├── px4/
+│   └── uxrce_dds_topics.patch        # DDS-выходы PX4 для MTF-01 Gigaobrik
 ├── worlds/
-│   └── obrik_aruco.sdf              # SITL-мир с картой ArUco-маркеров
+│   ├── obrik_aruco.sdf              # SITL-мир с картой ArUco-маркеров
+│   └── obrik_aruco_graffiti_wall.sdf # ArUco-карта со стеной для граффити
 ├── ros_nodes/                       # colcon-пакеты, нужные ТОЛЬКО симуляции;
 │   ├── graffiti_servo_gz_plugin/    #   gz-plugin кинематики серво опрыскивателя
 │   ├── graffiti_servo_sim/          #   ROS 2 нода-симулятор серво
@@ -26,6 +29,8 @@ sverk_gz_overrides/
     ├── x500_base/                   # физика NXP HoverGames x500 (апстрим PX4/Rudis Labs)
     │
     ├── x500_obrik_base/             # шасси Obrik без сенсоров (на физике x500_base)
+    ├── x500_obrik_gigaobrik_base/   # остов и ВМГ Gigaobrik с физикой X500
+    ├── x500_obrik_gigaobrik/        # Gigaobrik с MTF-01 OF и дальномером
     ├── x500_obrik_graffiti_base/    # корпус + VMG-опрыскиватель Obrik
     ├── x500_obrik_graffiti/         # Obrik-опрыскиватель (include: x500_obrik_graffiti_base)
     ├── x500_obrik_lidar/            # Obrik с лидаром LD19
@@ -47,10 +52,16 @@ sverk_gz_overrides/
 | Модель | Подключает |
 |---|---|
 | `x500` | — (физика зашита напрямую) |
-| `x500_obrik_*` | `x500` (общая физика мотора/рамы) |
+| `x500_obrik_base` | `x500`, `rpi_camera` |
+| `x500_obrik_gigaobrik` | `x500_obrik_gigaobrik_base` |
+| `x500_obrik_gigaobrik_base` | — (локальная копия физики и motor-model параметров X500) |
 | `x500_obrik_graffiti` | `x500_obrik_graffiti_base`, `rpi_camera` |
 | `x500_obrik_lidar` | `x500`, `ld19` |
 | `x500_obrik_one_rangefinder`, `x500_obrik_three_rangefinders_*` | `x500`, `vl53l0x` |
+
+`x500_obrik_gigaobrik` моделирует встроенный MTF-01 в координатах `(0, 0.081, -0.015801)` м от `base_link`: скрытая 100×100 камера нужна только внутри Gazebo для вычисления optical flow, а невидимый однолучевой дальномер направлен вниз. PX4 получает их нативно через `flow_link/optical_flow` и `lidar_sensor_link/lidar`; оба ArUco-мира подключают штатный PX4 `OpticalFlowSystem`. Launch задаёт PX4 смещение оптического центра `EKF2_OF_POS_*` и публикует TF `mtf01_link`/`mtf01_optical`.
+
+ROS-интерфейс MTF-01 разделён на два пути: существующий `ros_gz_bridge` выдаёт scan дальномера в `/obrik/mtf01/rangefinder/scan`, а патч DDS экспортирует данные, уже обработанные PX4, в `/fmu/out/distance_sensor` и `/fmu/out/vehicle_optical_flow_vel`. Видеопотока MTF-01 в ROS нет: внутренняя камера используется только Gazebo для расчёта optical flow.
 
 ## Использование в sverk-ros2
 
@@ -60,9 +71,18 @@ sverk_gz_overrides/
 - `models/` → `$PX4_DIR/Tools/simulation/gz/models` (резолвятся через
   `GZ_SIM_RESOURCE_PATH`);
 - `worlds/*.sdf` → `$PX4_DIR/Tools/simulation/gz/worlds`;
+- `px4/uxrce_dds_topics.patch` → добавляет MTF-01 DDS outputs в
+  `$PX4_DIR/src/modules/uxrce_dds_client/dds_topics.yaml`;
 - `ros_nodes/<pkg>/` → `$ROS_NODES_DIR` (по умолчанию
   `~/sverk_ws/src/sverk_drone/simulation`) — после этого пакеты собираются
   обычным `colcon build`.
+
+Если скрипт применил DDS-патч, пересоберите PX4, чтобы сгенерировать новый
+uXRCE-DDS client:
+
+```bash
+cd "$PX4_DIR" && make px4_sitl
+```
 
 Три сценария запуска:
 

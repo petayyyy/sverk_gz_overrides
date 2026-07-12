@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version="1.9">
-  <world name="obrik_aruco">
+  <world name="obrik_aruco_graffiti_wall">
     <!-- Системные плагины gz, которые нужны PX4 SITL: без них Gazebo не поднимает
          системы IMU / AirPressure / Magnetometer / NavSat / Sensors, PX4 рапортует
          "Accel/Gyro/Baro/Compass Sensor 0 missing", EKF2 не стартует и дрон не
@@ -121,5 +121,34 @@
     <include>
       <uri>model://obrik_aruco_map_4x4</uri>
     </include>
+    <!-- Painting wall aligned with the full X extent of the ArUco map.
+         The near face is y=0.60: draw_sverh_wall.py keeps the drone at
+         y=0.32 and targets this face with the graffiti nozzle. -->
+    <model name="graffiti_paint_wall">
+      <static>true</static>
+      <pose>0.6734 0.65 0.80 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>3.8 0.1 1.6</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <box>
+              <size>3.8 0.1 1.6</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.95 0.95 0.95 1</ambient>
+            <diffuse>0.95 0.95 0.95 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
   </world>
 </sdf>

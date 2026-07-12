@@ -1,0 +1,15 @@
+--- a/src/modules/uxrce_dds_client/dds_topics.yaml
++++ b/src/modules/uxrce_dds_client/dds_topics.yaml
+@@ -7,4 +7,12 @@
+ publications:
+ 
++  # Native Gigaobrik MTF-01 simulation outputs.
++  # The sensor data is produced by PX4's Gazebo bridge, not by a ROS node.
++  - topic: /fmu/out/distance_sensor
++    type: px4_msgs::msg::DistanceSensor
++
++  - topic: /fmu/out/vehicle_optical_flow_vel
++    type: px4_msgs::msg::VehicleOpticalFlowVel
++
+   - topic: /fmu/out/register_ext_component_reply
+     type: px4_msgs::msg::RegisterExtComponentReply
