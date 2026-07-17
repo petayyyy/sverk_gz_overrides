@@ -156,8 +156,8 @@ class LedStripVisualization:
     std::vector<Rgb> rendered(this->visualGroups.size());
     for (std::size_t i = 0; i < rendered.size(); ++i)
     {
-      // The real strip has 112 logical LEDs while the current CAD previews
-      // have 100 unique positions (68 for graffiti).  Resample by normalized
+      // The real strip has 112 logical LEDs while CAD previews have a
+      // model-specific number of positions. Resample by normalized
       // strip position so gradients and wipe direction stay faithful.
       std::size_t source = 0;
       if (rendered.size() > 1 && frame.size() > 1)

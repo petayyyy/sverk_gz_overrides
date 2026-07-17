@@ -31,8 +31,10 @@ sverk_gz_overrides/
     ├── x500_obrik_base/             # шасси Obrik без сенсоров (на физике x500_base)
     ├── x500_obrik_gigaobrik_base/   # остов и ВМГ Gigaobrik с физикой X500
     ├── x500_obrik_gigaobrik/        # Gigaobrik с MTF-01 OF и дальномером
-    ├── x500_obrik_graffiti_base/    # корпус + VMG-опрыскиватель Obrik
-    ├── x500_obrik_graffiti/         # Obrik-опрыскиватель (include: x500_obrik_graffiti_base)
+    ├── x500_obrik_graffiti_base/    # legacy graffiti body and mechanism
+    ├── x500_obrik_graffiti_old/     # legacy gear-and-lever graffiti configuration
+    ├── x500_obrik_graffiti_cam_base/ # current graffiti body with standard Obrik rotors
+    ├── x500_obrik_graffiti/         # current direct-cam graffiti configuration
     ├── x500_obrik_lidar/            # Obrik с лидаром LD19
     ├── x500_obrik_one_rangefinder/  # Obrik с одним дальномером VL53L0X (вниз)
     ├── x500_obrik_three_rangefinders_30/  # Obrik с 3 дальномерами, раскрытие 30°
@@ -55,9 +57,20 @@ sverk_gz_overrides/
 | `x500_obrik_base` | `x500`, `rpi_camera` |
 | `x500_obrik_gigaobrik` | `x500_obrik_gigaobrik_base` |
 | `x500_obrik_gigaobrik_base` | — (локальная копия физики и motor-model параметров X500) |
-| `x500_obrik_graffiti` | `x500_obrik_graffiti_base`, `rpi_camera` |
+| `x500_obrik_graffiti` | `x500_obrik_graffiti_cam_base`, `rpi_camera` |
+| `x500_obrik_graffiti_old` | `x500_obrik_graffiti_base`, `rpi_camera` |
 | `x500_obrik_lidar` | `x500`, `ld19` |
 | `x500_obrik_one_rangefinder`, `x500_obrik_three_rangefinders_*` | `x500`, `vl53l0x` |
+
+## Graffiti Configurations
+
+`x500_obrik_graffiti` is the current direct cam-to-cap model. It uses
+`x500_obrik_graffiti_cam_base`, the standard Obrik X500 drivetrain, a
+forward-facing `obrik_slam_rangefinder`, a `+Y` spray nozzle, and 104 LED
+preview positions at `0.017200 m` Z. Its moving meshes are `cam.obj` and
+`cap.obj` in `models/x500_obrik_graffiti/meshes/`.
+
+`x500_obrik_graffiti_old` preserves the original gear-and-lever model.
 
 `x500_obrik_gigaobrik` моделирует встроенный MTF-01 в координатах `(0, 0.081, -0.015801)` м от `base_link`: скрытая 100×100 камера нужна только внутри Gazebo для вычисления optical flow, а невидимый однолучевой дальномер направлен вниз. PX4 получает их нативно через `flow_link/optical_flow` и `lidar_sensor_link/lidar`; оба ArUco-мира подключают штатный PX4 `OpticalFlowSystem`. Launch задаёт PX4 смещение оптического центра `EKF2_OF_POS_*` и публикует TF `mtf01_link`/`mtf01_optical`.
 
