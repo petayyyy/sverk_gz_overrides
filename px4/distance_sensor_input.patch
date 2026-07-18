@@ -1,0 +1,10 @@
+--- a/src/modules/uxrce_dds_client/dds_topics.yaml
++++ b/src/modules/uxrce_dds_client/dds_topics.yaml
+@@ -124,4 +124,7 @@ publications:
+ # Create uORB::Publication
+ subscriptions:
++  - topic: /fmu/in/distance_sensor
++    type: px4_msgs::msg::DistanceSensor
++
+   - topic: /fmu/in/register_ext_component_request
+     type: px4_msgs::msg::RegisterExtComponentRequest

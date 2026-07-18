@@ -72,21 +72,26 @@ echo ">> models/worlds -> $PX4_DIR/Tools/simulation/gz"
 # --- PX4 settings -------------------------------------------------------------
 # The patch is deliberately kept small rather than copying PX4's complete DDS
 # profile: this makes the override reviewable and avoids overwriting unrelated
-# upstream additions. It is idempotent for a normal PX4 v1.16 checkout.
-DDS_PATCH="$SRC/px4/uxrce_dds_topics.patch"
+# upstream additions. Each endpoint patch is independently idempotent so an
+# existing PX4 checkout can be upgraded from the older outputs-only setup.
+DDS_OUTPUTS_PATCH="$SRC/px4/uxrce_dds_topics.patch"
+DDS_INPUT_PATCH="$SRC/px4/distance_sensor_input.patch"
 DDS_TOPICS="$PX4_DIR/src/modules/uxrce_dds_client/dds_topics.yaml"
-if [ -f "$DDS_PATCH" ]; then
+if [ -f "$DDS_OUTPUTS_PATCH" ] || [ -f "$DDS_INPUT_PATCH" ]; then
   if [ ! -f "$DDS_TOPICS" ]; then
     echo "error: PX4 DDS profile not found: $DDS_TOPICS" >&2
     exit 1
   fi
 
-  if grep -Fq '/fmu/out/distance_sensor' "$DDS_TOPICS" \
-    && grep -Fq '/fmu/out/vehicle_optical_flow_vel' "$DDS_TOPICS"; then
-    echo ">> PX4 DDS sensor outputs already configured"
-  else
-    patch --batch --forward --directory="$PX4_DIR" -p1 < "$DDS_PATCH"
+  if ! grep -Fq '/fmu/out/distance_sensor' "$DDS_TOPICS" \
+    || ! grep -Fq '/fmu/out/vehicle_optical_flow_vel' "$DDS_TOPICS"; then
+    patch --batch --forward --directory="$PX4_DIR" -p1 < "$DDS_OUTPUTS_PATCH"
     echo ">> PX4 DDS sensor outputs configured"
+  fi
+
+  if ! grep -Fq '/fmu/in/distance_sensor' "$DDS_TOPICS"; then
+    patch --batch --forward --directory="$PX4_DIR" -p1 < "$DDS_INPUT_PATCH"
+    echo ">> PX4 DDS distance sensor input configured"
   fi
 fi
 

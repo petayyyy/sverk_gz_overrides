@@ -35,7 +35,9 @@
             <height>960</height>
           </image>
           <clip>
-            <near>0.05</near>
+            <!-- The camera sits about 47 mm above the floor while landed. Keep
+                 the near plane below that so the takeoff marker is visible. -->
+            <near>0.03</near>
             <!-- 50 m is plenty for the indoor/маркерная SITL scene; a 3000 m
                  far plane only wastes depth precision and culling work. -->
             <far>50</far>

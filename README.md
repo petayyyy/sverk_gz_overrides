@@ -15,7 +15,8 @@ sverk_gz_overrides/
 ├── scripts/
 │   └── update_overrides.sh          # установка моделей/миров/ROS-нод по местам (см. ниже)
 ├── px4/
-│   └── uxrce_dds_topics.patch        # DDS-выходы PX4 для MTF-01 Gigaobrik
+│   ├── uxrce_dds_topics.patch        # DDS outputs PX4 для симуляционных сенсоров
+│   └── distance_sensor_input.patch   # DDS input PX4 для дальномера
 ├── worlds/
 │   ├── obrik_aruco.sdf              # SITL-мир с картой ArUco-маркеров
 │   └── obrik_aruco_graffiti_wall.sdf # ArUco-карта со стеной для граффити
@@ -23,7 +24,8 @@ sverk_gz_overrides/
 │   ├── graffiti_servo_gz_plugin/    #   gz-plugin кинематики серво опрыскивателя
 │   ├── graffiti_servo_sim/          #   ROS 2 нода-симулятор серво
 │   ├── led_strip_gz_plugin/        #   gz-plugin рендера светодиодных орбов
-│   └── led_strip_sim/              #   ROS 2 симулятор эффектов светодиодной ленты
+│   ├── led_strip_sim/              #   ROS 2 симулятор эффектов светодиодной ленты
+│   └── rangefinder_px4_bridge/     #   LaserScan -> PX4 DistanceSensor
 └── models/
     ├── x500/                        # PX4 x500 wrapper (доп. визуальные joint'ы винтов)
     ├── x500_base/                   # физика NXP HoverGames x500 (апстрим PX4/Rudis Labs)
@@ -84,7 +86,7 @@ ROS-интерфейс MTF-01 разделён на два пути: сущес�
 - `models/` → `$PX4_DIR/Tools/simulation/gz/models` (резолвятся через
   `GZ_SIM_RESOURCE_PATH`);
 - `worlds/*.sdf` → `$PX4_DIR/Tools/simulation/gz/worlds`;
-- `px4/uxrce_dds_topics.patch` → добавляет MTF-01 DDS outputs в
+- `px4/*.patch` → добавляет DDS input дальномера и MTF-01 outputs в
   `$PX4_DIR/src/modules/uxrce_dds_client/dds_topics.yaml`;
 - `ros_nodes/<pkg>/` → `$ROS_NODES_DIR` (по умолчанию
   `~/sverk_ws/src/sverk_drone/simulation`) — после этого пакеты собираются

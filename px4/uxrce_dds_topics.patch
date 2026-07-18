@@ -1,6 +1,6 @@
 --- a/src/modules/uxrce_dds_client/dds_topics.yaml
 +++ b/src/modules/uxrce_dds_client/dds_topics.yaml
-@@ -7,4 +7,12 @@
+@@ -12,4 +12,12 @@
  publications:
  
 +  # Native Gigaobrik MTF-01 simulation outputs.
