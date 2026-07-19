@@ -9,13 +9,13 @@
     </include>
     <include merge='true'>
       <uri>model://rpi_camera</uri>
-      <pose relative_to="base_link">0 -0.061500 0.003100 0 1.5707963 1.5707963</pose>
+      <pose relative_to="base_link">0 -0.061500 -0.003100 0 1.5707963 1.5707963</pose>
       <name>rpi_camera</name>
     </include>
     <joint name="CameraJoint" type="fixed">
       <parent>base_link</parent>
       <child>rpi_camera_link</child>
-      <pose relative_to="base_link">0 -0.061500 0.003100 0 1.5707963 1.5707963</pose>
+      <pose relative_to="base_link">0 -0.061500 -0.003100 0 1.5707963 1.5707963</pose>
     </joint>
     <joint name="obrik_rangefinder_down_joint" type="fixed">
       <parent>base_link</parent>
