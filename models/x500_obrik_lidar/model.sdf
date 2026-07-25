@@ -74,7 +74,7 @@
       <child>obrik_lidar_link</child>
     </joint>
     <link name="obrik_lidar_link">
-      <pose relative_to="base_link">0 -0.051500 0.040000 0 0 0</pose>
+      <pose relative_to="base_link">0 -0.051500 0.026600 0 0 0</pose>
       <inertial>
         <mass>0.001</mass>
         <inertia>

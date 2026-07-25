@@ -9,12 +9,13 @@
       <inertial>
         <mass>0.187</mass>
         <inertia>
-          <ixx>0.000466</ixx>
+          <!-- Box approximation for the 303.862 x 373.467 x 105 mm body. -->
+          <ixx>0.002345</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.000542</iyy>
+          <iyy>0.001610</iyy>
           <iyz>0</iyz>
-          <izz>0.000825</izz>
+          <izz>0.003613</izz>
         </inertia>
       </inertial>
       <gravity>true</gravity>
