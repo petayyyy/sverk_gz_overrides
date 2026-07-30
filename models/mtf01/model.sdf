@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <model name="mtf01">
+    <self_collide>false</self_collide>
+    <static>false</static>
+
+    <!-- Mechanical frame. The normalized decimated mesh is already in metres;
+         its shared physical flow/ToF sensing axis is link-local +X. -->
+    <link name="mtf01_link">
+      <inertial>
+        <mass>0.0045</mass>
+        <inertia>
+          <ixx>0.00000019</ixx>
+          <iyy>0.00000040</iyy>
+          <izz>0.00000043</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="mtf01_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://mtf01/meshes/mtf01.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- The sensing origin is (+10 mm, 0, +3.5 mm) in the normalized
+         mechanical frame. The flow_link/flow_camera names are retained for
+         the ROS/PX4 bridge. -->
+    <link name="flow_link">
+      <pose relative_to="mtf01_link">0.010 0 0.0035 0 0 0</pose>
+      <inertial>
+        <mass>0.000001</mass>
+        <inertia>
+          <ixx>0.000000000001</ixx>
+          <iyy>0.000000000001</iyy>
+          <izz>0.000000000001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <sensor name="flow_camera" type="camera">
+        <!-- Gazebo cameras render along +X, which is now the normalized
+             MTF-01 sensing axis without a rotational correction. -->
+        <pose>0 0 0 0 0 0</pose>
+        <camera>
+          <horizontal_fov>0.733038285838</horizontal_fov>
+          <image>
+            <!-- Internal Gazebo image source for optical-flow calculation;
+                 the physical MTF-01 does not expose a raw video stream. -->
+            <width>100</width>
+            <height>100</height>
+          </image>
+          <clip>
+            <near>0.08</near>
+            <far>30</far>
+          </clip>
+        </camera>
+        <always_on>true</always_on>
+        <update_rate>100</update_rate>
+        <visualize>false</visualize>
+      </sensor>
+    </link>
+    <joint name="mtf01_flow_joint" type="fixed">
+      <parent>mtf01_link</parent>
+      <child>flow_link</child>
+    </joint>
+
+    <!-- The ToF origin and +X sensing direction are shared with optical flow.
+         PX4's Gazebo bridge requires the lidar_sensor_link/lidar names. -->
+    <link name="lidar_sensor_link">
+      <pose relative_to="mtf01_link">0.010 0 0.0035 0 0 0</pose>
+      <inertial>
+        <mass>0.000001</mass>
+        <inertia>
+          <ixx>0.000000000001</ixx>
+          <iyy>0.000000000001</iyy>
+          <izz>0.000000000001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <sensor name="lidar" type="gpu_lidar">
+        <!-- Gazebo's lidar ray axis is +X, matching the normalized model. -->
+        <pose>0 0 0 0 0 0</pose>
+        <update_rate>100</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.02</min>
+            <max>8.0</max>
+            <resolution>0.001</resolution>
+          </range>
+        </ray>
+        <always_on>true</always_on>
+        <visualize>false</visualize>
+      </sensor>
+    </link>
+    <joint name="mtf01_lidar_joint" type="fixed">
+      <parent>mtf01_link</parent>
+      <child>lidar_sensor_link</child>
+    </joint>
+  </model>
+</sdf>

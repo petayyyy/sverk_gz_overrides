@@ -76,8 +76,10 @@ echo ">> models/worlds -> $PX4_DIR/Tools/simulation/gz"
 # existing PX4 checkout can be upgraded from the older outputs-only setup.
 DDS_OUTPUTS_PATCH="$SRC/px4/uxrce_dds_topics.patch"
 DDS_INPUT_PATCH="$SRC/px4/distance_sensor_input.patch"
+OPTICAL_FLOW_INPUT_PATCH="$SRC/px4/optical_flow_input.patch"
 DDS_TOPICS="$PX4_DIR/src/modules/uxrce_dds_client/dds_topics.yaml"
-if [ -f "$DDS_OUTPUTS_PATCH" ] || [ -f "$DDS_INPUT_PATCH" ]; then
+if [ -f "$DDS_OUTPUTS_PATCH" ] || [ -f "$DDS_INPUT_PATCH" ] \
+  || [ -f "$OPTICAL_FLOW_INPUT_PATCH" ]; then
   if [ ! -f "$DDS_TOPICS" ]; then
     echo "error: PX4 DDS profile not found: $DDS_TOPICS" >&2
     exit 1
@@ -92,6 +94,11 @@ if [ -f "$DDS_OUTPUTS_PATCH" ] || [ -f "$DDS_INPUT_PATCH" ]; then
   if ! grep -Fq '/fmu/in/distance_sensor' "$DDS_TOPICS"; then
     patch --batch --forward --directory="$PX4_DIR" -p1 < "$DDS_INPUT_PATCH"
     echo ">> PX4 DDS distance sensor input configured"
+  fi
+
+  if ! grep -Eq '^[[:space:]]*-[[:space:]]+topic:[[:space:]]+/fmu/in/sensor_optical_flow([[:space:]]|$)' "$DDS_TOPICS"; then
+    patch --batch --forward --directory="$PX4_DIR" -p1 < "$OPTICAL_FLOW_INPUT_PATCH"
+    echo ">> PX4 DDS optical-flow input configured"
   fi
 fi
 

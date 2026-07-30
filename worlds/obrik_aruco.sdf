@@ -18,8 +18,6 @@
     <plugin name="gz::sim::systems::Sensors" filename="gz-sim-sensors-system">
       <render_engine>ogre2</render_engine>
     </plugin>
-    <!-- Required for PX4's gz:type="optical_flow" custom sensor. -->
-    <plugin name="custom::OpticalFlowSystem" filename="libOpticalFlowSystem.so"/>
     <physics type="dart">
       <max_step_size>0.004</max_step_size>
       <real_time_factor>1.0</real_time_factor>

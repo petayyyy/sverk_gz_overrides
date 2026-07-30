@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>mtf01_px4_bridge</name>
+  <version>0.1.0</version>
+  <description>Estimate MTF-01 optical flow from Gazebo images and publish PX4 SensorOpticalFlow.</description>
+  <maintainer email="petayyyy@gmail.com">sverk</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>px4_msgs</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

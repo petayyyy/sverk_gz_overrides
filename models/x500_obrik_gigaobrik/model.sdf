@@ -4,78 +4,38 @@
     <include merge='true'>
       <uri>model://x500_obrik_gigaobrik_base</uri>
     </include>
-    <!--
-      MTF-01 is integrated into the Gigaobrik frame.  Its real optical
-      outputs are not rendered separately: the camera below is only the
-      internal image source required by PX4's Gazebo optical-flow system.
-      PX4 GZBridge requires the flow_link/optical_flow names.
-    -->
-    <link name="flow_link">
-      <pose relative_to="base_link">0 0.081000 -0.015801 0 0 0</pose>
-      <inertial>
-        <mass>0.001</mass>
-        <inertia>
-          <ixx>0.00001</ixx><iyy>0.00001</iyy><izz>0.00001</izz>
-          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
-        </inertia>
-      </inertial>
-      <sensor name="flow_camera" type="camera">
-        <pose>0 0 0 0 1.5707963 0</pose>
-        <camera>
-          <horizontal_fov>0.733038</horizontal_fov>
-          <image>
-            <width>100</width>
-            <height>100</height>
-          </image>
-          <clip>
-            <near>0.1</near>
-            <far>30</far>
-          </clip>
-        </camera>
-        <always_on>1</always_on>
-        <update_rate>50</update_rate>
-        <visualize>false</visualize>
-      </sensor>
-      <sensor name="optical_flow" type="custom" gz:type="optical_flow">
-        <always_on>1</always_on>
-        <update_rate>50</update_rate>
-        <visualize>false</visualize>
-      </sensor>
-    </link>
-    <joint name="optical_flow_joint" type="fixed">
+    <!-- Reusable MTF-01 body and sensing stack. Its normalized local +X
+         sensing axis uses the RPi-style downward-facing mount while preserving
+         the measured body-frame origin: (0, 84.5, -5.801) mm. -->
+    <include merge="true">
+      <uri>model://mtf01</uri>
+      <pose relative_to="base_link">0 0.084500 -0.005801 0 1.5707963267948966 1.5707963267948966</pose>
+    </include>
+    <joint name="mtf01_joint" type="fixed">
       <parent>base_link</parent>
-      <child>flow_link</child>
+      <child>mtf01_link</child>
     </joint>
-    <!--
-      PX4 GZBridge requires the lidar_sensor_link/lidar names.  This is the
-      same physical MTF-01 position as flow_link, with a ray directed down.
-    -->
-    <link name="lidar_sensor_link">
-      <pose relative_to="base_link">0 0.081000 -0.015801 0 1.5707963 0</pose>
-      <inertial>
-        <mass>0.001</mass>
-        <inertia>
-          <ixx>0.00001</ixx><iyy>0.00001</iyy><izz>0.00001</izz>
-          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
-        </inertia>
-      </inertial>
-      <sensor name="lidar" type="gpu_lidar">
-        <pose>0 0 0 3.1415926 0 0</pose>
-        <update_rate>50</update_rate>
-        <ray>
-          <scan>
-            <horizontal><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></horizontal>
-            <vertical><samples>1</samples><resolution>1</resolution><min_angle>0</min_angle><max_angle>0</max_angle></vertical>
-          </scan>
-          <range><min>0.03</min><max>4.0</max><resolution>0.001</resolution></range>
-        </ray>
-        <always_on>1</always_on>
-        <visualize>false</visualize>
-      </sensor>
-    </link>
-    <joint name="lidar_sensor_joint" type="fixed">
+    <!-- Front Orange Pi camera. Its normalized model-local +X optical axis
+         is yawed toward body +Y. -->
+    <include>
+      <uri>model://orange_pi_camera</uri>
+      <name>orange_pi_camera_front</name>
+      <pose relative_to="base_link">0 0.113885 0.023131 0 0 1.5707963267948966</pose>
+    </include>
+    <joint name="orange_pi_camera_front_joint" type="fixed">
       <parent>base_link</parent>
-      <child>lidar_sensor_link</child>
+      <child>orange_pi_camera_front::orange_pi_camera_link</child>
+    </joint>
+    <!-- Bottom Orange Pi camera. The normalized model-local +X optical axis
+         uses the same downward-facing mounting convention as the RPi camera. -->
+    <include>
+      <uri>model://orange_pi_camera</uri>
+      <name>orange_pi_camera_bottom</name>
+      <pose relative_to="base_link">0 0.067001 -0.004800 0 1.5707963267948966 1.5707963267948966</pose>
+    </include>
+    <joint name="orange_pi_camera_bottom_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>orange_pi_camera_bottom::orange_pi_camera_link</child>
     </joint>
     <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>rotor_0_joint</jointName>

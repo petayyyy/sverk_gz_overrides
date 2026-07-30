@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <model name="orange_pi_camera">
+    <self_collide>false</self_collide>
+    <static>false</static>
+    <link name="orange_pi_camera_link">
+      <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.000001</ixx>
+          <iyy>0.000001</iyy>
+          <izz>0.000001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <visual name="orange_pi_camera_visual">
+        <geometry>
+          <mesh>
+            <!-- The normalized export is already in metres. -->
+            <scale>1 1 1</scale>
+            <uri>model://orange_pi_camera/meshes/orange_pi_camera.obj</uri>
+          </mesh>
+        </geometry>
+        <!-- Gazebo Sim does not reliably apply the OBJ's MTL diffuse colour.
+             Keep the supplied model's neutral-grey finish explicit here. -->
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>1 1 1 1</specular>
+        </material>
+      </visual>
+
+      <sensor name="imager" type="camera">
+        <!-- The normalized model uses link-local +X as its physical lens axis,
+             which matches Gazebo's camera-forward convention. The optical
+             centre is 6 mm forward of the model origin. -->
+        <pose>0.006 0 0 0 0 0</pose>
+        <camera>
+          <!--
+            Operational OV13850 EIS-720p mode. This is a real sensor mode,
+            not an arbitrary downscale: the OV13850 product brief specifies
+            1408x792. Rendering two 4224x3136 streams continuously makes
+            software-rendered SITL run at about 0.01x real time.
+          -->
+          <horizontal_fov>1.354811094812</horizontal_fov>
+          <image>
+            <width>1408</width>
+            <height>792</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <!-- Official focusing range starts at 0.1 m. Gazebo needs a
+                 finite far plane, so 50 m matches the indoor simulation. -->
+            <near>0.1</near>
+            <far>50</far>
+          </clip>
+        </camera>
+        <!-- Activate on the selected Gazebo/ROS subscriber. This keeps the
+             unselected camera mode from rendering in parallel. -->
+        <always_on>false</always_on>
+        <update_rate>30</update_rate>
+        <visualize>false</visualize>
+      </sensor>
+
+      <!--
+        Native 13.2 MP mode for explicit sensor validation. It stays inactive
+        unless a client subscribes to its scoped Gazebo topic, so the normal
+        two-camera flight stack remains schedulable.
+      -->
+      <sensor name="imager_fullres" type="camera">
+        <pose>0.006 0 0 0 0 0</pose>
+        <camera>
+          <horizontal_fov>1.354811094812</horizontal_fov>
+          <image>
+            <width>4224</width>
+            <height>3136</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>50</far>
+          </clip>
+        </camera>
+        <always_on>false</always_on>
+        <update_rate>30</update_rate>
+        <visualize>false</visualize>
+      </sensor>
+    </link>
+  </model>
+</sdf>
