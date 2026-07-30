@@ -52,9 +52,12 @@
             <format>R8G8B8</format>
           </image>
           <clip>
-            <!-- Official focusing range starts at 0.1 m. Gazebo needs a
-                 finite far plane, so 50 m matches the indoor simulation. -->
-            <near>0.1</near>
+            <!-- Clipping is geometric visibility, not optical focus. Keep
+                 nearby geometry renderable so the grounded Gigaobrik can see
+                 its 15 mm initialization marker at roughly 45 mm. The real
+                 OV13850 module's specified focus range still starts at 0.1 m;
+                 Gazebo does not simulate its defocus blur. -->
+            <near>0.01</near>
             <far>50</far>
           </clip>
         </camera>
@@ -80,7 +83,7 @@
             <format>R8G8B8</format>
           </image>
           <clip>
-            <near>0.1</near>
+            <near>0.01</near>
             <far>50</far>
           </clip>
         </camera>
