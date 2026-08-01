@@ -64,8 +64,12 @@ sverk_gz_overrides/
 |---|---|
 | `x500` | — (физика зашита напрямую) |
 | `x500_obrik_base` | `x500`, `rpi_camera` |
+| `unitree_l2` | — (Unitree L2 3D lidar: normal and NAGE GPU-lidar modes; visible rotor at 333 RPM) |
+| `brio_95_camera` | — (Logitech BRIO 95 1080p / 30 fps / 58° diagonal FoV) |
 | `x500_obrik_gigaobrik` | `x500_obrik_gigaobrik_base`, `mtf01`, `orange_pi_camera` (two instances) |
 | `x500_obrik_gigaobrik_base` | — (локальная копия физики и motor-model параметров X500) |
+| `x500_obrik_gigaobrik_lidar` | `x500_obrik_gigaobrik_lidar_base`, `mtf01`, `brio_95_camera` (downward), `unitree_l2` |
+| `x500_obrik_gigaobrik_lidar_base` | original Gigaobrik VMG meshes; the supplied clean body mesh; the same X500 collision and motor model |
 | `x500_obrik_graffiti` | `x500_obrik_graffiti_cam_base`, `rpi_camera` |
 | `x500_obrik_graffiti_old` | `x500_obrik_graffiti_base`, `rpi_camera` |
 | `x500_obrik_lidar` | `x500`, `ld19` |
@@ -165,7 +169,8 @@ bash scripts/update_overrides.sh
 bash <(curl -fsSL https://raw.githubusercontent.com/petayyyy/sverk_gz_overrides/main/scripts/update_overrides.sh)
 cd ~/sverk_ws && colcon build --packages-select \
   graffiti_servo_gz_plugin graffiti_servo_sim \
-  led_strip_gz_plugin led_strip_sim mtf01_px4_bridge
+  led_strip_gz_plugin led_strip_sim mtf01_px4_bridge \
+  unitree_l2_rotor_gz_plugin
 ```
 
 Пути и источник переопределяются флагами `--src/--repo/--ref/--px4-dir/--ros-nodes-dir`

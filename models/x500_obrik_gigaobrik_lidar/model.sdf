@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <model name="x500_obrik_gigaobrik_lidar">
+    <include merge="true">
+      <uri>model://x500_obrik_gigaobrik_lidar_base</uri>
+    </include>
+
+    <!-- Reuse the existing downward MTF-01 optical-flow / rangefinder stack. -->
+    <include merge="true">
+      <uri>model://mtf01</uri>
+      <pose relative_to="base_link">0 0.084500 -0.005801 0 1.5707963267948966 1.5707963267948966</pose>
+    </include>
+    <joint name="mtf01_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>mtf01_link</child>
+    </joint>
+
+    <!-- Logitech BRIO 95: supplied CAD pose is in millimetres relative to
+         base_link. Apply rotations in XYZ order: 0 about X, then +90 degrees
+         about Y and -90 degrees about Z
+         (SDF roll=0, pitch=+pi/2, yaw=-pi/2). -->
+    <include>
+      <uri>model://brio_95_camera</uri>
+      <name>brio_95_camera_down</name>
+      <pose relative_to="base_link">0.001 0.019700 -0.005925 0 1.5707963267948966 -1.5707963267948966</pose>
+    </include>
+    <joint name="brio_95_camera_down_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>brio_95_camera_down::brio_95_camera_link</child>
+    </joint>
+
+    <!-- CAD mount: (X, Y, Z) = (0, -117.849, 22.159) mm and 97 degrees
+         clockwise about CAD +X. The clean body visual is yawed 180 degrees
+         relative to base_link, so this becomes (0, +0.117849, +0.022159) m
+         and -97 degrees about base_link +X. Unitree L2's local +Z remains
+         its mechanical rotor axis and its local +X is its cloud forward axis. -->
+    <include merge="true">
+      <uri>model://unitree_l2</uri>
+      <pose relative_to="base_link">0 0.117849 0.022159 -1.6929693744344996 0 0</pose>
+    </include>
+    <joint name="unitree_l2_mount_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>l2_base_link</child>
+    </joint>
+
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_0_joint</jointName><linkName>rotor_0</linkName><turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown><maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.37e-07</motorConstant><momentConstant>0.0035</momentConstant><commandSubTopic>command/motor_speed</commandSubTopic><motorNumber>0</motorNumber>
+      <rotorDragCoefficient>7.9e-06</rotorDragCoefficient><rollingMomentCoefficient>1e-07</rollingMomentCoefficient><rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim><motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_1_joint</jointName><linkName>rotor_1</linkName><turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown><maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.37e-07</motorConstant><momentConstant>0.0035</momentConstant><commandSubTopic>command/motor_speed</commandSubTopic><motorNumber>1</motorNumber>
+      <rotorDragCoefficient>7.9e-06</rotorDragCoefficient><rollingMomentCoefficient>1e-07</rollingMomentCoefficient><rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim><motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_2_joint</jointName><linkName>rotor_2</linkName><turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown><maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.37e-07</motorConstant><momentConstant>0.0035</momentConstant><commandSubTopic>command/motor_speed</commandSubTopic><motorNumber>2</motorNumber>
+      <rotorDragCoefficient>7.9e-06</rotorDragCoefficient><rollingMomentCoefficient>1e-07</rollingMomentCoefficient><rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim><motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_3_joint</jointName><linkName>rotor_3</linkName><turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown><maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.37e-07</motorConstant><momentConstant>0.0035</momentConstant><commandSubTopic>command/motor_speed</commandSubTopic><motorNumber>3</motorNumber>
+      <rotorDragCoefficient>7.9e-06</rotorDragCoefficient><rollingMomentCoefficient>1e-07</rollingMomentCoefficient><rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim><motorType>velocity</motorType>
+    </plugin>
+  </model>
+</sdf>

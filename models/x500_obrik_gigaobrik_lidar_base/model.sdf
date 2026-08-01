@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sdf version="1.9">
+  <model name="x500_obrik_gigaobrik_lidar_base">
+    <!-- Lift the base_link so the supplied z=-56 mm collision bound rests on ground. -->
+    <pose>0 0 0.056 0 0 0</pose>
+    <self_collide>false</self_collide>
+    <static>false</static>
+    <link name="base_link">
+      <inertial>
+        <!-- The original Gigaobrik body CoM was offset to counter two 10 g
+             Orange Pi cameras plus the MTF-01.  This assembly has neither
+             Orange Pi; BRIO and L2 are deliberately near-massless until the
+             vehicle mass properties are retuned.  Offset the 187 g body only
+             against the remaining 4.5 g MTF-01 at Y=+84.5 mm, keeping the
+             assembled CoM at base_link. -->
+        <pose>0 -0.002036 -0.0014149 0 0 0</pose>
+        <mass>0.187</mass>
+        <inertia>
+          <!-- Box approximation for the 303.862 x 373.467 x 105 mm body. -->
+          <ixx>0.002345</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001610</iyy>
+          <iyz>0</iyz>
+          <izz>0.003613</izz>
+        </inertia>
+      </inertial>
+      <gravity>true</gravity>
+      <velocity_decay />
+      <collision name="obrik_body_collision">
+        <pose>0 0 -0.0035 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.303862 0.373467 0.105</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <visual name="obrik_body_visual">
+        <!-- Keep the visible fuselage heading while base_link uses PX4 axes. -->
+        <pose>0 0 0 0 0 3.1415926</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://x500_obrik_gigaobrik_lidar_base/meshes/gigaobrik_base_clean.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name="air_pressure_sensor" type="air_pressure">
+        <always_on>1</always_on>
+        <update_rate>50</update_rate>
+        <air_pressure>
+          <pressure>
+            <noise type="gaussian">
+              <mean>0</mean>
+              <stddev>3</stddev>
+            </noise>
+          </pressure>
+        </air_pressure>
+      </sensor>
+      <sensor name="magnetometer_sensor" type="magnetometer">
+        <always_on>1</always_on>
+        <update_rate>100</update_rate>
+        <magnetometer>
+          <x>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </z>
+        </magnetometer>
+      </sensor>
+      <sensor name="imu_sensor" type="imu">
+        <always_on>1</always_on>
+        <update_rate>250</update_rate>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00686</stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+      <sensor name="navsat_sensor" type="navsat">
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+      </sensor>
+    </link>
+    <link name="rotor_0">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <pose>0.105420 -0.068869 0.026850 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>2.8e-7</ixx>
+          <iyy>2.9e-7</iyy>
+          <izz>5.7e-7</izz>
+        </inertia>
+      </inertial>
+      <visual name="obrik_prop_ccw_rear_right_visual">
+        <pose>0 0 0 0 0 1.5707963</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://x500_obrik_gigaobrik_base/meshes/vmg_ccw.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_0_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_0</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_1">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <pose>-0.105420 0.068869 0.026850 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>2.8e-7</ixx>
+          <iyy>2.9e-7</iyy>
+          <izz>5.7e-7</izz>
+        </inertia>
+      </inertial>
+      <visual name="obrik_prop_ccw_front_left_visual">
+        <pose>0 0 0 0 0 1.5707963</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://x500_obrik_gigaobrik_base/meshes/vmg_ccw.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_1_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_2">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <pose>0.105420 0.068869 0.026850 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>2.8e-7</ixx>
+          <iyy>2.9e-7</iyy>
+          <izz>5.7e-7</izz>
+        </inertia>
+      </inertial>
+      <visual name="obrik_prop_cw_front_right_visual">
+        <pose>0 0 0 0 0 1.5707963</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://x500_obrik_gigaobrik_base/meshes/vmg_cw.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_2_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_3">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <pose>-0.105420 -0.068869 0.026850 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>2.8e-7</ixx>
+          <iyy>2.9e-7</iyy>
+          <izz>5.7e-7</izz>
+        </inertia>
+      </inertial>
+      <visual name="obrik_prop_cw_rear_left_visual">
+        <pose>0 0 0 0 0 1.5707963</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://x500_obrik_gigaobrik_base/meshes/vmg_cw.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_3_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+  </model>
+</sdf>
