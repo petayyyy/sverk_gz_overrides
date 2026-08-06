@@ -8,11 +8,14 @@
          its shared physical flow/ToF sensing axis is link-local +X. -->
     <link name="mtf01_link">
       <inertial>
-        <mass>0.0045</mass>
+        <!-- The physical MicoAir MTF-01 weighs 4.5 g.  Keep its simulated
+             payload effectively massless until the Gigaobrik mass properties
+             (including the payload locations) are deliberately retuned. -->
+        <mass>0.000001</mass>
         <inertia>
-          <ixx>0.00000019</ixx>
-          <iyy>0.00000040</iyy>
-          <izz>0.00000043</izz>
+          <ixx>1e-12</ixx>
+          <iyy>1e-12</iyy>
+          <izz>1e-12</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>

@@ -5,11 +5,14 @@
     <static>false</static>
     <link name="orange_pi_camera_link">
       <inertial>
-        <mass>0.01</mass>
+        <!-- The physical OV13850 / OV13855 camera module is modelled as
+             10 g.  Keep it effectively massless in SITL until the complete
+             Gigaobrik payload mass properties are deliberately retuned. -->
+        <mass>0.000001</mass>
         <inertia>
-          <ixx>0.000001</ixx>
-          <iyy>0.000001</iyy>
-          <izz>0.000001</izz>
+          <ixx>1e-12</ixx>
+          <iyy>1e-12</iyy>
+          <izz>1e-12</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>

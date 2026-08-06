@@ -8,20 +8,12 @@
     <link name="base_link">
       <inertial>
         <!--
-          The camera and MTF-01 models carry their real masses as separate
-          child links.  This is the residual body CoM required to keep the
-          completed Gigaobrik assembly's combined CoM at base_link:
-
-            2 x Orange Pi camera: 10 g each
-            MTF-01:               4.5 g
-            sensor helper links:  1 mg each
-            four rotors:          1 g each
-
-          Without this compensation, all three sensors lie on body +Y and
-          shift the assembly CoM forward by about 10 mm.  That produces a
-          large roll torque whenever collective thrust is reduced.
+          The two Orange Pi cameras (10 g each in reality) and the MTF-01
+          (4.5 g in reality) are deliberately near-massless in SITL.  Keep
+          the body inertia centred on base_link; do not add payload CoM
+          compensation unless those real sensor masses are restored and the
+          complete assembly is retuned.
         -->
-        <pose>0 -0.0117074 -0.0014149 0 0 0</pose>
         <mass>0.187</mass>
         <inertia>
           <!-- Box approximation for the 303.862 x 373.467 x 105 mm body. -->
