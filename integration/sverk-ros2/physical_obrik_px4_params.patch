@@ -1,0 +1,35 @@
+diff --git a/sverk_ws/src/sverk_drone/main_package/launch_system/launch/full_system_sitl.launch.py b/sverk_ws/src/sverk_drone/main_package/launch_system/launch/full_system_sitl.launch.py
+index ae2080b..628818f 100644
+--- a/sverk_ws/src/sverk_drone/main_package/launch_system/launch/full_system_sitl.launch.py
++++ b/sverk_ws/src/sverk_drone/main_package/launch_system/launch/full_system_sitl.launch.py
+@@ -23,0 +24,21 @@ GRAFFITI_MODELS = ('x500_obrik_graffiti', 'x500_obrik_graffiti_old')
++PHYSICAL_OBRIK_MODELS = {
++    'x500_obrik_base',
++    'x500_obrik_lidar',
++    'x500_obrik_one_rangefinder',
++    'x500_obrik_three_rangefinders_30',
++    'x500_obrik_three_rangefinders_45',
++}
++PHYSICAL_OBRIK_PX4_PARAMS = (
++    ('SIM_GZ_EC_MIN1', '720'),
++    ('SIM_GZ_EC_MIN2', '720'),
++    ('SIM_GZ_EC_MIN3', '720'),
++    ('SIM_GZ_EC_MIN4', '720'),
++    ('SIM_GZ_EC_MAX1', '4800'),
++    ('SIM_GZ_EC_MAX2', '4800'),
++    ('SIM_GZ_EC_MAX3', '4800'),
++    ('SIM_GZ_EC_MAX4', '4800'),
++    ('MPC_THR_HOVER', '0.53'),
++    ('MC_PITCHRATE_P', '0.05'),
++    ('MC_PITCHRATE_I', '0.06'),
++    ('MC_PITCHRATE_D', '0.001'),
++)
+@@ -139,0 +161,5 @@ def _make_px4_launch(context, px4_dir):
++    if obrik_model in PHYSICAL_OBRIK_MODELS:
++        px4_sensor_params += ''.join(
++            f' PX4_PARAM_{name}={value}'
++            for name, value in PHYSICAL_OBRIK_PX4_PARAMS
++        )
+@@ -409,0 +436,2 @@ def _make_px4_param_setup(context):
++    if obrik_model in PHYSICAL_OBRIK_MODELS:
++        settings.extend(PHYSICAL_OBRIK_PX4_PARAMS)
