@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <!-- This package is a mesh resource. Battery-enabled assemblies attach its
+       visual to their own base_link so it cannot affect vehicle dynamics. -->
+  <model name="x500_obrik_battery">
+    <static>true</static>
+  </model>
+</sdf>

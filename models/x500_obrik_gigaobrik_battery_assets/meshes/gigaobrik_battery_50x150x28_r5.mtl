@@ -1,0 +1,11 @@
+# Neutral, low-gloss battery enclosure. This material is referenced directly
+# by the OBJ so Gazebo renderers that ignore an SDF mesh material still colour it.
+newmtl battery_neutral_grey
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.380000 0.380000 0.380000
+Ks 0.040000 0.040000 0.040000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2

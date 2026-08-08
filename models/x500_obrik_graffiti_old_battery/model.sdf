@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <model name="x500_obrik_graffiti_old_battery">
+    <self_collide>false</self_collide>
+    <include merge="true"><uri>model://x500_obrik_graffiti_old</uri></include>
+    <link name="battery_visual_link">
+      <pose relative_to="base_link">0 0 0.036 0 0 0</pose>
+      <gravity>false</gravity><self_collide>false</self_collide>
+      <!-- Visual-only 28x65x22 mm pack, 5 mm fillets; its real mass is not modeled here. -->
+      <inertial><mass>0.00001</mass><inertia><ixx>1e-9</ixx><iyy>1e-9</iyy><izz>1e-9</izz></inertia></inertial>
+      <visual name="battery_visual"><cast_shadows>true</cast_shadows><geometry><mesh><uri>model://x500_obrik_battery/meshes/obrik_battery_28x65x22_r5.obj</uri></mesh></geometry><material><ambient>0.18 0.18 0.18 1</ambient><diffuse>0.38 0.38 0.38 1</diffuse><specular>0.04 0.04 0.04 1</specular></material></visual>
+    </link>
+    <joint name="battery_visual_joint" type="fixed"><parent>base_link</parent><child>battery_visual_link</child></joint>
+  </model>
+</sdf>
