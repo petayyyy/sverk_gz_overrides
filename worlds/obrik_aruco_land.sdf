@@ -2,8 +2,8 @@
 <sdf version="1.9">
   <world name="obrik_aruco_land">
     <!-- Same as obrik_aruco.sdf, plus a land_point_1 landing pad at the origin.
-         The ArUco marker field is shifted +0.2 m on Y so its footprint clears
-         the 200x200 mm pad and the drone can still fly the full field. -->
+         The ArUco marker field is shifted +1 m on X so its footprint clears
+         the 500x500 mm pad and the drone can still fly the full field. -->
     <plugin name="gz::sim::systems::Physics" filename="gz-sim-physics-system"/>
     <plugin name="gz::sim::systems::UserCommands" filename="gz-sim-user-commands-system"/>
     <plugin name="gz::sim::systems::SceneBroadcaster" filename="gz-sim-scene-broadcaster-system"/>
@@ -113,11 +113,11 @@
       <uri>model://land_point_1</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
-    <!-- Default ArUco marker field (markers_large.txt), shifted +0.2 m on Y
+    <!-- Default ArUco marker field (markers_large.txt), shifted +1 m on X
          so its 0.4 m outer markers don't overlap the landing pad. -->
     <include>
       <uri>model://obrik_aruco_map_4x4</uri>
-      <pose>0 0.2 0 0 0 0</pose>
+      <pose>1.0 0 0 0 0 0</pose>
     </include>
   </world>
 </sdf>
