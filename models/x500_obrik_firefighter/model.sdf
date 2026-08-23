@@ -112,6 +112,26 @@
       <child>brio_95_camera_right::brio_95_camera_link</child>
     </joint>
 
+    <!--
+      Foxeer T-Rex Mini occurrence recovered from the complete shifted STEP
+      hierarchy. Its global CAD origin (-13.000, +56.408913, -127.052388) mm
+      maps through (X, Y, Z) -> (X, -Z, Y), then receives the Firefighter
+      visual's +62.009 mm Z correction.
+
+      The reusable Foxeer model normalizes mesh-local +Z (the lens axis) to
+      link-local +X. The resulting Gazebo link RPY is (+90, -30, +90) deg,
+      pointing the optical axis vehicle-forward (+Y) and 30 deg upward.
+    -->
+    <include>
+      <uri>model://foxeer_t_rex_mini_camera</uri>
+      <name>foxeer_fpv_camera</name>
+      <pose relative_to="base_link">-0.013 0.127052388 0.118417913 1.5707963267948966 -0.5235987755982988 1.5707963267948966</pose>
+    </include>
+    <joint name="foxeer_fpv_camera_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>foxeer_fpv_camera::foxeer_t_rex_mini_link</child>
+    </joint>
+
     <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>rotor_0_joint</jointName>
       <linkName>rotor_0</linkName>

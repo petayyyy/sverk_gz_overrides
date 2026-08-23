@@ -53,6 +53,7 @@ sverk_gz_overrides/
     ├── ld19/                        # переиспользуемая модель лидара LD19
     ├── rpi_camera/                  # переиспользуемая модель камеры Raspberry Pi
     ├── orange_pi_camera/            # Orange Pi 13 MP MIPI camera
+    ├── foxeer_t_rex_mini_camera/    # Foxeer T-Rex Mini analog FPV camera
     ├── mtf01/                       # переиспользуемая модель MicoAir MTF-01
     └── obrik_aruco_map_4x4/         # плоскость с ArUco-маркерами (словарь 4x4)
 ```
@@ -68,9 +69,10 @@ sverk_gz_overrides/
 | `x500_obrik_base` | `x500`, `rpi_camera` |
 | `unitree_l2` | — (Unitree L2 3D lidar: normal and NAGE GPU-lidar modes; visible rotor at 333 RPM) |
 | `brio_95_camera` | — (Logitech BRIO 95 1080p / 30 fps / 58° diagonal FoV) |
+| `foxeer_t_rex_mini_camera` | — (Foxeer T-Rex Mini 4:3 FPV feed, 640x480 / 30 fps / 120° horizontal FoV) |
 | `x500_obrik_gigaobrik` | `x500_obrik_gigaobrik_base`, `mtf01`, `orange_pi_camera` (two instances) |
 | `x500_obrik_gigaobrik_base` | — (локальная копия физики и motor-model параметров X500) |
-| `x500_obrik_firefighter` | `x500_obrik_firefighter_base`, `unitree_l2`, `mtf01`, `brio_95_camera` (five instances; activation selected by the ROS launch file) |
+| `x500_obrik_firefighter` | `x500_obrik_firefighter_base`, `unitree_l2`, `mtf01`, `brio_95_camera` (five instances), `foxeer_t_rex_mini_camera` |
 | `x500_obrik_firefighter_base` | decimated Firefighter body and VMGs; Gigaobrik collision/inertia; invisible X500 physics rotors |
 | `x500_obrik_gigaobrik_lidar` | `x500_obrik_gigaobrik_lidar_base`, `mtf01`, `brio_95_camera` (downward), `unitree_l2` |
 | `x500_obrik_gigaobrik_lidar_base` | original Gigaobrik VMG meshes; the supplied clean body mesh; the same X500 collision and motor model |
