@@ -1,0 +1,425 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sdf version="1.9">
+  <model name="x500_obrik_firefighter_base">
+    <!-- Lift the base_link so the supplied z=-56 mm collision bound rests on ground. -->
+    <pose>0 0 0.056 0 0 0</pose>
+    <self_collide>false</self_collide>
+    <static>false</static>
+    <link name="base_link">
+      <inertial>
+        <!--
+          Included payload sensors are deliberately near-massless in SITL.
+          Keep the body inertia centred on base_link; do not add payload CoM
+          compensation unless their real masses are restored and the complete
+          assembly is retuned.
+        -->
+        <mass>0.187</mass>
+        <inertia>
+          <!-- Box approximation for the 303.862 x 373.467 x 105 mm body. -->
+          <ixx>0.002345</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001610</iyy>
+          <iyz>0</iyz>
+          <izz>0.003613</izz>
+        </inertia>
+      </inertial>
+      <gravity>true</gravity>
+      <velocity_decay />
+      <collision name="obrik_body_collision">
+        <pose>0 0 -0.0035 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.303862 0.373467 0.105</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <visual name="firefighter_body_visual">
+        <!-- The decimated Blender export is Y-up. Rotate it into Gazebo's
+             Z-up frame and place its lowest point at the same ground plane
+             as the Gigaobrik collision box. -->
+        <pose>0 0 0.062009 1.5707963267948966 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://x500_obrik_firefighter_base/meshes/firefighter_base.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <!--
+        Decimated motor-propeller groups from the Firefighter CAD assembly.
+        Fusion uses +Y up and +Z back; the firefighter visual maps that to
+        Gazebo with (X, Y, Z) -> (X, -Z, Y).  The body's +62.009 mm visual
+        offset is applied here as well so these groups remain registered to
+        the decimated fuselage mesh.
+
+        Motor pattern: CAD X = +/-166.041 mm and Z = +/-129.769 mm.
+        Upper CAD layer: Y = +37.4 mm -> Gazebo Z = 99.409 mm.
+        Lower CAD layer: reflection about Y = +7.5 mm gives Y = -22.4 mm
+        -> Gazebo Z = 39.609 mm.  Lower groups are flipped 180 degrees about
+        local X to mirror the coaxial motor-propeller assembly vertically.
+
+        These are visual-only for now. The existing four hidden rotor links
+        retain the proven quad flight dynamics until PX4 is configured for
+        eight actuator outputs.
+      -->
+      <!-- The eight VMG visuals are declared on dedicated zero-thrust rotor
+           links below. -->
+      <sensor name="air_pressure_sensor" type="air_pressure">
+        <always_on>1</always_on>
+        <update_rate>50</update_rate>
+        <air_pressure>
+          <pressure>
+            <noise type="gaussian">
+              <mean>0</mean>
+              <stddev>3</stddev>
+            </noise>
+          </pressure>
+        </air_pressure>
+      </sensor>
+      <sensor name="magnetometer_sensor" type="magnetometer">
+        <always_on>1</always_on>
+        <update_rate>100</update_rate>
+        <magnetometer>
+          <x>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </z>
+        </magnetometer>
+      </sensor>
+      <sensor name="imu_sensor" type="imu">
+        <always_on>1</always_on>
+        <update_rate>250</update_rate>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.00686</stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+      <sensor name="navsat_sensor" type="navsat">
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+      </sensor>
+    </link>
+    <link name="rotor_0">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <pose>0.105420 -0.068869 0.026850 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>2.8e-7</ixx>
+          <iyy>2.9e-7</iyy>
+          <izz>5.7e-7</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="rotor_0_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_0</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_1">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <pose>-0.105420 0.068869 0.026850 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>2.8e-7</ixx>
+          <iyy>2.9e-7</iyy>
+          <izz>5.7e-7</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="rotor_1_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_2">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <pose>0.105420 0.068869 0.026850 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>2.8e-7</ixx>
+          <iyy>2.9e-7</iyy>
+          <izz>5.7e-7</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="rotor_2_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_3">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay />
+      <pose>-0.105420 -0.068869 0.026850 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>2.8e-7</ixx>
+          <iyy>2.9e-7</iyy>
+          <izz>5.7e-7</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="rotor_3_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <!--
+      Animated Firefighter VMG presentation links. They subscribe to the same
+      four motor commands as the hidden X500 physics rotors, but their motor
+      constants and aerodynamic coefficients are zero: these links provide
+      animation only and cannot change thrust, torque, or flight tuning.
+
+      Each coaxial lower visual is flipped about X. Its visual motor reverses
+      direction, runs 1% slower, and has a slightly softer spool response than
+      its upper partner. This makes the visual phase drift naturally while the
+      zero-force animation remains isolated from flight dynamics.
+    -->
+    <link name="vmg_rear_right_upper">
+      <pose>0.166041 -0.129769 0.099409 0 0 0</pose>
+      <gravity>false</gravity><self_collide>false</self_collide>
+      <inertial><mass>0.000001</mass><inertia><ixx>1e-12</ixx><iyy>1e-12</iyy><izz>1e-12</izz></inertia></inertial>
+      <visual name="vmg_rear_right_upper_visual"><geometry><mesh><uri>model://x500_obrik_firefighter_base/meshes/vmg.obj</uri></mesh></geometry></visual>
+    </link>
+    <joint name="vmg_rear_right_upper_joint" type="revolute">
+      <parent>base_link</parent><child>vmg_rear_right_upper</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e+16</lower><upper>1e+16</upper></limit></axis>
+    </joint>
+    <link name="vmg_rear_right_lower">
+      <pose>0.166041 -0.129769 0.039609 0 0 0</pose>
+      <gravity>false</gravity><self_collide>false</self_collide>
+      <inertial><mass>0.000001</mass><inertia><ixx>1e-12</ixx><iyy>1e-12</iyy><izz>1e-12</izz></inertia></inertial>
+      <visual name="vmg_rear_right_lower_visual"><pose>0 0 0 3.141592653589793 0 0</pose><geometry><mesh><uri>model://x500_obrik_firefighter_base/meshes/vmg.obj</uri></mesh></geometry></visual>
+    </link>
+    <joint name="vmg_rear_right_lower_joint" type="revolute">
+      <parent>base_link</parent><child>vmg_rear_right_lower</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e+16</lower><upper>1e+16</upper></limit></axis>
+    </joint>
+
+    <link name="vmg_front_left_upper">
+      <pose>-0.166041 0.129769 0.099409 0 0 0</pose>
+      <gravity>false</gravity><self_collide>false</self_collide>
+      <inertial><mass>0.000001</mass><inertia><ixx>1e-12</ixx><iyy>1e-12</iyy><izz>1e-12</izz></inertia></inertial>
+      <visual name="vmg_front_left_upper_visual"><geometry><mesh><uri>model://x500_obrik_firefighter_base/meshes/vmg.obj</uri></mesh></geometry></visual>
+    </link>
+    <joint name="vmg_front_left_upper_joint" type="revolute">
+      <parent>base_link</parent><child>vmg_front_left_upper</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e+16</lower><upper>1e+16</upper></limit></axis>
+    </joint>
+    <link name="vmg_front_left_lower">
+      <pose>-0.166041 0.129769 0.039609 0 0 0</pose>
+      <gravity>false</gravity><self_collide>false</self_collide>
+      <inertial><mass>0.000001</mass><inertia><ixx>1e-12</ixx><iyy>1e-12</iyy><izz>1e-12</izz></inertia></inertial>
+      <visual name="vmg_front_left_lower_visual"><pose>0 0 0 3.141592653589793 0 0</pose><geometry><mesh><uri>model://x500_obrik_firefighter_base/meshes/vmg.obj</uri></mesh></geometry></visual>
+    </link>
+    <joint name="vmg_front_left_lower_joint" type="revolute">
+      <parent>base_link</parent><child>vmg_front_left_lower</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e+16</lower><upper>1e+16</upper></limit></axis>
+    </joint>
+
+    <link name="vmg_front_right_upper">
+      <pose>0.166041 0.129769 0.099409 0 0 0</pose>
+      <gravity>false</gravity><self_collide>false</self_collide>
+      <inertial><mass>0.000001</mass><inertia><ixx>1e-12</ixx><iyy>1e-12</iyy><izz>1e-12</izz></inertia></inertial>
+      <visual name="vmg_front_right_upper_visual"><geometry><mesh><uri>model://x500_obrik_firefighter_base/meshes/vmg.obj</uri></mesh></geometry></visual>
+    </link>
+    <joint name="vmg_front_right_upper_joint" type="revolute">
+      <parent>base_link</parent><child>vmg_front_right_upper</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e+16</lower><upper>1e+16</upper></limit></axis>
+    </joint>
+    <link name="vmg_front_right_lower">
+      <pose>0.166041 0.129769 0.039609 0 0 0</pose>
+      <gravity>false</gravity><self_collide>false</self_collide>
+      <inertial><mass>0.000001</mass><inertia><ixx>1e-12</ixx><iyy>1e-12</iyy><izz>1e-12</izz></inertia></inertial>
+      <visual name="vmg_front_right_lower_visual"><pose>0 0 0 3.141592653589793 0 0</pose><geometry><mesh><uri>model://x500_obrik_firefighter_base/meshes/vmg.obj</uri></mesh></geometry></visual>
+    </link>
+    <joint name="vmg_front_right_lower_joint" type="revolute">
+      <parent>base_link</parent><child>vmg_front_right_lower</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e+16</lower><upper>1e+16</upper></limit></axis>
+    </joint>
+
+    <link name="vmg_rear_left_upper">
+      <pose>-0.166041 -0.129769 0.099409 0 0 0</pose>
+      <gravity>false</gravity><self_collide>false</self_collide>
+      <inertial><mass>0.000001</mass><inertia><ixx>1e-12</ixx><iyy>1e-12</iyy><izz>1e-12</izz></inertia></inertial>
+      <visual name="vmg_rear_left_upper_visual"><geometry><mesh><uri>model://x500_obrik_firefighter_base/meshes/vmg.obj</uri></mesh></geometry></visual>
+    </link>
+    <joint name="vmg_rear_left_upper_joint" type="revolute">
+      <parent>base_link</parent><child>vmg_rear_left_upper</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e+16</lower><upper>1e+16</upper></limit></axis>
+    </joint>
+    <link name="vmg_rear_left_lower">
+      <pose>-0.166041 -0.129769 0.039609 0 0 0</pose>
+      <gravity>false</gravity><self_collide>false</self_collide>
+      <inertial><mass>0.000001</mass><inertia><ixx>1e-12</ixx><iyy>1e-12</iyy><izz>1e-12</izz></inertia></inertial>
+      <visual name="vmg_rear_left_lower_visual"><pose>0 0 0 3.141592653589793 0 0</pose><geometry><mesh><uri>model://x500_obrik_firefighter_base/meshes/vmg.obj</uri></mesh></geometry></visual>
+    </link>
+    <joint name="vmg_rear_left_lower_joint" type="revolute">
+      <parent>base_link</parent><child>vmg_rear_left_lower</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e+16</lower><upper>1e+16</upper></limit></axis>
+    </joint>
+
+    <!-- Zero-aerodynamic visual motor drivers, paired to X500 motor 0..3. -->
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>vmg_rear_right_upper_joint</jointName><linkName>vmg_rear_right_upper</linkName><turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown><maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>0</motorConstant><momentConstant>0</momentConstant><commandSubTopic>command/motor_speed</commandSubTopic><motorNumber>0</motorNumber>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient><rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim><motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>vmg_rear_right_lower_joint</jointName><linkName>vmg_rear_right_lower</linkName><turningDirection>cw</turningDirection>
+      <timeConstantUp>0.015</timeConstantUp><timeConstantDown>0.03</timeConstantDown><maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>0</motorConstant><momentConstant>0</momentConstant><commandSubTopic>command/motor_speed</commandSubTopic><motorNumber>0</motorNumber>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient><rotorVelocitySlowdownSim>10.1</rotorVelocitySlowdownSim><motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>vmg_front_left_upper_joint</jointName><linkName>vmg_front_left_upper</linkName><turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown><maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>0</motorConstant><momentConstant>0</momentConstant><commandSubTopic>command/motor_speed</commandSubTopic><motorNumber>1</motorNumber>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient><rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim><motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>vmg_front_left_lower_joint</jointName><linkName>vmg_front_left_lower</linkName><turningDirection>cw</turningDirection>
+      <timeConstantUp>0.015</timeConstantUp><timeConstantDown>0.03</timeConstantDown><maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>0</motorConstant><momentConstant>0</momentConstant><commandSubTopic>command/motor_speed</commandSubTopic><motorNumber>1</motorNumber>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient><rotorVelocitySlowdownSim>10.1</rotorVelocitySlowdownSim><motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>vmg_front_right_upper_joint</jointName><linkName>vmg_front_right_upper</linkName><turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown><maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>0</motorConstant><momentConstant>0</momentConstant><commandSubTopic>command/motor_speed</commandSubTopic><motorNumber>2</motorNumber>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient><rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim><motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>vmg_front_right_lower_joint</jointName><linkName>vmg_front_right_lower</linkName><turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.015</timeConstantUp><timeConstantDown>0.03</timeConstantDown><maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>0</motorConstant><momentConstant>0</momentConstant><commandSubTopic>command/motor_speed</commandSubTopic><motorNumber>2</motorNumber>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient><rotorVelocitySlowdownSim>10.1</rotorVelocitySlowdownSim><motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>vmg_rear_left_upper_joint</jointName><linkName>vmg_rear_left_upper</linkName><turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown><maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>0</motorConstant><momentConstant>0</momentConstant><commandSubTopic>command/motor_speed</commandSubTopic><motorNumber>3</motorNumber>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient><rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim><motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>vmg_rear_left_lower_joint</jointName><linkName>vmg_rear_left_lower</linkName><turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.015</timeConstantUp><timeConstantDown>0.03</timeConstantDown><maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>0</motorConstant><momentConstant>0</momentConstant><commandSubTopic>command/motor_speed</commandSubTopic><motorNumber>3</motorNumber>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient><rotorVelocitySlowdownSim>10.1</rotorVelocitySlowdownSim><motorType>velocity</motorType>
+    </plugin>
+  </model>
+</sdf>

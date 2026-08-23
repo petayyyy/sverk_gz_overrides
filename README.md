@@ -38,6 +38,8 @@ sverk_gz_overrides/
     ├── x500_obrik_base/             # шасси Obrik без сенсоров (на физике x500_base)
     ├── x500_obrik_gigaobrik_base/   # остов и ВМГ Gigaobrik с физикой X500
     ├── x500_obrik_gigaobrik/        # Gigaobrik с MTF-01 OF и дальномером
+    ├── x500_obrik_firefighter_base/ # decimated Firefighter body on Gigaobrik collision
+    ├── x500_obrik_firefighter/      # Firefighter with lidar, MTF-01, and optional cameras
     ├── x500_obrik_graffiti_base/    # legacy graffiti body and mechanism
     ├── x500_obrik_graffiti_old/     # legacy gear-and-lever graffiti configuration
     ├── x500_obrik_graffiti_cam_base/ # current graffiti body with standard Obrik rotors
@@ -68,6 +70,8 @@ sverk_gz_overrides/
 | `brio_95_camera` | — (Logitech BRIO 95 1080p / 30 fps / 58° diagonal FoV) |
 | `x500_obrik_gigaobrik` | `x500_obrik_gigaobrik_base`, `mtf01`, `orange_pi_camera` (two instances) |
 | `x500_obrik_gigaobrik_base` | — (локальная копия физики и motor-model параметров X500) |
+| `x500_obrik_firefighter` | `x500_obrik_firefighter_base`, `unitree_l2`, `mtf01`, `brio_95_camera` (five instances; activation selected by the ROS launch file) |
+| `x500_obrik_firefighter_base` | decimated Firefighter body and VMGs; Gigaobrik collision/inertia; invisible X500 physics rotors |
 | `x500_obrik_gigaobrik_lidar` | `x500_obrik_gigaobrik_lidar_base`, `mtf01`, `brio_95_camera` (downward), `unitree_l2` |
 | `x500_obrik_gigaobrik_lidar_base` | original Gigaobrik VMG meshes; the supplied clean body mesh; the same X500 collision and motor model |
 | `x500_obrik_graffiti` | `x500_obrik_graffiti_cam_base`, `rpi_camera` |

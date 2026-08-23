@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='x500_obrik_firefighter'>
+    <include merge='true'>
+      <uri>model://x500_obrik_firefighter_base</uri>
+    </include>
+
+    <!--
+      Unitree L2 pose from the Firefighter CAD assembly.
+
+      CAD translation (X, Y, Z) = (0, 12.396, -110.531) mm maps through
+      the Firefighter Y-up conversion to Gazebo (X, Y, Z) =
+      (0, 110.531, 12.396) mm. Add the same +62.009 mm Z correction used
+      by the shifted decimated fuselage and VMG visuals, yielding 74.405 mm.
+
+      Orient the sensor from its physical pointing requirement rather than
+      reproducing the ambiguous CAD Euler decomposition: Unitree local +Z,
+      the sensing-hemisphere pole, points toward vehicle +Y and 25 degrees
+      below the horizontal. Gazebo RPY is therefore (-115, 0, 0) degrees.
+      This matches the existing Gigaobrik L2 mounting direction, but is
+      depressed by 18 degrees more than Gigaobrik's -97-degree roll.
+    -->
+    <include merge='true'>
+      <uri>model://unitree_l2</uri>
+      <pose relative_to="base_link">0 0.110531 0.074405 -2.007128639793479 0 0</pose>
+    </include>
+    <joint name="unitree_l2_mount_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>l2_base_link</child>
+    </joint>
+
+    <!--
+      MicoAir MTF-01 occurrence from the shifted Firefighter STEP assembly.
+      CAD origin (0, -13.000, -80.278129) mm maps to Gazebo
+      (0, +80.278129, -13.000) mm, then receives the Firefighter visual's
+      +62.009 mm Z correction. The mesh-origin translation is zero.
+
+      Apply the supplied clockwise XYZ correction as X=-180, Y=0, Z=-90
+      degrees. Combined with the STEP occurrence and Y-up-to-Z-up conversion,
+      the equivalent Gazebo RPY is (0, +90, -90) degrees. MTF local +X, its
+      shared flow/ToF sensing axis, consequently points vehicle-down (-Z).
+    -->
+    <include merge="true">
+      <uri>model://mtf01</uri>
+      <pose relative_to="base_link">0 0.080278129 0.049009 0 1.5707963267948966 -1.5707963267948966</pose>
+    </include>
+    <joint name="mtf01_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>mtf01_link</child>
+    </joint>
+
+    <!--
+      Five Logitech BRIO 95 occurrences recovered from the shifted Firefighter
+      STEP assembly. Fusion emitted different assembly datums for the copied
+      camera components, so the normalized reusable mesh is registered against
+      each occurrence's placed geometry. The supplied 90-degree clockwise
+      mesh-to-component correction is represented as +90 degrees in the STEP
+      basis used by the extractor. The +62.009 mm firefighter visual correction
+      is included in every Z coordinate.
+
+      All five sensors have always_on=false in model://brio_95_camera. Merely
+      loading their visuals is cheap; a camera renders only when the launch file
+      creates a bridge/subscriber for its name.
+    -->
+    <include>
+      <uri>model://brio_95_camera</uri>
+      <name>brio_95_camera_bottom</name>
+      <pose relative_to="base_link">0.001 0.060532234 0.057010 1.5707963267948966 1.5707963267948966 0</pose>
+    </include>
+    <joint name="brio_95_camera_bottom_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>brio_95_camera_bottom::brio_95_camera_link</child>
+    </joint>
+
+    <include>
+      <uri>model://brio_95_camera</uri>
+      <name>brio_95_camera_front</name>
+      <pose relative_to="base_link">0.001 0.119286772 0.121017913 3.141592653589793 0 1.5707963267948966</pose>
+    </include>
+    <joint name="brio_95_camera_front_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>brio_95_camera_front::brio_95_camera_link</child>
+    </joint>
+
+    <include>
+      <uri>model://brio_95_camera</uri>
+      <name>brio_95_camera_rear</name>
+      <pose relative_to="base_link">-0.001 -0.117220231 0.106009 3.141592653589793 0 -1.5707963267948966</pose>
+    </include>
+    <joint name="brio_95_camera_rear_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>brio_95_camera_rear::brio_95_camera_link</child>
+    </joint>
+
+    <include>
+      <uri>model://brio_95_camera</uri>
+      <name>brio_95_camera_left</name>
+      <pose relative_to="base_link">-0.237785448 0.001858497 0.064009 3.141592653589793 0 3.141592653589793</pose>
+    </include>
+    <joint name="brio_95_camera_left_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>brio_95_camera_left::brio_95_camera_link</child>
+    </joint>
+
+    <include>
+      <uri>model://brio_95_camera</uri>
+      <name>brio_95_camera_right</name>
+      <pose relative_to="base_link">0.237785448 -0.000141492 0.064009 3.141592653589793 0 0</pose>
+    </include>
+    <joint name="brio_95_camera_right_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>brio_95_camera_right::brio_95_camera_link</child>
+    </joint>
+
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_0_joint</jointName>
+      <linkName>rotor_0</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.37e-07</motorConstant>
+      <momentConstant>0.0035</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>0</motorNumber>
+      <rotorDragCoefficient>7.9e-06</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-07</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_1_joint</jointName>
+      <linkName>rotor_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.37e-07</motorConstant>
+      <momentConstant>0.0035</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>1</motorNumber>
+      <rotorDragCoefficient>7.9e-06</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-07</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_2_joint</jointName>
+      <linkName>rotor_2</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.37e-07</motorConstant>
+      <momentConstant>0.0035</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>2</motorNumber>
+      <rotorDragCoefficient>7.9e-06</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-07</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_3_joint</jointName>
+      <linkName>rotor_3</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1000.0</maxRotVelocity>
+      <motorConstant>8.37e-07</motorConstant>
+      <momentConstant>0.0035</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>3</motorNumber>
+      <rotorDragCoefficient>7.9e-06</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-07</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+  </model>
+</sdf>
