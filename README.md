@@ -141,6 +141,17 @@ topics, поэтому модель можно безопасно включат
 bash scripts/test_gigaobrik_vision.sh
 ```
 
+## Firefighter
+
+`x500_obrik_firefighter` combines the decimated Firefighter fuselage and
+coaxial VMG visuals with the Gigaobrik collision/inertia envelope and the
+four physical X500 rotors. The upper and lower VMGs are visually driven from
+the same four actuator channels; the extra four are visual only and add no
+lift. The configuration includes a Unitree L2, MTF-01, Foxeer FPV camera, and
+five on-demand BRIO cameras (`bottom`, `front`, `rear`, `left`, `right`).
+Camera selection and the bottom-camera ArUco pipeline are configured by the
+`sverk-ros2` SITL launch file, not by this model.
+
 ## Livox Avia
 
 `livox_avia` is a reusable, sensor-native module: local `+X` is the optical
