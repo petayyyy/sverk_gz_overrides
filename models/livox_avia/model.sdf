@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <model name="livox_avia">
+    <self_collide>false</self_collide>
+    <static>false</static>
+
+    <!-- Model frame follows the Livox point-cloud convention: +X is the
+         optical axis, +Y points left, and +Z points up. The supplied mesh was
+         exported in its P-2.2 installation frame and centred on the physical
+         centre of mass, hence this fixed inverse transform. -->
+    <link name="livox_avia_link">
+      <gravity>true</gravity>
+      <inertial>
+        <pose>-0.041135035 0.000000276 -0.000000340 0.072773679 -1.395368869 -0.073903923</pose>
+        <mass>0.498</mass>
+        <inertia>
+          <ixx>0.000486</ixx><iyy>0.000690</iyy><izz>0.000503</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="housing_collision">
+        <pose>-0.041135035 0.000000276 -0.000000340 0.072773679 -1.395368869 -0.073903923</pose>
+        <geometry><box><size>0.0883 0.0649 0.0998</size></box></geometry>
+      </collision>
+      <visual name="housing_visual">
+        <pose>-0.041135035 0.000000276 -0.000000340 0.072773679 -1.395368869 -0.073903923</pose>
+        <cast_shadows>true</cast_shadows>
+        <geometry><mesh><uri>model://livox_avia/meshes/livox_avia.stl</uri></mesh></geometry>
+        <material>
+          <ambient>0.10 0.10 0.10 1</ambient>
+          <diffuse>0.16 0.16 0.16 1</diffuse>
+          <specular>0.25 0.25 0.25 1</specular>
+        </material>
+      </visual>
+
+      <!-- Avia's default non-repetitive mode covers 70.4 x 77.2 degrees.
+           Gazebo first renders a moderately oversampled angular range image;
+           livox_avia_cloud_adapter then samples it with Livox's published
+           four-second, 960,000-point Avia trajectory. Only the selected mode
+           is rendered because both sensors are demand activated. -->
+      <sensor name="nonrepetitive" type="gpu_lidar">
+        <topic>/livox_avia/nonrepetitive/scan</topic>
+        <always_on>false</always_on>
+        <update_rate>10</update_rate>
+        <visualize>true</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>352</samples><resolution>1</resolution>
+              <min_angle>-0.614355897</min_angle><max_angle>0.614355897</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>386</samples><resolution>1</resolution>
+              <min_angle>-0.673697091</min_angle><max_angle>0.673697091</max_angle>
+            </vertical>
+          </scan>
+          <!-- 190 m is the guaranteed daylight range at 10% reflectivity.
+               Livox specifies a blind zone below 1 m and <2 cm (1 sigma)
+               random range error at 20 m. -->
+          <range><min>1.0</min><max>190.0</max><resolution>0.002</resolution></range>
+          <noise><type>gaussian</type><mean>0</mean><stddev>0.02</stddev></noise>
+        </ray>
+      </sensor>
+
+      <!-- Repetitive line mode: 70.4 x 4.5 degrees, 24k samples per 10 Hz
+           cloud = the real strongest/single-return rate of 240k points/s. -->
+      <sensor name="repetitive" type="gpu_lidar">
+        <topic>/livox_avia/repetitive/scan</topic>
+        <always_on>false</always_on>
+        <update_rate>10</update_rate>
+        <visualize>true</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>600</samples><resolution>1</resolution>
+              <min_angle>-0.614355897</min_angle><max_angle>0.614355897</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>40</samples><resolution>1</resolution>
+              <min_angle>-0.039269908</min_angle><max_angle>0.039269908</max_angle>
+            </vertical>
+          </scan>
+          <range><min>1.0</min><max>190.0</max><resolution>0.002</resolution></range>
+          <noise><type>gaussian</type><mean>0</mean><stddev>0.02</stddev></noise>
+        </ray>
+      </sensor>
+
+      <!-- BMI088 IMU. Its origin is 41.65 mm behind, 23.26 mm right and
+           28.40 mm above the point-cloud origin per the Avia manual. -->
+      <sensor name="imu" type="imu">
+        <pose>-0.04165 -0.02326 0.02840 0 0 0</pose>
+        <topic>/livox_avia/imu</topic>
+        <always_on>false</always_on>
+        <update_rate>200</update_rate>
+      </sensor>
+    </link>
+  </model>
+</sdf>

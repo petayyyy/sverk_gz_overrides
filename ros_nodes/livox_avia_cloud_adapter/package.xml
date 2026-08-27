@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>livox_avia_cloud_adapter</name>
+  <version>0.1.0</version>
+  <description>Apply the published Livox Avia scan trajectory to Gazebo point clouds.</description>
+  <maintainer email="petayyyy@gmail.com">sverk</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <export><build_type>ament_python</build_type></export>
+</package>

@@ -40,6 +40,7 @@ sverk_gz_overrides/
     ├── x500_obrik_gigaobrik/        # Gigaobrik с MTF-01 OF и дальномером
     ├── x500_obrik_firefighter_base/ # decimated Firefighter body on Gigaobrik collision
     ├── x500_obrik_firefighter/      # Firefighter with lidar, MTF-01, and optional cameras
+    ├── porter/                       # P-2.2 / Porter X8 with source mass and inertia
     ├── x500_obrik_graffiti_base/    # legacy graffiti body and mechanism
     ├── x500_obrik_graffiti_old/     # legacy gear-and-lever graffiti configuration
     ├── x500_obrik_graffiti_cam_base/ # current graffiti body with standard Obrik rotors
@@ -55,6 +56,7 @@ sverk_gz_overrides/
     ├── orange_pi_camera/            # Orange Pi 13 MP MIPI camera
     ├── foxeer_t_rex_mini_camera/    # Foxeer T-Rex Mini analog FPV camera
     ├── mtf01/                       # переиспользуемая модель MicoAir MTF-01
+    ├── livox_avia/                  # Livox Avia 3D lidar, two realistic scan modes
     └── obrik_aruco_map_4x4/         # плоскость с ArUco-маркерами (словарь 4x4)
 ```
 
@@ -74,6 +76,7 @@ sverk_gz_overrides/
 | `x500_obrik_gigaobrik_base` | — (локальная копия физики и motor-model параметров X500) |
 | `x500_obrik_firefighter` | `x500_obrik_firefighter_base`, `unitree_l2`, `mtf01`, `brio_95_camera` (five instances), `foxeer_t_rex_mini_camera` |
 | `x500_obrik_firefighter_base` | decimated Firefighter body and VMGs; Gigaobrik collision/inertia; invisible X500 physics rotors |
+| `porter` | `livox_avia` (full coaxial-X8 vehicle generated from the P-2.2 description) |
 | `x500_obrik_gigaobrik_lidar` | `x500_obrik_gigaobrik_lidar_base`, `mtf01`, `brio_95_camera` (downward), `unitree_l2` |
 | `x500_obrik_gigaobrik_lidar_base` | original Gigaobrik VMG meshes; the supplied clean body mesh; the same X500 collision and motor model |
 | `x500_obrik_graffiti` | `x500_obrik_graffiti_cam_base`, `rpi_camera` |
@@ -137,6 +140,49 @@ topics, поэтому модель можно безопасно включат
 ```bash
 bash scripts/test_gigaobrik_vision.sh
 ```
+
+## Livox Avia
+
+`livox_avia` is a reusable, sensor-native module: local `+X` is the optical
+axis, `+Y` points left, and `+Z` points up. It includes the 498 g housing mesh,
+a conservative 190 m daylight range, 1 m blind zone, 2 cm Gaussian range
+noise, and both real scan modes:
+
+- `nonrepetitive`: 70.4° × 77.2°, shaped by Livox's published four-second
+  Avia trajectory;
+- `repetitive`: 70.4° × 4.5° line scan.
+
+Both publish 24,000 points at 10 Hz, corresponding to the Avia
+strongest/single-return rate of 240,000 points/s. Only the selected Gazebo
+topic is rendered, since each GPU lidar is demand activated. The simulation
+does not emulate reflectivity-dependent range, the 1–3 m distortion region,
+beam divergence, or dual/triple echoes.
+
+Standalone test (after installing the override and rebuilding the package):
+
+```bash
+cd ~/sverk_ws
+colcon build --packages-select livox_avia_cloud_adapter
+source install/setup.bash
+ros2 launch livox_avia_cloud_adapter livox_avia_test.launch.py \
+  scan_mode:=nonrepetitive
+```
+
+Use `scan_mode:=repetitive` for line mode. The launch opens the empty
+`livox_avia_test` world and RViz with `/livox_avia/points` configured.
+
+## Porter
+
+`porter` is the full P-2.2 coaxial-X8 vehicle, not an X500 visual shell. It is
+generated reproducibly by `scripts/generate_porter_model.py` from the compiled
+`p22_description` URDF and keeps the source component placement, primitive
+collisions, centre of mass, inertia, 5.201 kg simulated takeoff mass, and all
+eight physical motor plugins. Its reusable Livox Avia publishes the selected
+scan through `/livox_avia/points`.
+
+The source package marks its CAD meshes as proprietary. The copied Porter
+meshes must not be redistributed until their distribution terms are confirmed;
+see `models/porter/SOURCE.md`.
 
 ## Использование в sverk-ros2
 

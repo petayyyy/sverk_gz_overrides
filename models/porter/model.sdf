@@ -1,0 +1,1065 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="porter">
+    <pose>0 0 0 0 0 0</pose>
+    <self_collide>false</self_collide>
+    <static>false</static>
+    <link name="base_link">
+      <inertial>
+        <pose>-0.0099647757784098907 -0.0002373481406530975 0.023935333252792141 0 0 0</pose>
+        <mass>4.6550000000000011</mass>
+        <inertia>
+          <ixx>0.038163400752508569</ixx>
+          <ixy>2.6045715026987511e-05</ixy>
+          <ixz>-0.00060536731462408947</ixz>
+          <iyy>0.061897142095364233</iyy>
+          <iyz>8.8887066983618513e-06</iyz>
+          <izz>0.070339338178846522</izz>
+        </inertia>
+      </inertial>
+      <collision name="base_link_collision">
+        <pose>0.0046259999999999999 0 0.001748 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.28677200000000003 0.125251 0.109526</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="base_link_collision_1">
+        <pose>0.065313999999999997 -0.083019999999999997 -0.01 0 0 -0.90420599999999995</pose>
+        <geometry>
+          <box>
+            <size>0.21126600000000001 0.029999999999999999 0.012</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="base_link_collision_2">
+        <pose>-0.065313999999999997 0.083019999999999997 -0.01 0 0 2.237387</pose>
+        <geometry>
+          <box>
+            <size>0.21126600000000001 0.029999999999999999 0.012</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="base_link_collision_3">
+        <pose>0.065312999999999996 0.083020999999999998 -0.01 0 0 0.90421200000000013</pose>
+        <geometry>
+          <box>
+            <size>0.21126500000000001 0.029999999999999999 0.012</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="base_link_collision_4">
+        <pose>-0.065312999999999996 -0.083020999999999998 -0.01 0 0 -2.2373810000000001</pose>
+        <geometry>
+          <box>
+            <size>0.21126500000000001 0.029999999999999999 0.012</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="base_link_collision_5">
+        <pose>0.13062799999999999 -0.16604099999999999 0.0079190000000000007 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.034000000000000002</length>
+            <radius>0.017500000000000002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="base_link_collision_6">
+        <pose>0.13076199999999999 -0.16598099999999999 -0.032918999999999997 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.034000000000000002</length>
+            <radius>0.017500000000000002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="base_link_collision_7">
+        <pose>-0.13062599999999999 -0.166042 0.0079190000000000007 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.034000000000000002</length>
+            <radius>0.017500000000000002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="base_link_collision_8">
+        <pose>-0.13076199999999999 -0.16598099999999999 -0.032918999999999997 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.034000000000000002</length>
+            <radius>0.017500000000000002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="base_link_collision_9">
+        <pose>-0.13076199999999999 0.16598099999999999 -0.032918999999999997 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.034000000000000002</length>
+            <radius>0.017500000000000002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="base_link_collision_10">
+        <pose>-0.13062799999999999 0.16604099999999999 0.0079190000000000007 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.034000000000000002</length>
+            <radius>0.017500000000000002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="base_link_collision_11">
+        <pose>0.13062599999999999 0.166042 0.0079190000000000007 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.034000000000000002</length>
+            <radius>0.017500000000000002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="base_link_collision_12">
+        <pose>0.13076199999999999 0.16598099999999999 -0.032918999999999997 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.034000000000000002</length>
+            <radius>0.017500000000000002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="base_link_collision_13">
+        <pose>-0.040476999999999999 0.057381000000000001 -0.123428 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.29189500000000002 0.100948 0.029144</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="base_link_collision_14">
+        <pose>-0.040476999999999999 -0.057381000000000001 -0.123428 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.29189500000000002 0.100948 0.029144</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="base_link_fixed_joint_lump__battery_front_collision_15">
+        <pose>0.06522303670522818 -1.633972797343564e-09 0.078174222859885192 1.5707959999999987 1.4835299999999998 -1.9107600594825517e-15</pose>
+        <geometry>
+          <box>
+            <size>0.047 0.17499999999999999 0.063</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="base_link_fixed_joint_lump__battery_rear_collision_16">
+        <pose>-0.11409196329477179 -1.633972797343564e-09 0.062486222859885199 1.5707959999999987 1.4835299999999998 -1.9107600594825517e-15</pose>
+        <geometry>
+          <box>
+            <size>0.047 0.17499999999999999 0.063</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="base_link_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/base_frame.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.13 0.13 0.14 1</diffuse>
+          <ambient>0.13 0.13 0.14 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_visual_1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/base_shell.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.82 0.25 0.09 1</diffuse>
+          <ambient>0.82 0.25 0.09 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_visual_2">
+        <pose>0.13062699999999999 -0.16604099999999999 0.0014 0 0 1.396263</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/velox2808.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.35 0.36 0.38 1</diffuse>
+          <ambient>0.35 0.36 0.38 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_visual_3">
+        <pose>0.124242 -0.165981 -0.032919 3.14159265359 0 -2.530727</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/velox2808.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.35 0.36 0.38 1</diffuse>
+          <ambient>0.35 0.36 0.38 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_visual_4">
+        <pose>-0.13062599999999999 -0.166042 0.0014 0 0 0.17453299999999999</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/velox2808.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.35 0.36 0.38 1</diffuse>
+          <ambient>0.35 0.36 0.38 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_visual_5">
+        <pose>-0.13076199999999999 -0.16598099999999999 -0.0264 3.1415923071795868 -1.3234889800848443e-23 2.5307270000000002</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/velox2808.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.35 0.36 0.38 1</diffuse>
+          <ambient>0.35 0.36 0.38 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_visual_6">
+        <pose>-0.137281 0.165981 -0.032919 3.14159265359 0 0.610865</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/velox2808.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.35 0.36 0.38 1</diffuse>
+          <ambient>0.35 0.36 0.38 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_visual_7">
+        <pose>-0.13062799999999999 0.16604099999999999 0.0014 0 0 -1.7453289999999999</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/velox2808.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.35 0.36 0.38 1</diffuse>
+          <ambient>0.35 0.36 0.38 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_visual_8">
+        <pose>0.13062599999999999 0.166042 0.0014 0 0 -2.96706</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/velox2808.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.35 0.36 0.38 1</diffuse>
+          <ambient>0.35 0.36 0.38 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_visual_9">
+        <pose>0.13076199999999999 0.16598099999999999 -0.0264 3.1415923071795868 -1.3234889800848443e-23 -0.61086499999999999</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/velox2808.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.35 0.36 0.38 1</diffuse>
+          <ambient>0.35 0.36 0.38 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__battery_front_visual_10">
+        <pose>0.070204000000000003 0.0315 0.078609999999999999 1.5707959999999987 1.4835299999999998 -1.9107600594825517e-15</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/tattu_6s_8000.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.15 0.17 0.20 1</diffuse>
+          <ambient>0.15 0.17 0.20 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__battery_rear_visual_11">
+        <pose>-0.109111 0.0315 0.062922000000000006 1.5707959999999987 1.4835299999999998 -1.9107600594825517e-15</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/tattu_6s_8000.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.15 0.17 0.20 1</diffuse>
+          <ambient>0.15 0.17 0.20 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__camera_down_visual_12">
+        <pose>0.059673998366025507 -0.0161 -0.034330000000000263 0 1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.012 0.029999999999999999 0.029999999999999999</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.05 0.05 0.05 1</diffuse>
+          <ambient>0.05 0.05 0.05 1</ambient>
+        </material>
+      </visual>
+      <visual name="base_link_fixed_joint_lump__camera_front_visual_13">
+        <pose>0.12775900000000001 -0.0161 0.039009000000000002 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.012 0.029999999999999999 0.029999999999999999</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.05 0.05 0.05 1</diffuse>
+          <ambient>0.05 0.05 0.05 1</ambient>
+        </material>
+      </visual>
+      <sensor name="camera_down" type="camera">
+        <always_on>false</always_on>
+        <topic>camera_down/image</topic>
+        <update_rate>30</update_rate>
+        <camera>
+          <horizontal_fov>1.361</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+          </image>
+          <clip>
+            <near>0.050000000000000003</near>
+            <far>300</far>
+          </clip>
+        </camera>
+        <pose>0.059673999999999998 -0.0161 -0.039329999999999997 3.1415926535897931 1.5707926536359933 3.1415926535897931</pose>
+      </sensor>
+      <sensor name="camera_front" type="camera">
+        <always_on>false</always_on>
+        <topic>camera_front/image</topic>
+        <update_rate>30</update_rate>
+        <camera>
+          <horizontal_fov>1.361</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>720</height>
+          </image>
+          <clip>
+            <near>0.050000000000000003</near>
+            <far>300</far>
+          </clip>
+        </camera>
+        <pose>0.13275899999999999 -0.0161 0.039009000000000002 0 0 0</pose>
+      </sensor>
+      <sensor name="air_pressure_sensor" type="air_pressure">
+        <always_on>1</always_on>
+        <update_rate>50</update_rate>
+        <air_pressure>
+          <pressure>
+            <noise type="gaussian">
+              <mean>0</mean>
+              <stddev>3</stddev>
+            </noise>
+          </pressure>
+        </air_pressure>
+      </sensor>
+      <sensor name="magnetometer_sensor" type="magnetometer">
+        <always_on>1</always_on>
+        <update_rate>100</update_rate>
+        <magnetometer>
+          <x>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </z>
+        </magnetometer>
+      </sensor>
+      <sensor name="imu_sensor" type="imu">
+        <always_on>1</always_on>
+        <update_rate>250</update_rate>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00686</stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+      <sensor name="navsat_sensor" type="navsat">
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+      </sensor>
+    </link>
+    <joint name="rotor_0_joint" type="revolute">
+      <pose relative_to="base_link">0.13062799999999999 -0.16604099999999999 0.022896 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor_0</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_0">
+      <pose relative_to="rotor_0_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0060000000000000001</mass>
+        <inertia>
+          <ixx>1.3329999999999999e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.3329999999999999e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.6129999999999999e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="rotor_0_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.012</length>
+            <radius>0.1145</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="rotor_0_visual">
+        <pose>0 0 -0.0098709999999999996 -1.5707959999999999 0 -1.22173</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/t9048_ccw.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.10 0.10 0.11 1</diffuse>
+          <ambient>0.10 0.10 0.11 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="rotor_1_joint" type="revolute">
+      <pose relative_to="base_link">-0.13062799999999999 0.16604099999999999 0.022896 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_1">
+      <pose relative_to="rotor_1_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0060000000000000001</mass>
+        <inertia>
+          <ixx>1.3329999999999999e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.3329999999999999e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.6129999999999999e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="rotor_1_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.012</length>
+            <radius>0.1145</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="rotor_1_visual">
+        <pose>0 0 -0.0098709999999999996 -1.5707960000000001 -5.5511151231257827e-17 1.919862</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/t9048_ccw.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.10 0.10 0.11 1</diffuse>
+          <ambient>0.10 0.10 0.11 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="rotor_2_joint" type="revolute">
+      <pose relative_to="base_link">0.13062599999999999 0.166042 0.022896 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_2">
+      <pose relative_to="rotor_2_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0060000000000000001</mass>
+        <inertia>
+          <ixx>1.3329999999999999e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.3329999999999999e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.6129999999999999e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="rotor_2_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.012</length>
+            <radius>0.1145</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="rotor_2_visual">
+        <pose>0 0 -0.0098709999999999996 -1.5707960000000001 0 -1.1344640000000001</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/t9048_cw.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.10 0.10 0.11 1</diffuse>
+          <ambient>0.10 0.10 0.11 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="rotor_3_joint" type="revolute">
+      <pose relative_to="base_link">-0.13062599999999999 -0.166042 0.022896 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_3">
+      <pose relative_to="rotor_3_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0060000000000000001</mass>
+        <inertia>
+          <ixx>1.3329999999999999e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.3329999999999999e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.6129999999999999e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="rotor_3_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.012</length>
+            <radius>0.1145</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="rotor_3_visual">
+        <pose>0 0 -0.0098709999999999996 -1.5707960000000001 5.5511151231257827e-17 2.0071289999999999</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/t9048_cw.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.10 0.10 0.11 1</diffuse>
+          <ambient>0.10 0.10 0.11 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="rotor_4_joint" type="revolute">
+      <pose relative_to="base_link">0.13076199999999999 -0.16598099999999999 -0.044778999999999999 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor_4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_4">
+      <pose relative_to="rotor_4_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0060000000000000001</mass>
+        <inertia>
+          <ixx>1.3329999999999999e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.3329999999999999e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.6129999999999999e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="rotor_4_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.012</length>
+            <radius>0.1145</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="rotor_4_visual">
+        <pose>0 0 -0.0098709999999999996 -1.5707960000000001 0 -3.0543260000000001</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/t9048_cw.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.10 0.10 0.11 1</diffuse>
+          <ambient>0.10 0.10 0.11 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="rotor_5_joint" type="revolute">
+      <pose relative_to="base_link">-0.13076199999999999 0.16598099999999999 -0.044778999999999999 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor_5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_5">
+      <pose relative_to="rotor_5_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0060000000000000001</mass>
+        <inertia>
+          <ixx>1.3329999999999999e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.3329999999999999e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.6129999999999999e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="rotor_5_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.012</length>
+            <radius>0.1145</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="rotor_5_visual">
+        <pose>0 0 -0.0098709999999999996 -1.5707960000000001 0 0.087265999999999996</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/t9048_cw.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.10 0.10 0.11 1</diffuse>
+          <ambient>0.10 0.10 0.11 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="rotor_6_joint" type="revolute">
+      <pose relative_to="base_link">0.13076199999999999 0.16598099999999999 -0.044778999999999999 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor_6</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_6">
+      <pose relative_to="rotor_6_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0060000000000000001</mass>
+        <inertia>
+          <ixx>1.3329999999999999e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.3329999999999999e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.6129999999999999e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="rotor_6_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.012</length>
+            <radius>0.1145</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="rotor_6_visual">
+        <pose>0 0 -0.0098709999999999996 -1.5707960000000001 1.6653345369377348e-16 0.69813199999999975</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/t9048_ccw.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.10 0.10 0.11 1</diffuse>
+          <ambient>0.10 0.10 0.11 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="rotor_7_joint" type="revolute">
+      <pose relative_to="base_link">-0.13076199999999999 -0.16598099999999999 -0.044778999999999999 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor_7</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_7">
+      <pose relative_to="rotor_7_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0060000000000000001</mass>
+        <inertia>
+          <ixx>1.3329999999999999e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.3329999999999999e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.6129999999999999e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="rotor_7_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.012</length>
+            <radius>0.1145</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="rotor_7_visual">
+        <pose>0 0 -0.0098709999999999996 -1.5707960000000001 -5.5511151231257827e-17 -2.4434610000000001</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://porter/meshes/t9048_ccw.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.10 0.10 0.11 1</diffuse>
+          <ambient>0.10 0.10 0.11 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_0_joint</jointName>
+      <linkName>rotor_0</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1600</maxRotVelocity>
+      <motorConstant>7.8e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>0</motorNumber>
+      <rotorDragCoefficient>8.06e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_1_joint</jointName>
+      <linkName>rotor_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1600</maxRotVelocity>
+      <motorConstant>7.8e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>1</motorNumber>
+      <rotorDragCoefficient>8.06e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_2_joint</jointName>
+      <linkName>rotor_2</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1600</maxRotVelocity>
+      <motorConstant>7.8e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>2</motorNumber>
+      <rotorDragCoefficient>8.06e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_3_joint</jointName>
+      <linkName>rotor_3</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1600</maxRotVelocity>
+      <motorConstant>7.8e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>3</motorNumber>
+      <rotorDragCoefficient>8.06e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_4_joint</jointName>
+      <linkName>rotor_4</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1600</maxRotVelocity>
+      <motorConstant>7.8e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>4</motorNumber>
+      <rotorDragCoefficient>8.06e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_5_joint</jointName>
+      <linkName>rotor_5</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1600</maxRotVelocity>
+      <motorConstant>7.8e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>5</motorNumber>
+      <rotorDragCoefficient>8.06e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_6_joint</jointName>
+      <linkName>rotor_6</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1600</maxRotVelocity>
+      <motorConstant>7.8e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>6</motorNumber>
+      <rotorDragCoefficient>8.06e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_7_joint</jointName>
+      <linkName>rotor_7</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1600</maxRotVelocity>
+      <motorConstant>7.8e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorNumber>7</motorNumber>
+      <rotorDragCoefficient>8.06e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <frame name="battery_front_joint" attached_to="base_link">
+      <pose>0.070204000000000003 0.0315 0.078609999999999999 1.5707960000000001 1.4835299999999998 -6.3692001982751724e-16</pose>
+    </frame>
+    <frame name="battery_front" attached_to="battery_front_joint">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="battery_rear_joint" attached_to="base_link">
+      <pose>-0.109111 0.0315 0.062922000000000006 1.5707960000000001 1.4835299999999998 -6.3692001982751724e-16</pose>
+    </frame>
+    <frame name="battery_rear" attached_to="battery_rear_joint">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="camera_down_optical_joint" attached_to="camera_down">
+      <pose>0 0 0 -1.5707959999999999 0 -1.5707959999999999</pose>
+    </frame>
+    <frame name="camera_down_optical" attached_to="camera_down_optical_joint">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="camera_down_joint" attached_to="base_link">
+      <pose>0.059673999999999998 -0.0161 -0.039329999999999997 0 1.5707959999869179 0</pose>
+    </frame>
+    <frame name="camera_down" attached_to="camera_down_joint">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="camera_front_optical_joint" attached_to="camera_front">
+      <pose>0 0 0 -1.5707959999999999 0 -1.5707959999999999</pose>
+    </frame>
+    <frame name="camera_front_optical" attached_to="camera_front_optical_joint">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="camera_front_joint" attached_to="base_link">
+      <pose>0.13275899999999999 -0.0161 0.039009000000000002 0 0 0</pose>
+    </frame>
+    <frame name="camera_front" attached_to="camera_front_joint">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="imu_joint" attached_to="base_link">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="imu_link" attached_to="imu_joint">
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <include merge="true">
+      <uri>model://livox_avia</uri>
+      <pose relative_to="base_link">-0.021893 -0.003378 -0.112559 0 1.395838 0.012887</pose>
+    </include>
+    <joint name="livox_avia_mount_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>livox_avia_link</child>
+    </joint>
+  </model>
+</sdf>

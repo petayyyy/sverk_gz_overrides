@@ -1,0 +1,46 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+Visualization Manager:
+  Class: ""
+  Global Options:
+    Background Color: 35; 35; 35
+    Fixed Frame: livox_avia
+    Frame Rate: 30
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Name: Ground grid
+      Enabled: true
+      Cell Size: 1
+      Plane: XY
+    - Class: rviz_default_plugins/PointCloud2
+      Name: Livox Avia cloud
+      Enabled: true
+      Topic:
+        Value: /livox_avia/points
+        Reliability Policy: Best Effort
+        History Policy: Keep Last
+        Depth: 5
+      Style: Points
+      Size (Pixels): 2
+      Decay Time: 4
+      Color Transformer: AxisColor
+      Axis: X
+      Use Fixed Frame: true
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 8
+      Focal Point:
+        X: 3
+        Y: 0
+        Z: -0.5
+      Pitch: 0.45
+      Yaw: 3.14
+Window Geometry:
+  Width: 1100
+  Height: 760
