@@ -12,7 +12,6 @@ setup(
         ('share/ament_index/resource_index/packages', [f'resource/{package_name}']),
         (f'share/{package_name}', ['package.xml']),
         (f'share/{package_name}/data', ['data/avia_pattern_i16.bin.gz', 'data/SOURCE.md']),
-        (f'share/{package_name}/launch', ['launch/livox_avia_test.launch.py']),
         (f'share/{package_name}/rviz', ['rviz/livox_avia.rviz']),
     ],
     install_requires=['setuptools'],

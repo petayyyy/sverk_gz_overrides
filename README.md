@@ -21,9 +21,6 @@ sverk_gz_overrides/
 ├── worlds/
 │   ├── obrik_aruco.sdf              # SITL-мир с картой ArUco-маркеров
 │   ├── obrik_aruco_graffiti_wall.sdf # ArUco-карта со стеной для граффити
-│   ├── orange_pi_camera_aruco_test.sdf # временный smoke test камеры над ArUco-картой
-│   ├── gigaobrik_vision_test.sdf # smoke test полной сборки с двумя камерами
-│   └── mtf01_aruco_test.sdf         # временный smoke test MTF-01 над ArUco-картой
 ├── ros_nodes/                       # colcon-пакеты, нужные ТОЛЬКО симуляции;
 │   ├── graffiti_servo_gz_plugin/    #   gz-plugin кинематики серво опрыскивателя
 │   ├── graffiti_servo_sim/          #   ROS 2 нода-симулятор серво
@@ -168,19 +165,6 @@ strongest/single-return rate of 240,000 points/s. Only the selected Gazebo
 topic is rendered, since each GPU lidar is demand activated. The simulation
 does not emulate reflectivity-dependent range, the 1–3 m distortion region,
 beam divergence, or dual/triple echoes.
-
-Standalone test (after installing the override and rebuilding the package):
-
-```bash
-cd ~/sverk_ws
-colcon build --packages-select livox_avia_cloud_adapter
-source install/setup.bash
-ros2 launch livox_avia_cloud_adapter livox_avia_test.launch.py \
-  scan_mode:=nonrepetitive
-```
-
-Use `scan_mode:=repetitive` for line mode. The launch opens the empty
-`livox_avia_test` world and RViz with `/livox_avia/points` configured.
 
 ## Porter
 
