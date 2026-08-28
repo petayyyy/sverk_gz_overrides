@@ -1,0 +1,15 @@
+mtllib concrete_ground.mtl
+o concrete_ground
+v -50 -50 0
+v 50 -50 0
+v 50 50 0
+v -50 50 0
+vt 0 0
+vt 25 0
+vt 25 25
+vt 0 25
+vn 0 0 1
+usemtl LightConcrete
+s off
+f 1/1/1 2/2/1 3/3/1
+f 1/1/1 3/3/1 4/4/1

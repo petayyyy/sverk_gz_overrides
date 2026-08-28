@@ -1,0 +1,7 @@
+newmtl LightConcrete
+Ka 0.20 0.20 0.20
+Kd 0.85 0.85 0.85
+Ks 0.03 0.03 0.03
+Ns 10.0
+illum 2
+map_Kd ../materials/textures/concrete_neutral_color.png

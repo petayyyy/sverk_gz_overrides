@@ -18,6 +18,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_1.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_1.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -37,6 +38,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_2.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_2.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -56,6 +58,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_3.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_3.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -75,6 +78,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_4.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_4.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -94,6 +98,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_5.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_5.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -113,6 +118,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_6.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_6.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -132,6 +138,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_7.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_7.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -151,6 +158,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_8.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_8.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -170,6 +178,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_9.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_9.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -189,6 +198,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_10.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_10.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -208,6 +218,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_11.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_11.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -227,6 +238,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_12.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_12.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -246,6 +258,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_13.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_13.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -265,6 +278,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_14.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_14.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -284,6 +298,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_15.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_15.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -303,6 +318,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_16.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_16.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -322,6 +338,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_18.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_18.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -341,6 +358,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_20.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_20.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -360,6 +378,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_21.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_21.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -379,6 +398,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_22.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_22.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -398,6 +418,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_23.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_23.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -417,6 +438,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_24.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_24.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -436,6 +458,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_25.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_25.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -455,6 +478,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_26.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_26.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -474,6 +498,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_27.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_27.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -493,6 +518,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_28.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_28.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -512,6 +538,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_29.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_29.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -531,6 +558,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_94.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_94.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -550,6 +578,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_31.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_31.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -569,6 +598,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_32.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_32.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -588,6 +618,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_33.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_33.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -607,6 +638,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_34.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_34.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -626,6 +658,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_35.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_35.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -645,6 +678,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_36.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_36.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -664,6 +698,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_92.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_92.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -683,6 +718,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_38.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_38.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -702,6 +738,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_39.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_39.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -721,6 +758,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_40.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_40.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -740,6 +778,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_97.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_97.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -759,6 +798,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_42.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_42.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -778,6 +818,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_43.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_43.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -797,6 +838,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_44.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_44.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -816,6 +858,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_45.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_45.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -835,6 +878,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_46.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_46.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -854,6 +898,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_47.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_47.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -873,6 +918,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_48.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_48.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -892,6 +938,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_49.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_49.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -911,6 +958,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_50.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_50.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -930,6 +978,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_51.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_51.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -949,6 +998,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_52.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_52.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -968,6 +1018,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_53.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_53.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -987,6 +1038,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_54.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_54.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -1006,6 +1058,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_55.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_55.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -1025,6 +1078,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_56.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_56.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -1044,6 +1098,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_57.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_57.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -1063,6 +1118,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_58.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_58.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -1082,6 +1138,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_59.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_59.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -1101,6 +1158,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_96.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_96.png</emissive_map>
               </metal>
             </pbr>
           </material>
@@ -1120,6 +1178,7 @@
             <pbr>
               <metal>
                 <albedo_map>model://obrik_aruco_map_4x4/materials/textures/aruco_61.png</albedo_map>
+                <emissive_map>model://obrik_aruco_map_4x4/materials/textures/aruco_61.png</emissive_map>
               </metal>
             </pbr>
           </material>
