@@ -17,8 +17,8 @@
           <specular>0 0 0 1</specular>
           <pbr>
             <metal>
-              <albedo_map>model://aruco_land_2/materials/textures/map.png</albedo_map>
-              <emissive_map>model://aruco_land_2/materials/textures/map.png</emissive_map>
+              <albedo_map>model://aruco_land_2/materials/textures/aruco_land_2.png</albedo_map>
+              <emissive_map>model://aruco_land_2/materials/textures/aruco_land_2.png</emissive_map>
               <roughness>1.0</roughness>
             </metal>
           </pbr>
