@@ -162,6 +162,7 @@
         </geometry>
       </collision>
       <visual name="base_link_visual">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
@@ -175,6 +176,7 @@
         </material>
       </visual>
       <visual name="base_link_visual_1">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
@@ -188,6 +190,7 @@
         </material>
       </visual>
       <visual name="base_link_visual_2">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0.13062699999999999 -0.16604099999999999 0.0014 0 0 1.396263</pose>
         <geometry>
           <mesh>
@@ -201,6 +204,7 @@
         </material>
       </visual>
       <visual name="base_link_visual_3">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0.124242 -0.165981 -0.032919 3.14159265359 0 -2.530727</pose>
         <geometry>
           <mesh>
@@ -214,6 +218,7 @@
         </material>
       </visual>
       <visual name="base_link_visual_4">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>-0.13062599999999999 -0.166042 0.0014 0 0 0.17453299999999999</pose>
         <geometry>
           <mesh>
@@ -227,6 +232,7 @@
         </material>
       </visual>
       <visual name="base_link_visual_5">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>-0.13076199999999999 -0.16598099999999999 -0.0264 3.1415923071795868 -1.3234889800848443e-23 2.5307270000000002</pose>
         <geometry>
           <mesh>
@@ -240,6 +246,7 @@
         </material>
       </visual>
       <visual name="base_link_visual_6">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>-0.137281 0.165981 -0.032919 3.14159265359 0 0.610865</pose>
         <geometry>
           <mesh>
@@ -253,6 +260,7 @@
         </material>
       </visual>
       <visual name="base_link_visual_7">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>-0.13062799999999999 0.16604099999999999 0.0014 0 0 -1.7453289999999999</pose>
         <geometry>
           <mesh>
@@ -266,6 +274,7 @@
         </material>
       </visual>
       <visual name="base_link_visual_8">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0.13062599999999999 0.166042 0.0014 0 0 -2.96706</pose>
         <geometry>
           <mesh>
@@ -279,6 +288,7 @@
         </material>
       </visual>
       <visual name="base_link_visual_9">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0.13076199999999999 0.16598099999999999 -0.0264 3.1415923071795868 -1.3234889800848443e-23 -0.61086499999999999</pose>
         <geometry>
           <mesh>
@@ -292,6 +302,7 @@
         </material>
       </visual>
       <visual name="base_link_fixed_joint_lump__battery_front_visual_10">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0.070204000000000003 0.0315 0.078609999999999999 1.5707959999999987 1.4835299999999998 -1.9107600594825517e-15</pose>
         <geometry>
           <mesh>
@@ -305,6 +316,7 @@
         </material>
       </visual>
       <visual name="base_link_fixed_joint_lump__battery_rear_visual_11">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>-0.109111 0.0315 0.062922000000000006 1.5707959999999987 1.4835299999999998 -1.9107600594825517e-15</pose>
         <geometry>
           <mesh>
@@ -318,6 +330,7 @@
         </material>
       </visual>
       <visual name="base_link_fixed_joint_lump__camera_down_visual_12">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0.059673998366025507 -0.0161 -0.034330000000000263 0 1.5707963267948966 0</pose>
         <geometry>
           <box>
@@ -330,6 +343,7 @@
         </material>
       </visual>
       <visual name="base_link_fixed_joint_lump__camera_front_visual_13">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0.12775900000000001 -0.0161 0.039009000000000002 0 0 0</pose>
         <geometry>
           <box>
@@ -344,8 +358,19 @@
       <sensor name="camera_down" type="camera">
         <always_on>false</always_on>
         <topic>camera_down/image</topic>
-        <update_rate>30</update_rate>
+        <!-- 10 Hz matches the real downward camera of the reference MARS-LVIG
+             dataset (AMvalley03 publishes images at exactly 10.0 Hz); the
+             previous 30 Hz was three times the hardware rate and made a raw
+             recording of the stream impractical (84 MB/s). -->
+        <update_rate>10</update_rate>
         <camera>
+          <!-- The airframe sits ~4 cm above the lens and clips the frame.
+               Rendering it into a photometric-VIO camera is worse than losing
+               the pixels: airframe pixels are static in the body frame, so any
+               landmark picked there anchors the estimate to the vehicle.
+               This mask hides every visual of the model from THIS sensor only;
+               the GUI still renders the drone normally. -->
+          <visibility_mask>0x0000FFFF</visibility_mask>
           <horizontal_fov>1.361</horizontal_fov>
           <image>
             <width>1280</width>
@@ -358,23 +383,10 @@
         </camera>
         <pose>0.059673999999999998 -0.0161 -0.039329999999999997 3.1415926535897931 1.5707926536359933 3.1415926535897931</pose>
       </sensor>
-      <sensor name="camera_front" type="camera">
-        <always_on>false</always_on>
-        <topic>camera_front/image</topic>
-        <update_rate>30</update_rate>
-        <camera>
-          <horizontal_fov>1.361</horizontal_fov>
-          <image>
-            <width>1280</width>
-            <height>720</height>
-          </image>
-          <clip>
-            <near>0.050000000000000003</near>
-            <far>300</far>
-          </clip>
-        </camera>
-        <pose>0.13275899999999999 -0.0161 0.039009000000000002 0 0 0</pose>
-      </sensor>
+      <!-- camera_front disabled: nothing in the sverk-ros2 SITL stack
+           subscribes to it, and an always_on=false sensor still costs a
+           render pass as soon as anything does. Restore from git history
+           if a forward view is needed again. -->
       <sensor name="air_pressure_sensor" type="air_pressure">
         <always_on>1</always_on>
         <update_rate>50</update_rate>
@@ -499,6 +511,7 @@
         </geometry>
       </collision>
       <visual name="rotor_0_visual">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0 0 -0.0098709999999999996 -1.5707959999999999 0 -1.22173</pose>
         <geometry>
           <mesh>
@@ -552,6 +565,7 @@
         </geometry>
       </collision>
       <visual name="rotor_1_visual">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0 0 -0.0098709999999999996 -1.5707960000000001 -5.5511151231257827e-17 1.919862</pose>
         <geometry>
           <mesh>
@@ -605,6 +619,7 @@
         </geometry>
       </collision>
       <visual name="rotor_2_visual">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0 0 -0.0098709999999999996 -1.5707960000000001 0 -1.1344640000000001</pose>
         <geometry>
           <mesh>
@@ -658,6 +673,7 @@
         </geometry>
       </collision>
       <visual name="rotor_3_visual">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0 0 -0.0098709999999999996 -1.5707960000000001 5.5511151231257827e-17 2.0071289999999999</pose>
         <geometry>
           <mesh>
@@ -711,6 +727,7 @@
         </geometry>
       </collision>
       <visual name="rotor_4_visual">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0 0 -0.0098709999999999996 -1.5707960000000001 0 -3.0543260000000001</pose>
         <geometry>
           <mesh>
@@ -764,6 +781,7 @@
         </geometry>
       </collision>
       <visual name="rotor_5_visual">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0 0 -0.0098709999999999996 -1.5707960000000001 0 0.087265999999999996</pose>
         <geometry>
           <mesh>
@@ -817,6 +835,7 @@
         </geometry>
       </collision>
       <visual name="rotor_6_visual">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0 0 -0.0098709999999999996 -1.5707960000000001 1.6653345369377348e-16 0.69813199999999975</pose>
         <geometry>
           <mesh>
@@ -870,6 +889,7 @@
         </geometry>
       </collision>
       <visual name="rotor_7_visual">
+        <visibility_flags>0x00FF0000</visibility_flags>
         <pose>0 0 -0.0098709999999999996 -1.5707960000000001 -5.5511151231257827e-17 -2.4434610000000001</pose>
         <geometry>
           <mesh>
