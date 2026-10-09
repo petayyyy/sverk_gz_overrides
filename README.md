@@ -166,6 +166,20 @@ topic is rendered, since each GPU lidar is demand activated. The simulation
 does not emulate reflectivity-dependent range, the 1–3 m distortion region,
 beam divergence, or dual/triple echoes.
 
+The cloud adapter enables `texel_fix=true` by default. It preserves each measured
+range while placing the point on the centre ray of the Ogre2 cubemap texel that
+supplied that range. Both Avia scan modes are corrected before publication;
+timestamps and non-XYZ fields are preserved. The correction supports the Avia
+field of view on the `+X` cube face; it must not be applied to direct-raycast data
+or assumed valid for wider-field lidars. Disable it only to reproduce uncorrected
+historical data. The optional `cube_face_texels` parameter overrides automatic
+cubemap-size detection (`0` selects the size from the incoming GPU scan grid).
+
+This repository is the source for the adapter installed by
+`scripts/update_overrides.sh`. SITL image builders must pin a revision containing
+the correction; changing only a vendored copy in `sverk-ros2` is overwritten by
+that installation step.
+
 ## Porter
 
 `porter` is the full P-2.2 coaxial-X8 vehicle, not an X500 visual shell. It is
