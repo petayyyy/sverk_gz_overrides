@@ -13,3 +13,24 @@ Apply from the root of a compatible `sverk-ros2` checkout:
 ```bash
 git apply /path/to/sverk_gz_overrides/integration/sverk-ros2/physical_obrik_px4_params.patch
 ```
+
+## Porter D2 and Firefighter P3
+
+The companion selector must support `porter_D2` and `firefighter_P3`, apply
+their eight-motor PX4 parameters and start the matching payload launch from
+`porter_sensor_adapters`. The required model, ROS package and parameter files
+are installed by `scripts/update_overrides.sh`.
+
+After merging the companion launch changes and building an image pinned to
+the corresponding overrides revision:
+
+```bash
+bash scripts/sitl/sim.sh launch --display headless --config porter_D2 --world obrik_aruco
+bash scripts/sitl/sim.sh launch --display headless --config firefighter_P3 --world obrik_aruco
+```
+
+Use `firefighter_p3_cameras:=all`, `none`, or a comma-separated subset of
+`n6,blackfly,foxeer` to choose P3 video bridges. N6 and Blackfly are enabled
+by default. Supply this launch argument after `--` in the sim.sh command.
+
+See the model READMEs for output topics, frames and provisional parameters.

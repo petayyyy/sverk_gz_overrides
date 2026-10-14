@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="firefighter_P3_foxeer_camera">
+    <self_collide>false</self_collide>
+    <static>false</static>
+    <link name="firefighter_P3_foxeer_camera_link">
+      <inertial>
+        <mass>0.0102</mass>
+        <inertia>
+          <ixx>1.0625e-06</ixx>
+          <iyy>1.0625e-06</iyy>
+          <izz>1.0625e-06</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="foxeer_t_rex_mini_visual">
+        <pose>0 0 0 0 1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://foxeer_t_rex_mini_camera/meshes/foxeer_t_rex_mini.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name="imager" type="camera">
+        <pose relative_to="firefighter_P3_foxeer_camera_sensing">0 0 0 0 0 0</pose>
+        <camera>
+          <horizontal_fov>2.0943951023931953</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.01</near>
+            <far>50</far>
+          </clip>
+          <camera_info_topic>/firefighter_P3/foxeer/camera_info</camera_info_topic>
+          <optical_frame_id>firefighter_P3_foxeer_camera_optical</optical_frame_id>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.004</stddev>
+          </noise>
+        </camera>
+        <always_on>false</always_on>
+        <update_rate>30</update_rate>
+        <visualize>false</visualize>
+        <topic>/firefighter_P3/foxeer/image</topic>
+      </sensor>
+    </link>
+    <frame name="firefighter_P3_foxeer_camera_sensing" attached_to="firefighter_P3_foxeer_camera_link">
+      <pose relative_to="firefighter_P3_foxeer_camera_link">0.0215 0 0 1.5707963267948966 0 0</pose>
+    </frame>
+    <frame name="firefighter_P3_foxeer_camera_optical" attached_to="firefighter_P3_foxeer_camera_sensing">
+      <pose relative_to="firefighter_P3_foxeer_camera_sensing">0 0 0 -1.5707963267948966 0 -1.5707963267948966</pose>
+    </frame>
+  </model>
+</sdf>

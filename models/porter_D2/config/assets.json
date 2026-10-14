@@ -1,0 +1,46 @@
+[
+  {
+    "source": "Доставщик 09.10 v2.obj",
+    "source_sha256": "2a09d1189ff40c4cbd7b8103c6895160598e88be4d48ef37581fe299db1c6f68",
+    "bundled_path": "models/porter_D2/meshes/body.obj",
+    "bundled_sha256": "e3091ec16129d19c5d21be837fca840e90d4acd3edd7f036491cf1f8df001da2"
+  },
+  {
+    "source": "vmg v1.obj",
+    "source_sha256": "9ee83f0d5f2d9da1cae3e2187e6a2ece45b80d18aa17fe8b59a35dcf858ca037",
+    "bundled_path": "models/porter_D2/meshes/motor.obj",
+    "bundled_sha256": "190199ce1a4a5792e18128858f31b103a8fd498f5c94bd117c989982abe2ab5b",
+    "split_from_sha256": "11967975a0af009181d97038124955e731192749b784e0fc9d069ed93b30d003"
+  },
+  {
+    "source": "vmg v1.obj",
+    "source_sha256": "9ee83f0d5f2d9da1cae3e2187e6a2ece45b80d18aa17fe8b59a35dcf858ca037",
+    "bundled_path": "models/porter_D2/meshes/propeller.obj",
+    "bundled_sha256": "78e07113d2b075a68c067cacc3bba079d9596a5b579d20ddcffa313651dc43f9",
+    "split_from_sha256": "11967975a0af009181d97038124955e731192749b784e0fc9d069ed93b30d003"
+  },
+  {
+    "source": "Доставщик 09.10_Датчик оптического потока H-FLOW v2.obj",
+    "source_sha256": "2b88ff51f807bf5fb57b8d5783e5828e47c318325b1e07faabaefaf40ae548c6",
+    "bundled_path": "models/porter_D2_hflow/meshes/sensor.obj",
+    "bundled_sha256": "2c26e1e78e485159835ee869fdaefacf4a27f5f03af1d959b8a9ca5b37bf329d"
+  },
+  {
+    "source": "Доставщик 09.10_Дальномер 200м v2.obj",
+    "source_sha256": "271a8a2b89c38a79fbc5d13a21720d3d126ad6ecb91ea158340ce3bfcc22d333",
+    "bundled_path": "models/porter_D2_rangefinder_200m/meshes/sensor.obj",
+    "bundled_sha256": "c49338fefb665ee3d378bbddfb06261bb40f03c80a63e25722a59d4dc1b680fa"
+  },
+  {
+    "source": "Доставщик 09.10_Камера N6 v2.obj",
+    "source_sha256": "149e94472c4e6ff269a01afa9b7b1c2a2ce025da975ea95cf486f125061c2b52",
+    "bundled_path": "models/porter_D2_n6_camera/meshes/sensor.obj",
+    "bundled_sha256": "e6549bf7271f993e4b60aaedafcc2590f76e4443635a51b47cc6e1ffd0ca262d"
+  },
+  {
+    "source": "Доставщик 09.10_MV-CA050-10GMGC v2.obj",
+    "source_sha256": "261ea71d18397fe5313de95afd2a58c2b86d298b2ea55704dc7ae6c4cdf98763",
+    "bundled_path": "models/porter_D2_mv_ca050_camera/meshes/sensor.obj",
+    "bundled_sha256": "edd4854a6fbc40035f6da8f3e2239d46221e32df3750aeb5956996bbbc9dfd0a"
+  }
+]

@@ -1,6 +1,7 @@
 """Shape Gazebo range images into realistic Livox Avia point clouds."""
 
 import gzip
+import copy
 from pathlib import Path
 
 from ament_index_python.packages import get_package_share_directory
@@ -92,6 +93,8 @@ class LivoxAviaCloudAdapter(Node):
 
         input_topic = str(self.get_parameter('input_topic').value)
         output_topic = str(self.get_parameter('output_topic').value)
+        if self.resolve_topic_name(input_topic) == self.resolve_topic_name(output_topic):
+            raise ValueError('input_topic and output_topic must differ')
         self._publisher = self.create_publisher(PointCloud2, output_topic, 2)
         self._subscription = self.create_subscription(
             PointCloud2, input_topic, self._cloud_callback, 2)
@@ -126,7 +129,7 @@ class LivoxAviaCloudAdapter(Node):
             data = self._apply_texel_fix(message, data, count, point_step)
 
         output = PointCloud2()
-        output.header = message.header
+        output.header = copy.deepcopy(message.header)
         output.header.frame_id = self._frame_id
         output.height = 1
         output.width = count
@@ -179,11 +182,12 @@ class LivoxAviaCloudAdapter(Node):
 
         raw = np.frombuffer(message.data, dtype=np.uint8).reshape(height, row_step)
         points = raw[:, :width * point_step].reshape(height * width, point_step)
-        frame_indices = self._source_indices[
-            self._phase:self._phase + POINTS_PER_FRAME]
-        output = points[frame_indices].tobytes()
-        self._phase = (self._phase + POINTS_PER_FRAME) % PATTERN_POINTS
-        return output
+        # Follow acquisition time so dropped messages or subscriber restarts
+        # do not slow down the four-second scan trajectory.
+        stamp_ns = int(message.header.stamp.sec) * 1000000000 + int(message.header.stamp.nanosec)
+        phase = (stamp_ns * 240000 // 1000000000) % PATTERN_POINTS
+        frame_indices = self._source_indices[(phase + np.arange(POINTS_PER_FRAME)) % PATTERN_POINTS]
+        return points[frame_indices].tobytes()
 
 
 def main(args=None):

@@ -1,0 +1,505 @@
+{
+  "model": "firefighter_P3",
+  "frame": "+X forward, +Y left, +Z up; metres/radians",
+  "body_mesh": "models/firefighter_P3/meshes/body.obj",
+  "body_mesh_sha256": "5c345da46abdabc51849c7815e5cc8ea725b32e2812b83b0a4155d0c0f8bf529",
+  "notes": [
+    "13 airframe boxes plus the inherited Livox housing box.",
+    "Boxes fit selected structural mesh components with approximately 1 mm padding; landing soles preserve the contact plane.",
+    "Component IDs and mesh hash support containment checks. Small protrusions and propellers are omitted."
+  ],
+  "boxes": [
+    {
+      "name": "central_body",
+      "category": "body",
+      "center_m": [
+        0.003056160000000002,
+        -5.918900000000116e-05,
+        0.023483162000000002
+      ],
+      "size_m": [
+        0.323584092,
+        0.16268193,
+        0.164893188
+      ],
+      "rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          13,
+          14,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          37,
+          38,
+          43,
+          44,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97
+        ],
+        "component_vertices": 19333,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Axis-aligned envelope of the battery and central frame/electronics; excludes arms/motor mounts, legs/feet, lower sensor bracket/support plate and RF whip."
+      }
+    },
+    {
+      "name": "upper_front_right_arm",
+      "category": "arms",
+      "center_m": [
+        0.09231853430029523,
+        -0.10193550128065246,
+        0.0075
+      ],
+      "size_m": [
+        0.19527150729445364,
+        0.057161704901079344,
+        0.017
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -0.9122924313164734
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          51,
+          52
+        ],
+        "component_vertices": 719,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Minimum-area XY rectangle of the current flat arm plate and its motor mounting plate; exact Z bounds."
+      }
+    },
+    {
+      "name": "upper_rear_left_arm",
+      "category": "arms",
+      "center_m": [
+        -0.09231855876966091,
+        0.10193549841813736,
+        0.0075
+      ],
+      "size_m": [
+        0.19527150086258807,
+        0.057161705646963906,
+        0.017
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        2.229300192722101
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          47,
+          48
+        ],
+        "component_vertices": 723,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Minimum-area XY rectangle of the current flat arm plate and its motor mounting plate; exact Z bounds."
+      }
+    },
+    {
+      "name": "upper_front_left_arm",
+      "category": "arms",
+      "center_m": [
+        0.09232013639009154,
+        0.10193424225675136,
+        0.0075
+      ],
+      "size_m": [
+        0.19527151418701566,
+        0.05716581874333657,
+        0.017
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -2.2293002452390684
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          45,
+          46
+        ],
+        "component_vertices": 725,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Minimum-area XY rectangle of the current flat arm plate and its motor mounting plate; exact Z bounds."
+      }
+    },
+    {
+      "name": "upper_rear_right_arm",
+      "category": "arms",
+      "center_m": [
+        -0.09231853430029523,
+        -0.10193550128065246,
+        0.0075
+      ],
+      "size_m": [
+        0.19527150729445364,
+        0.057161704901079344,
+        0.017
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        0.9122924313164734
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          49,
+          50
+        ],
+        "component_vertices": 715,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Minimum-area XY rectangle of the current flat arm plate and its motor mounting plate; exact Z bounds."
+      }
+    },
+    {
+      "name": "landing_pad_0",
+      "category": "landing_gear",
+      "center_m": [
+        -0.14708555972895807,
+        -0.1895461959663534,
+        -0.31063005050000003
+      ],
+      "size_m": [
+        0.04810641549544888,
+        0.02096395413149494,
+        0.02473989899999998
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        0.9598862676068617
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          42
+        ],
+        "component_vertices": 217,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Minimum-area XY rectangle of complete landing foot; horizontal sole fixed to the existing ground plane.",
+        "floor_m": -0.323,
+        "sole_padding_m": 3.802499999999709e-05,
+        "top_padding_m": 0.001
+      }
+    },
+    {
+      "name": "landing_strut_0",
+      "category": "landing_gear",
+      "center_m": [
+        -0.09901486027691789,
+        -0.12089426487576221,
+        -0.16530438260041502
+      ],
+      "size_m": [
+        0.352000006289037,
+        0.017000007750573056,
+        0.01700000377009579
+      ],
+      "rpy_rad": [
+        1.570795356078981,
+        1.0471971803070286,
+        -2.1816624927921593
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          11
+        ],
+        "component_vertices": 16,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Exact current mesh bounds: PCA straight leg axis and minimum-area transverse rectangle."
+      }
+    },
+    {
+      "name": "landing_pad_1",
+      "category": "landing_gear",
+      "center_m": [
+        -0.1470860969761297,
+        0.18954581749800417,
+        -0.31063005050000003
+      ],
+      "size_m": [
+        0.04810639460435661,
+        0.020965268466953263,
+        0.02473989899999998
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        2.1817063859829315
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          41
+        ],
+        "component_vertices": 218,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Minimum-area XY rectangle of complete landing foot; horizontal sole fixed to the existing ground plane.",
+        "floor_m": -0.323,
+        "sole_padding_m": 3.802499999999709e-05,
+        "top_padding_m": 0.001
+      }
+    },
+    {
+      "name": "landing_strut_1",
+      "category": "landing_gear",
+      "center_m": [
+        -0.0990148602676542,
+        0.1208942648822488,
+        -0.16530438260041505
+      ],
+      "size_m": [
+        0.35200000628903705,
+        0.0170000077183904,
+        0.017000003779660558
+      ],
+      "rpy_rad": [
+        -1.5707953582244905,
+        1.0471971803070284,
+        2.1816624927921593
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          12
+        ],
+        "component_vertices": 16,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Exact current mesh bounds: PCA straight leg axis and minimum-area transverse rectangle."
+      }
+    },
+    {
+      "name": "landing_pad_2",
+      "category": "landing_gear",
+      "center_m": [
+        0.15029517733316275,
+        -0.1941340293774289,
+        -0.3106200255
+      ],
+      "size_m": [
+        0.03680971262373063,
+        0.02096701725308771,
+        0.024759949000000007
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        2.1813789063975912
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          40
+        ],
+        "component_vertices": 186,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Minimum-area XY rectangle of complete landing foot; horizontal sole fixed to the existing ground plane.",
+        "floor_m": -0.323,
+        "sole_padding_m": 3.811600000003246e-05,
+        "top_padding_m": 0.001
+      }
+    },
+    {
+      "name": "landing_strut_2",
+      "category": "landing_gear",
+      "center_m": [
+        0.09901475553059194,
+        -0.12089426552889075,
+        -0.16530444349999984
+      ],
+      "size_m": [
+        0.35200000105185475,
+        0.017000013807068542,
+        0.0170000077824494
+      ],
+      "rpy_rad": [
+        -1.0564119137903274e-07,
+        1.0471975482605285,
+        -0.9599310895449336
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          10
+        ],
+        "component_vertices": 16,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Exact current mesh bounds: PCA straight leg axis and minimum-area transverse rectangle."
+      }
+    },
+    {
+      "name": "landing_pad_3",
+      "category": "landing_gear",
+      "center_m": [
+        0.15028739329271656,
+        0.19412236531365742,
+        -0.310619858
+      ],
+      "size_m": [
+        0.020965158389950764,
+        0.03683879364437124,
+        0.024760284000000014
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -0.6107639130875804
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          39
+        ],
+        "component_vertices": 182,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Minimum-area XY rectangle of complete landing foot; horizontal sole fixed to the existing ground plane.",
+        "floor_m": -0.323,
+        "sole_padding_m": 3.811600000003246e-05,
+        "top_padding_m": 0.001
+      }
+    },
+    {
+      "name": "landing_strut_3",
+      "category": "landing_gear",
+      "center_m": [
+        0.09901475553059196,
+        0.12089426552889075,
+        -0.16530444349999984
+      ],
+      "size_m": [
+        0.35200000105185475,
+        0.017000013807068542,
+        0.0170000077824494
+      ],
+      "rpy_rad": [
+        1.0564119149005505e-07,
+        1.0471975482605285,
+        0.9599310895449336
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          9
+        ],
+        "component_vertices": 16,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Exact current mesh bounds: PCA straight leg axis and minimum-area transverse rectangle."
+      }
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="porter_D2_rangefinder_200m">
+    <static>false</static>
+    <self_collide>false</self_collide>
+    <!-- Mesh datum and FLU axes preserved; synthetic noise and provisional settings are recorded in porter_D2/config/sensor_profiles.json. -->
+    <link name="porter_D2_rangefinder_200m_link">
+      <visual name="porter_D2_rangefinder_200m_housing">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2_rangefinder_200m/meshes/sensor.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name="porter_D2_rangefinder_200m_range" type="gpu_lidar">
+        <pose relative_to="porter_D2_rangefinder_200m_sensing">0 0 0 0 0 0</pose>
+        <topic>/porter_D2/rangefinder_200m/scan</topic>
+        <gz_frame_id>porter_D2_rangefinder_200m_sensing</gz_frame_id>
+        <always_on>false</always_on>
+        <update_rate>20</update_rate>
+        <visualize>false</visualize>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.000000000000</min_angle>
+              <max_angle>0.000000000000</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.000000000000</min_angle>
+              <max_angle>0.000000000000</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.1</min>
+            <max>200.0</max>
+            <resolution>0.001</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.05</stddev>
+          </noise>
+        </lidar>
+      </sensor>
+      <inertial>
+        <pose>0.0249999975 0 0 0 0 0</pose>
+        <mass>0.12</mass>
+        <inertia>
+          <ixx>4.03132896573034e-05</ixx>
+          <iyy>3.39805383378147e-05</iyy>
+          <izz>5.63327613194893e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+    </link>
+    <frame name="porter_D2_rangefinder_200m_origin" attached_to="porter_D2_rangefinder_200m_link">
+      <pose relative_to="porter_D2_rangefinder_200m_link">0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="porter_D2_rangefinder_200m_sensing" attached_to="porter_D2_rangefinder_200m_link">
+      <pose relative_to="porter_D2_rangefinder_200m_link">0.050000000 0.000000000 0.000000000 0 0 0</pose>
+    </frame>
+  </model>
+</sdf>

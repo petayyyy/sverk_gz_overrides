@@ -38,6 +38,8 @@ sverk_gz_overrides/
     ├── x500_obrik_firefighter_base/ # decimated Firefighter body on Gigaobrik collision
     ├── x500_obrik_firefighter/      # Firefighter with lidar, MTF-01, and optional cameras
     ├── porter/                       # P-2.2 / Porter X8 with source mass and inertia
+    ├── porter_D2/                    # Porter D2 X8 with five payload sensors
+    ├── firefighter_P3/               # Firefighter P3 X8 with six payload sensors
     ├── x500_obrik_graffiti_base/    # legacy graffiti body and mechanism
     ├── x500_obrik_graffiti_old/     # legacy gear-and-lever graffiti configuration
     ├── x500_obrik_graffiti_cam_base/ # current graffiti body with standard Obrik rotors
@@ -52,6 +54,7 @@ sverk_gz_overrides/
     ├── rpi_camera/                  # переиспользуемая модель камеры Raspberry Pi
     ├── orange_pi_camera/            # Orange Pi 13 MP MIPI camera
     ├── foxeer_t_rex_mini_camera/    # Foxeer T-Rex Mini analog FPV camera
+    ├── bfs_pge_50s5c_camera/         # Blackfly S camera with lens
     ├── mtf01/                       # переиспользуемая модель MicoAir MTF-01
     ├── livox_avia/                  # Livox Avia 3D lidar, two realistic scan modes
     └── obrik_aruco_map_4x4/         # плоскость с ArUco-маркерами (словарь 4x4)
@@ -74,6 +77,10 @@ sverk_gz_overrides/
 | `x500_obrik_firefighter` | `x500_obrik_firefighter_base`, `unitree_l2`, `mtf01`, `brio_95_camera` (five instances), `foxeer_t_rex_mini_camera` |
 | `x500_obrik_firefighter_base` | decimated Firefighter body and VMGs; Gigaobrik collision/inertia; invisible X500 physics rotors |
 | `porter` | `livox_avia` (full coaxial-X8 vehicle generated from the P-2.2 description) |
+| `porter_D2` | `livox_avia`, `porter_D2_hflow`, `porter_D2_rangefinder_200m`, `porter_D2_n6_camera`, `porter_D2_mv_ca050_camera` |
+| `firefighter_P3` | `livox_avia`, `bfs_pge_50s5c_camera`, `firefighter_P3_hflow`, `firefighter_P3_rangefinder_200m`, `firefighter_P3_n6_camera`, `firefighter_P3_foxeer_camera`; VMG mesh from `x500_obrik_firefighter_base` |
+| `firefighter_P3_hflow`, `firefighter_P3_rangefinder_200m`, `firefighter_P3_n6_camera` | Meshes from the corresponding `porter_D2_*` models |
+| `firefighter_P3_foxeer_camera` | `foxeer_t_rex_mini_camera` mesh |
 | `x500_obrik_gigaobrik_lidar` | `x500_obrik_gigaobrik_lidar_base`, `mtf01`, `brio_95_camera` (downward), `unitree_l2` |
 | `x500_obrik_gigaobrik_lidar_base` | original Gigaobrik VMG meshes; the supplied clean body mesh; the same X500 collision and motor model |
 | `x500_obrik_graffiti` | `x500_obrik_graffiti_cam_base`, `rpi_camera` |
@@ -193,6 +200,29 @@ The source package marks its CAD meshes as proprietary. The copied Porter
 meshes must not be redistributed until their distribution terms are confirmed;
 see `models/porter/SOURCE.md`.
 
+## Porter D2 and Firefighter P3
+
+`porter_D2` and `firefighter_P3` are separate X8 configurations with eight
+physical motor channels, decimated CAD meshes and fitted box collisions.
+Both use +X forward, +Y left and +Z up. Mass, inertia, motor performance,
+unidentified lenses and new sensor noise remain provisional.
+
+The `porter_sensor_msgs` and `porter_sensor_adapters` packages provide payload
+bridges, mounting TF, image-based H-Flow observations and range outputs. Livox
+uses `livox_avia_cloud_adapter`. Tested runtime: Gazebo Harmonic 8.15, ROS 2
+Humble and PX4 v1.15. Payload range/flow streams do not automatically aid PX4.
+
+Model documentation includes launch commands, topics, sensor assumptions and
+regeneration commands:
+
+- [Porter D2](models/porter_D2/README.txt)
+- [Firefighter P3](models/firefighter_P3/README.txt)
+- [Blackfly S camera](models/bfs_pge_50s5c_camera/README.txt)
+
+The P3 Foxeer FPV image bridge is off by default. Use an existing world such
+as `obrik_aruco`; the shared sverk-ros2 launch spawns the selected vehicle.
+The shared Avia topics currently allow one Avia instance per world.
+
 ## Использование в sverk-ros2
 
 Единая точка входа — `scripts/update_overrides.sh`. Он раскладывает всё по
@@ -231,7 +261,8 @@ bash <(curl -fsSL https://raw.githubusercontent.com/petayyyy/sverk_gz_overrides/
 cd ~/sverk_ws && colcon build --packages-select \
   graffiti_servo_gz_plugin graffiti_servo_sim \
   led_strip_gz_plugin led_strip_sim mtf01_px4_bridge \
-  unitree_l2_rotor_gz_plugin
+  unitree_l2_rotor_gz_plugin porter_sensor_msgs porter_sensor_adapters \
+  livox_avia_cloud_adapter
 ```
 
 Пути и источник переопределяются флагами `--src/--repo/--ref/--px4-dir/--ros-nodes-dir`
@@ -239,10 +270,9 @@ cd ~/sverk_ws && colcon build --packages-select \
 (`--help` покажет всё).
 
 В образ SITL модели и ноды запекаются на этапе сборки: `Dockerfile.sitl`
-клонирует репозиторий по **тегу** (`ARG GZ_OVERRIDES_REF`) и вызывает этот
-скрипт. Чтобы новая версия моделей попала в образ — создайте тег здесь и
-поднимите `GZ_OVERRIDES_REF` в `Dockerfile.sitl` (значение ARG входит в ключ
-docker-кэша, поэтому bump тега гарантированно перекачивает клон).
+получает репозиторий по ревизии `ARG GZ_OVERRIDES_REF` и вызывает этот
+скрипт. После публикации изменений укажите полный SHA коммита overrides
+в `Dockerfile.sitl` и пересоберите образ.
 
 Выбор модели и мира при запуске SITL — через launch-аргументы
 `full_system_sitl.launch.py` (`obrik_config`, `gz_world`), подробнее в

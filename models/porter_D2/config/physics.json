@@ -1,0 +1,65 @@
+{
+  "status": "Provisional simulation mass, inertia and propulsion parameters.",
+  "total_mass_kg": 18.0,
+  "base_com_m": [
+    0,
+    0,
+    -0.03
+  ],
+  "base_equivalent_box_m": [
+    0.6,
+    0.35,
+    0.25
+  ],
+  "rotor_mass_kg": 0.35,
+  "rotor_inertia_kg_m2": [
+    0.002,
+    0.002,
+    0.004
+  ],
+  "max_omega_rad_s": 600,
+  "idle_omega_rad_s": 30,
+  "max_thrust_per_rotor_n": 45,
+  "moment_constant_m": 0.025,
+  "time_constant_up_s": 0.05,
+  "time_constant_down_s": 0.1,
+  "rotor_drag_coefficient": 0.0001,
+  "rolling_moment_coefficient": 1e-06,
+  "motor_order": [
+    "vmg_2",
+    "vmg_4",
+    "vmg_5",
+    "vmg_7",
+    "vmg_1",
+    "vmg_3",
+    "vmg_6",
+    "vmg_8"
+  ],
+  "turning_directions": [
+    "ccw",
+    "ccw",
+    "cw",
+    "cw",
+    "cw",
+    "cw",
+    "ccw",
+    "ccw"
+  ],
+  "caveats": [
+    "Total mass includes reused Avia 0.498 kg, eight 0.35 kg equivalent VMG rotor links and four explicit provisional payload masses.",
+    "Base budget includes batteries and airframe; equivalent-box inertia is synthetic. Payload centres/inertias use bounding-box approximations.",
+    "Spin assignment is a conventional balanced X8 choice, not inferred from CAD prop handedness.",
+    "Motor housings are fixed to base_link; propeller meshes rotate on the thrust-producing rotor joints. The visual slowdown factor does not change the configured thrust law.",
+    "Rotor thrust is applied at measured motor origins. Separate prop hub axial offset is unmeasured.",
+    "No coaxial interference, blade flapping, calibrated airframe drag or real P60 power/ESC response.",
+    "Flight IMU is at the body datum with body FLU axes; CAD Pixhawk origin is not a measured internal IMU centre.",
+    "Controller defaults require flight tuning on the real airframe."
+  ],
+  "payload_masses_kg": {
+    "porter_hflow": 0.03,
+    "porter_rangefinder_200m": 0.12,
+    "porter_n6_camera": 0.08,
+    "porter_mv_ca050_camera": 0.18
+  },
+  "rotor_velocity_slowdown_sim": 10
+}

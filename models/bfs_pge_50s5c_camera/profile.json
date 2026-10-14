@@ -1,0 +1,88 @@
+{
+  "source_mesh": "П-3_BFS-PGE-50S5-C v2.obj",
+  "source_material": "П-3_BFS-PGE-50S5-C v2.mtl",
+  "source_sha256": {
+    "П-3_BFS-PGE-50S5-C v2.obj": "0de01c2f9967a7b6f4a0583c03f342ed34dc8f1230190c6b34886fe655648060",
+    "П-3_BFS-PGE-50S5-C v2.mtl": "2dd4958385c860752109982f317ce7a290a05ba283b85fc2ff96a75de6c3c6e3"
+  },
+  "mesh_units": "millimetres",
+  "mesh_scale": [
+    0.001,
+    0.001,
+    0.001
+  ],
+  "sensing_offset_m": [
+    0.086882,
+    0,
+    0
+  ],
+  "body_axes": {
+    "x": "forward / sensing direction",
+    "y": "left",
+    "z": "up"
+  },
+  "camera": {
+    "hardware_model": "Teledyne FLIR Blackfly S BFS-PGE-50S5C-C (inferred from CAD filename)",
+    "sensor": "Sony IMX264",
+    "pixel_pitch_um": 3.45,
+    "native_resolution": [
+      2448,
+      2048
+    ],
+    "update_rate_hz": 24,
+    "output_format": "R8G8B8 (ideal processed image; hardware 24 fps native stream is BayerRG8)",
+    "horizontal_fov_deg": 60,
+    "fov_status": "provisional; installed C-mount lens unknown",
+    "near_clip_m": 0.01,
+    "far_clip_m": 300,
+    "noise": {
+      "type": "gaussian",
+      "mean": 0,
+      "stddev": 0.004,
+      "status": "synthetic normalized intensity noise; not measured hardware calibration"
+    }
+  },
+  "physics": {
+    "mass_kg": 0.15,
+    "mass_status": "provisional complete camera + unknown lens estimate; manufacturer bare body is 0.036 kg",
+    "inertial_origin_m": [
+      0.031881781000000005,
+      0.0,
+      0.0
+    ],
+    "inertia_diagonal_kg_m2": [
+      4.39496326309538e-05,
+      0.00017314963263095377,
+      0.0001733
+    ],
+    "inertia_status": "uniform bounding-box approximation",
+    "collision": false
+  },
+  "sources": [
+    "https://softwareservices.flir.com/BFS-PGE-50S5/latest/Model/spec.html",
+    "https://www.teledynevisionsolutions.com/products/blackfly-s-gige/?model=BFS-PGE-50S5C-C&segment=iis&vertical=machine+vision"
+  ],
+  "simulation_mesh": {
+    "triangle_count": 4016,
+    "vertex_count": 2012,
+    "connected_components": 2,
+    "sha256": "9a999c29bf561c2162615c1b1ce61daa6269782f4f79470388eaf21ce01bc332",
+    "source_coordinates_preserved": true
+  },
+  "source_mesh_statistics": {
+    "vertex_count": 8994,
+    "triangle_count": 17980,
+    "bounds_mm": [
+      [
+        -23.118219,
+        -21.0,
+        -20.928274
+      ],
+      [
+        86.881781,
+        21.0,
+        20.928274
+      ]
+    ]
+  }
+}

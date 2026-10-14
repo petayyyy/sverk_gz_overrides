@@ -1,0 +1,126 @@
+{
+  "status": "Provisional simulation mass, inertia and propulsion parameters.",
+  "total_mass_kg": 3.0,
+  "base_com_m": [
+    -0.02,
+    0,
+    0.015
+  ],
+  "base_equivalent_box_m": [
+    0.32,
+    0.24,
+    0.14
+  ],
+  "rotor_mass_kg": 0.06,
+  "rotor_inertia_kg_m2": [
+    5e-05,
+    5e-05,
+    0.0001
+  ],
+  "max_omega_rad_s": 1000,
+  "idle_omega_rad_s": 30,
+  "max_thrust_per_rotor_n": 12,
+  "moment_constant_m": 0.015,
+  "time_constant_up_s": 0.025,
+  "time_constant_down_s": 0.05,
+  "rotor_drag_coefficient": 5e-05,
+  "rolling_moment_coefficient": 1e-06,
+  "upper_motor_origin_m": [
+    0.130762,
+    -0.165981,
+    0.0374
+  ],
+  "lower_motor_origin_m": [
+    0.130626,
+    -0.166042,
+    -0.0224
+  ],
+  "motor_position_source": "Measured upper/lower motor origins mirrored across body X/Y.",
+  "motor_order": [
+    "upper_front_right",
+    "upper_rear_left",
+    "upper_front_left",
+    "upper_rear_right",
+    "lower_front_right",
+    "lower_rear_left",
+    "lower_front_left",
+    "lower_rear_right"
+  ],
+  "turning_directions": [
+    "ccw",
+    "ccw",
+    "cw",
+    "cw",
+    "cw",
+    "cw",
+    "ccw",
+    "ccw"
+  ],
+  "payload_masses_kg": {
+    "hflow": 0.03,
+    "rangefinder_200m": 0.12,
+    "n6": 0.08,
+    "blackfly": 0.15,
+    "foxeer": 0.0102,
+    "livox_avia": 0.498
+  },
+  "landing_pads": [
+    {
+      "center_m": [
+        -0.1470741535,
+        -0.1895376205,
+        -0.3154841615
+      ],
+      "size_m": [
+        0.041674385000000036,
+        0.04826762300000004,
+        0.014955627000000027
+      ]
+    },
+    {
+      "center_m": [
+        -0.1471027675,
+        0.189536339,
+        -0.3154841615
+      ],
+      "size_m": [
+        0.041636963,
+        0.048265060000000026,
+        0.014955627000000027
+      ]
+    },
+    {
+      "center_m": [
+        0.15031568899999997,
+        -0.194111412,
+        -0.3154839785
+      ],
+      "size_m": [
+        0.03521060200000001,
+        0.039114884000000016,
+        0.014955810999999986
+      ]
+    },
+    {
+      "center_m": [
+        0.1502803875,
+        0.194133278,
+        -0.3154841615
+      ],
+      "size_m": [
+        0.03522535700000001,
+        0.039068802000000014,
+        0.014955444999999956
+      ]
+    }
+  ],
+  "caveats": [
+    "Total 3 kg includes all eight VMGs and six sensors; base link contains the remaining mass.",
+    "Base CoM, equivalent-box inertia and motor thrust/torque/spool are provisional.",
+    "Conventional balanced X8 spins; not a measurement of real ESC output order.",
+    "Motor housings are fixed to base_link; propeller meshes rotate on the thrust-producing rotor joints. The visual slowdown factor does not change the configured thrust law.",
+    "No coaxial interference, calibrated drag, power/battery model, or true Velox/T9048 characterization.",
+    "PX4 IMU sits at the body datum; external payload measurements are not injected into its EKF."
+  ],
+  "rotor_velocity_slowdown_sim": 10
+}

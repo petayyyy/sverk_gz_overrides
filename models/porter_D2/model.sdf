@@ -1,0 +1,858 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="porter_D2" canonical_link="base_link">
+    <static>false</static>
+    <self_collide>false</self_collide>
+    <!-- FLU / Z-up. CAD placements are measured; mass, inertia and propulsion are PROVISIONAL. -->
+    <link name="base_link">
+      <inertial>
+        <pose>0 0 -0.03 0 0 0</pose>
+        <mass>14.291999999999998</mass>
+        <inertia>
+          <ixx>0.220335</ixx>
+          <iyy>0.5031975</iyy>
+          <izz>0.5746575</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="decimated_body">
+        <pose>0 0 0 1.5707963267948966 0 -1.5707963267948966</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/body.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="vmg_2_motor_housing">
+        <pose>0.315666150213 -0.527093507005 0.0224760630051 1.51843644924 8.65314922874e-16 1.83259571459</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/motor.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="vmg_4_motor_housing">
+        <pose>-0.311550502674 0.329832515403 0.0224760630051 1.51843644923 8.31715320637e-14 -0.698131700798</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/motor.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="vmg_5_motor_housing">
+        <pose>0.315666150213 0.527093507005 0.0224760630051 1.62315620435 -5.64305462935e-16 -1.83259571459</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/motor.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="vmg_7_motor_housing">
+        <pose>-0.311550502674 -0.329832515403 0.0224760630051 1.62315620435 -8.31614811592e-14 0.698131700798</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/motor.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="vmg_1_motor_housing">
+        <pose>0.315666150213 -0.527093507005 -0.0224760630051 -1.51843644923 8.62409693692e-16 1.83259571459</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/motor.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="vmg_3_motor_housing">
+        <pose>-0.311550502674 0.329832515403 -0.0224760630051 -1.51843644924 8.31744293299e-14 -0.698131700798</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/motor.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="vmg_6_motor_housing">
+        <pose>0.315666150213 0.527093507005 -0.0224760630051 -1.62315620435 -5.64309444451e-16 -1.83259571459</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/motor.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="vmg_8_motor_housing">
+        <pose>-0.311550502674 -0.329832515403 -0.0224760630051 -1.62315620435 -8.31585600039e-14 0.698131700798</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/motor.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="central_airframe">
+        <pose>0.11595224 -3.73849999998899e-06 0.009186501 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.429911316 0.313249969 0.269474228</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="arm_0">
+        <pose>0.257712246589659 -0.310202867882383 -1.59591838780434e-05 -0 1.20570646475835e-05 -1.30900433293308</pose>
+        <geometry>
+          <box>
+            <size>0.55200074825381 0.0320290604936862 0.0320443417882728</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="arm_1">
+        <pose>-0.160738765593611 0.203085568758038 -1.07680828347952e-05 -0 -7.4405464908089e-06 -0.698142206976179</pose>
+        <geometry>
+          <box>
+            <size>0.497000701806354 0.0320336091758254 0.0320955069053773</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="arm_2">
+        <pose>0.257719154444684 0.310201010901168 3.54640239112951e-06 0 -1.21564173254429e-05 1.30901039201907</pose>
+        <geometry>
+          <box>
+            <size>0.552000842793782 0.0320201923279658 0.0320195689579595</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="arm_3">
+        <pose>-0.160746525693343 -0.203076342268226 9.00706283747492e-06 0 -4.29957729839258e-06 0.69813429907617</pose>
+        <geometry>
+          <box>
+            <size>0.497000534335303 0.0320165437512271 0.032093217582379</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_foot_-1_-0.27655">
+        <pose>-0.266070107879911 -0.109942385732348 -0.318905136 0 -0 -0.110061974594206</pose>
+        <geometry>
+          <box>
+            <size>0.0669340148743849 0.0428365099650993 0.0522012020000001</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_strut_-1_-0.27655">
+        <pose>-0.151279447511075 -0.0964631691667434 -0.18941136510825 1.87703451311102 0.886196499722656 -3.00992729315137</pose>
+        <geometry>
+          <box>
+            <size>0.357001617130946 0.0220123135231658 0.0220007387096983</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_foot_-1_0.39362">
+        <pose>0.386163831000253 -0.181173127094946 -0.3195823845 0 -0 -0.106899492253712</pose>
+        <geometry>
+          <box>
+            <size>0.0579688193941336 0.0426016475209963 0.050851231</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_strut_-1_0.39362">
+        <pose>0.307439637197349 -0.146469753320186 -0.189509213750022 1.19780139020187 1.02024562244907 -0.430435261234623</pose>
+        <geometry>
+          <box>
+            <size>0.329000594866435 0.0220055491995274 0.0220004667841517</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_foot_1_-0.27655">
+        <pose>-0.266052942211186 0.10994456314146 -0.318926206 0 -0 -3.03137368278334</pose>
+        <geometry>
+          <box>
+            <size>0.0669588293058947 0.0428339761293086 0.052157588</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_strut_1_-0.27655">
+        <pose>-0.151279447498359 0.0964631691669948 -0.189411365102424 -1.8770229285584 0.886165104827761 3.00994224751425</pose>
+        <geometry>
+          <box>
+            <size>0.357002263276814 0.0220239522366042 0.0220005797519713</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_foot_1_0.39362">
+        <pose>0.386171772513143 0.181173314594194 -0.319584536 0 -0 -3.03457186350419</pose>
+        <geometry>
+          <box>
+            <size>0.0579543396424141 0.0425955095646995 0.050846928</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_strut_1_0.39362">
+        <pose>0.307439639181255 0.146469750731138 -0.189509213306524 1.94380341778498 1.02026884806528 0.430449211635807</pose>
+        <geometry>
+          <box>
+            <size>0.329000142459179 0.0220036826952054 0.022001012027911</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <sensor name="imu_sensor" type="imu">
+        <always_on>true</always_on>
+        <update_rate>250</update_rate>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+      <sensor name="air_pressure_sensor" type="air_pressure">
+        <always_on>true</always_on>
+        <update_rate>50</update_rate>
+        <air_pressure>
+          <pressure>
+            <noise type="gaussian">
+              <mean>0</mean>
+              <stddev>3</stddev>
+            </noise>
+          </pressure>
+        </air_pressure>
+      </sensor>
+      <sensor name="magnetometer_sensor" type="magnetometer">
+        <always_on>true</always_on>
+        <update_rate>100</update_rate>
+        <magnetometer>
+          <x>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </z>
+        </magnetometer>
+      </sensor>
+      <sensor name="navsat_sensor" type="navsat">
+        <always_on>true</always_on>
+        <update_rate>30</update_rate>
+      </sensor>
+    </link>
+    <link name="rotor_0">
+      <pose relative_to="base_link">0.315666150213334 -0.527093507004829 0.0224760630050554 -0.0523598775596817 8.65314922873813e-16 1.83259571459402</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.35</mass>
+        <inertia>
+          <ixx>0.002</ixx>
+          <iyy>0.002</iyy>
+          <izz>0.004</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="vmg_2_propeller">
+        <pose>0 0 0 1.5707963267949 1.07697143321748e-18 1.05460803526439e-17</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/propeller.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_0_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_0</child>
+      <pose relative_to="rotor_0">0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_0_joint</jointName>
+      <linkName>rotor_0</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.05</timeConstantUp>
+      <timeConstantDown>0.1</timeConstantDown>
+      <maxRotVelocity>600</maxRotVelocity>
+      <motorConstant>0.000125</motorConstant>
+      <momentConstant>0.025</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>0</actuator_number>
+      <rotorDragCoefficient>0.0001</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <link name="rotor_1">
+      <pose relative_to="base_link">-0.311550502673553 0.32983251540343 0.0224760630050513 -0.0523598775599489 8.31715320637136e-14 -0.698131700797803</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.35</mass>
+        <inertia>
+          <ixx>0.002</ixx>
+          <iyy>0.002</iyy>
+          <izz>0.004</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="vmg_4_propeller">
+        <pose>0 0 0 1.5707963267949 -3.07475044709143e-18 4.14148012827749e-17</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/propeller.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_1_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_1</child>
+      <pose relative_to="rotor_1">0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_1_joint</jointName>
+      <linkName>rotor_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.05</timeConstantUp>
+      <timeConstantDown>0.1</timeConstantDown>
+      <maxRotVelocity>600</maxRotVelocity>
+      <motorConstant>0.000125</motorConstant>
+      <momentConstant>0.025</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>1</actuator_number>
+      <rotorDragCoefficient>0.0001</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <link name="rotor_2">
+      <pose relative_to="base_link">0.315666150213328 0.527093507004831 0.0224760630050555 0.0523598775599746 -5.64305462935029e-16 -1.83259571459402</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.35</mass>
+        <inertia>
+          <ixx>0.002</ixx>
+          <iyy>0.002</iyy>
+          <izz>0.004</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="vmg_5_propeller">
+        <pose>0 0 0 1.5707963267949 2.38340044680345e-18 -2.15823794058074e-17</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/propeller.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_2_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_2</child>
+      <pose relative_to="rotor_2">0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_2_joint</jointName>
+      <linkName>rotor_2</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.05</timeConstantUp>
+      <timeConstantDown>0.1</timeConstantDown>
+      <maxRotVelocity>600</maxRotVelocity>
+      <motorConstant>0.000125</motorConstant>
+      <momentConstant>0.025</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>2</actuator_number>
+      <rotorDragCoefficient>0.0001</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <link name="rotor_3">
+      <pose relative_to="base_link">-0.311550502673559 -0.329832515403428 0.0224760630050598 0.0523598775597076 -8.31614811591703e-14 0.698131700797804</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.35</mass>
+        <inertia>
+          <ixx>0.002</ixx>
+          <iyy>0.002</iyy>
+          <izz>0.004</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="vmg_7_propeller">
+        <pose>0 0 0 1.5707963267949 4.90982784798924e-19 -1.89886508369089e-17</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/propeller.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_3_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_3</child>
+      <pose relative_to="rotor_3">0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_3_joint</jointName>
+      <linkName>rotor_3</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.05</timeConstantUp>
+      <timeConstantDown>0.1</timeConstantDown>
+      <maxRotVelocity>600</maxRotVelocity>
+      <motorConstant>0.000125</motorConstant>
+      <momentConstant>0.025</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>3</actuator_number>
+      <rotorDragCoefficient>0.0001</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <link name="rotor_4">
+      <pose relative_to="base_link">0.315666150213328 -0.527093507004831 -0.0224760630050556 0.0523598775599747 8.62409693691978e-16 1.83259571459402</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.35</mass>
+        <inertia>
+          <ixx>0.002</ixx>
+          <iyy>0.002</iyy>
+          <izz>0.004</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="vmg_1_propeller">
+        <pose>0 0 0 -1.5707963267949 -1.33053507080854e-18 4.08931281908488e-18</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/propeller.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_4_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_4</child>
+      <pose relative_to="rotor_4">0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_4_joint</jointName>
+      <linkName>rotor_4</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.05</timeConstantUp>
+      <timeConstantDown>0.1</timeConstantDown>
+      <maxRotVelocity>600</maxRotVelocity>
+      <motorConstant>0.000125</motorConstant>
+      <momentConstant>0.025</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>4</actuator_number>
+      <rotorDragCoefficient>0.0001</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <link name="rotor_5">
+      <pose relative_to="base_link">-0.311550502673559 0.329832515403428 -0.0224760630050597 0.0523598775597076 8.31744293298642e-14 -0.698131700797803</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.35</mass>
+        <inertia>
+          <ixx>0.002</ixx>
+          <iyy>0.002</iyy>
+          <izz>0.004</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="vmg_3_propeller">
+        <pose>0 0 0 -1.5707963267949 3.50064146862064e-18 5.78785807976057e-18</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/propeller.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_5_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_5</child>
+      <pose relative_to="rotor_5">0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_5_joint</jointName>
+      <linkName>rotor_5</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.05</timeConstantUp>
+      <timeConstantDown>0.1</timeConstantDown>
+      <maxRotVelocity>600</maxRotVelocity>
+      <motorConstant>0.000125</motorConstant>
+      <momentConstant>0.025</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>5</actuator_number>
+      <rotorDragCoefficient>0.0001</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <link name="rotor_6">
+      <pose relative_to="base_link">0.315666150213334 0.527093507004829 -0.0224760630050555 -0.0523598775596818 -5.64309444450661e-16 -1.83259571459402</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.35</mass>
+        <inertia>
+          <ixx>0.002</ixx>
+          <iyy>0.002</iyy>
+          <izz>0.004</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="vmg_6_propeller">
+        <pose>0 0 0 -1.5707963267949 1.25666061203466e-18 5.20732919495196e-18</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/propeller.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_6_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_6</child>
+      <pose relative_to="rotor_6">0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_6_joint</jointName>
+      <linkName>rotor_6</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.05</timeConstantUp>
+      <timeConstantDown>0.1</timeConstantDown>
+      <maxRotVelocity>600</maxRotVelocity>
+      <motorConstant>0.000125</motorConstant>
+      <momentConstant>0.025</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>6</actuator_number>
+      <rotorDragCoefficient>0.0001</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <link name="rotor_7">
+      <pose relative_to="base_link">-0.311550502673553 -0.32983251540343 -0.0224760630050512 -0.0523598775599489 -8.3158560003926e-14 0.698131700797803</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.35</mass>
+        <inertia>
+          <ixx>0.002</ixx>
+          <iyy>0.002</iyy>
+          <izz>0.004</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="vmg_8_propeller">
+        <pose>0 0 0 -1.5707963267949 2.65749308342665e-18 -2.71681940401255e-17</pose>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2/meshes/propeller.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_7_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_7</child>
+      <pose relative_to="rotor_7">0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_7_joint</jointName>
+      <linkName>rotor_7</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.05</timeConstantUp>
+      <timeConstantDown>0.1</timeConstantDown>
+      <maxRotVelocity>600</maxRotVelocity>
+      <motorConstant>0.000125</motorConstant>
+      <momentConstant>0.025</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>7</actuator_number>
+      <rotorDragCoefficient>0.0001</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <include merge="true">
+      <uri>model://porter_D2_hflow</uri>
+      <pose relative_to="base_link">0.242697237499 0.0471366867894 -0.02435 0 1.57079632679 1.7832957333e-15</pose>
+    </include>
+    <joint name="porter_D2_hflow_mount_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>porter_D2_hflow_link</child>
+    </joint>
+    <include merge="true">
+      <uri>model://porter_D2_rangefinder_200m</uri>
+      <pose relative_to="base_link">0.234575518712 -0.00238365588392 0.0205 0 1.57079632679 3.14159265359</pose>
+    </include>
+    <joint name="porter_D2_rangefinder_200m_mount_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>porter_D2_rangefinder_200m_link</child>
+    </joint>
+    <include merge="true">
+      <uri>model://porter_D2_n6_camera</uri>
+      <pose relative_to="base_link">0.27655 0.0286035762126 -0.0145 0 1.57079632679 2.57055600506e-14</pose>
+    </include>
+    <joint name="porter_D2_n6_camera_mount_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>porter_D2_n6_camera_link</child>
+    </joint>
+    <include merge="true">
+      <uri>model://porter_D2_mv_ca050_camera</uri>
+      <pose relative_to="base_link">0.244791042686 -0.051563134191 -0.0105000000005 0 1.57079632679 3.14159265359</pose>
+    </include>
+    <joint name="porter_D2_mv_ca050_camera_mount_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>porter_D2_mv_ca050_camera_link</child>
+    </joint>
+    <include merge="true">
+      <uri>model://livox_avia</uri>
+      <pose relative_to="base_link">0.287995607584 -0.00498923866634 -0.0234441504251 1.55450447798 1.39381766565 -0.00377301957203</pose>
+    </include>
+    <joint name="livox_avia_mount_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>livox_avia_link</child>
+    </joint>
+    <plugin name="gz::sim::systems::OdometryPublisher" filename="gz-sim-odometry-publisher-system">
+      <odom_frame>porter_D2/odom</odom_frame>
+      <robot_base_frame>porter_D2/base_link</robot_base_frame>
+      <dimensions>3</dimensions>
+      <odom_publish_frequency>50</odom_publish_frequency>
+      <odom_topic>/porter_D2/ground_truth/odometry</odom_topic>
+      <tf_topic>/porter_D2/ground_truth/tf</tf_topic>
+    </plugin>
+  </model>
+</sdf>
