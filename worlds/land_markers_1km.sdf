@@ -20,7 +20,7 @@
       <render_engine>ogre2</render_engine>
     </plugin>
 
-    <gravity>0 0 -9.8066</gravity>
+    <gravity>0 0 -9.80665</gravity>
     <magnetic_field>5.5645e-6 2.28758e-5 -4.23884e-5</magnetic_field>
     <atmosphere type="adiabatic"/>
 
