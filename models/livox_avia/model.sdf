@@ -91,7 +91,13 @@
         <pose>-0.04165 -0.02326 0.02840 0 0 0</pose>
         <topic>/livox_avia/imu</topic>
         <always_on>false</always_on>
-        <update_rate>200</update_rate>
+        <update_rate>250</update_rate>
+        <!-- One sample per 4 ms physics step. Orientation is relative to the
+             initial sensor attitude, explicitly matching sensor_realism's
+             orientation_reference=initial; gyro/accel stay sensor-local. -->
+        <!-- Orientation is relative to initial sensor orientation (gz-sensors8 default).
+             CUSTOM with an empty parent frame is not implemented in gz-sensors8.
+             sensor_realism deliberately consumes this initial-frame convention. -->
       </sensor>
     </link>
   </model>

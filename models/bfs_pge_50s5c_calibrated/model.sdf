@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <model name="bfs_pge_50s5c_calibrated">
+    <static>false</static>
+    <self_collide>false</self_collide>
+    <link name="bfs_pge_50s5c_camera_link">
+      <!-- Provisional 150 g camera + lens, uniform mesh bounding-box inertia.
+           The manufacturer's bare camera body is 36 g; the supplied lens is
+           unidentified. These values must be included in vehicle mass accounting. -->
+      <inertial>
+        <pose>0.031881781 0 0 0 0 0</pose>
+        <mass>0.15</mass>
+        <inertia>
+          <ixx>4.39496326309538e-05</ixx>
+          <iyy>0.000173149632630954</iyy>
+          <izz>0.0001733</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <!-- Original CAD datum and FLU axes preserved. OBJ coordinates are mm.
+           Payload visual only: no extra collision geometry. -->
+      <visual name="bfs_pge_50s5c_camera_visual">
+        <geometry>
+          <mesh>
+            <uri>model://bfs_pge_50s5c_camera/meshes/camera.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name="imager" type="camera">
+        <!-- Screenshot: sensing surface is +86.882 mm along mesh-local X.
+             This is an ideal pinhole placed at the user-specified surface;
+             the actual lens principal plane is unknown. Native camera looks +X. -->
+        <pose relative_to="bfs_pge_50s5c_camera_sensing">0 0 0 0 0 0</pose>
+        <!-- Subscriber-driven rendering; ROS bridging is configured separately. -->
+        <always_on>false</always_on>
+        <update_rate>10</update_rate>
+        <visualize>false</visualize>
+        <camera>
+          <!-- Measured IMX264 2x2 + ~6 mm lens. SDF principal point is OpenCV + 0.5 pixel. -->
+          <horizontal_fov>1.224276467377</horizontal_fov>
+          <lens><intrinsics><fx>871.6628</fx><fy>871.6034</fy>
+            <cx>597.8472</cx><cy>519.0569</cy><s>0</s>
+          </intrinsics></lens>
+          <!-- Calibrated 1224x1024, 10 Hz attestation rig; ideal undistorted image. -->
+          <image>
+            <width>1224</width>
+            <height>1024</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip><near>0.01</near><far>300</far></clip>
+          <optical_frame_id>bfs_pge_50s5c_camera_optical</optical_frame_id>
+          <!-- Optional sensor_realism supplies noise on separate streams. -->
+        </camera>
+      </sensor>
+    </link>
+    <frame name="bfs_pge_50s5c_camera_sensing" attached_to="bfs_pge_50s5c_camera_link">
+      <pose relative_to="bfs_pge_50s5c_camera_link">0.086882 0 0 0 0 0</pose>
+    </frame>
+    <!-- Optical convention: +Z forward, +X image-right, +Y image-down.
+         This frame describes image coordinates; it does not rotate the sensor. -->
+    <frame name="bfs_pge_50s5c_camera_optical" attached_to="bfs_pge_50s5c_camera_sensing">
+      <pose relative_to="bfs_pge_50s5c_camera_sensing">0 0 0 -1.5707963267948966 0 -1.5707963267948966</pose>
+    </frame>
+  </model>
+</sdf>

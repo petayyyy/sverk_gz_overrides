@@ -147,5 +147,5 @@ def bridge_entries(config):
             pairs += [(topic + '/tof/scan/points', 'sensor_msgs/msg/PointCloud2', 'gz.msgs.PointCloudPacked'),
                       (topic + '/imu', 'sensor_msgs/msg/Imu', 'gz.msgs.IMU')]
         for name, ros_type, gz_type in pairs:
-            result.append(dict(ros_topic_name=name, gz_topic_name=name, ros_type_name=ros_type, gz_type_name=gz_type, direction='GZ_TO_ROS', qos_profile='SENSOR_DATA'))
+            result.append(dict(ros_topic_name=name + ('_gz' if ros_type == 'sensor_msgs/msg/CameraInfo' else ''), gz_topic_name=name, ros_type_name=ros_type, gz_type_name=gz_type, direction='GZ_TO_ROS', qos_profile='SENSOR_DATA'))
     return result

@@ -102,6 +102,20 @@ if [ -f "$DDS_OUTPUTS_PATCH" ] || [ -f "$DDS_INPUT_PATCH" ] \
   fi
 fi
 
+# Source patches require a PX4 rebuild; copying models alone cannot fix the bridge.
+for source_patch in gazebo-sensor-truth hrt-periodic-reschedule; do
+  patch_file="$SRC/px4/$source_patch.patch"
+  [ -f "$patch_file" ] || continue
+  if patch --dry-run --batch --forward --directory="$PX4_DIR" -p1 < "$patch_file" >/dev/null 2>&1; then
+    patch --batch --forward --directory="$PX4_DIR" -p1 < "$patch_file"
+  elif patch --dry-run --batch --reverse --directory="$PX4_DIR" -p1 < "$patch_file" >/dev/null 2>&1; then
+    echo ">> $source_patch already applied"
+  else
+    echo "error: $source_patch does not match this PX4 source tree; do not use an unpatched binary" >&2
+    exit 1
+  fi
+done
+
 # --- ros_nodes -> workspace (каждый каталог = colcon-пакет) -------------------
 installed=0
 if [ -d "$SRC/ros_nodes" ]; then

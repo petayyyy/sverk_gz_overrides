@@ -30,9 +30,15 @@ def camera_bridges(context):
             output.append(Node(package='ros_gz_bridge',executable='parameter_bridge',
                 name='firefighter_P3_'+name+'_'+suffix+'_bridge',
                 arguments=[topic+'@sensor_msgs/msg/'+ros_type+'[gz.msgs.'+gz_type],
-                remappings=[(topic,'/firefighter_P3/'+name+'/'+ros_suffix)],
+                remappings=[(topic,'/firefighter_P3/'+name+'/'+ros_suffix+('_gz' if ros_type=='CameraInfo' else ''))],
                 parameters=[{'use_sim_time':ParameterValue(LaunchConfiguration('use_sim_time'),value_type=bool)}],
                 output='screen'))
+        output.append(Node(package='gazebo_camera_tools', executable='camera_info',
+            name='firefighter_P3_'+name+'_camera_info',
+            parameters=[{'input_topic':'/firefighter_P3/'+name+'/camera_info_gz',
+                         'output_topic':'/firefighter_P3/'+name+'/camera_info',
+                         'use_sim_time':ParameterValue(LaunchConfiguration('use_sim_time'),value_type=bool)}],
+            output='screen'))
     return output
 
 

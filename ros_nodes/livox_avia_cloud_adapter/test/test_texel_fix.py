@@ -111,3 +111,26 @@ def test_callback_corrects_both_scan_modes(mode):
     expected = np.broadcast_to(texel_fix(xyz, 512).astype(np.float32), out.shape)
     np.testing.assert_array_equal(out, expected)
     np.testing.assert_array_equal(points[:, 12:], np.broadcast_to(raw[0, 12:], points[:, 12:].shape))
+
+
+def test_pattern_phase_survives_dropped_frames_and_subscriber_restart():
+    def adapter():
+        obj=LivoxAviaCloudAdapter.__new__(LivoxAviaCloudAdapter)
+        obj._source_shape=(1,101)
+        obj._source_indices=np.arange(PATTERN_POINTS,dtype=np.int32)%101
+        return obj
+    msg=PointCloud2(height=1,width=101,point_step=4,row_step=404,
+                    data=np.arange(101,dtype='<u4').tobytes())
+    continuously_running=adapter()
+    msg.header.stamp.sec=1
+    continuously_running._sample_nonrepetitive(msg)
+    # Skip nine expected 100 ms messages and then restart the subscriber.
+    msg.header.stamp.sec=2
+    msg.header.stamp.nanosec=100000000
+    current=continuously_running._sample_nonrepetitive(msg)
+    assert adapter()._sample_nonrepetitive(msg)==current
+    first=int(np.frombuffer(current,dtype='<u4')[0])
+    assert first==((2100000000*240000//1000000000)%PATTERN_POINTS)%101
+    # The four-second physical scan trajectory repeats independently of delivery.
+    msg.header.stamp.sec+=4
+    assert continuously_running._sample_nonrepetitive(msg)==current

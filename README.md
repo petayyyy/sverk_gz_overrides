@@ -294,3 +294,33 @@ cd ~/sverk_ws && colcon build --packages-select \
   `orange_pi_camera`, `mtf01`,
   `obrik_aruco_map_4x4`) и мир `obrik_aruco.sdf` — оригинальные ассеты SVErk.
 - Общая лицензия репозитория — см. [LICENSE](LICENSE).
+
+### Gazebo sensor corrections (2026-10-19)
+
+Avia's ideal IMU runs at 250 Hz on the 4 ms physics grid. Its orientation is
+relative to its initial sensor orientation; `sensor_realism` handles this
+convention. Keep ideal streams noise-free and enable realism separately.
+The existing Avia +X-face texel correction remains enabled; its scan pattern
+uses simulation timestamps, including after dropped frames and adapter restarts.
+
+World gravity is 9.80665 m/s². Gazebo magnetometer noise is expressed in tesla
+(1e-7 T); PX4 v1.15 normally uses its own WMM `sensor_mag_sim` instead.
+`gazebo_camera_tools` converts bridged CameraInfo from Gazebo to OpenCV pixel
+centres on separate raw/public topics. The author-calibrated FLIR camera is
+`bfs_pge_50s5c_calibrated`; it does not replace the user's D2/P3 camera choices.
+
+The installer now applies two PX4 source patches, idempotently:
+
+- `gazebo-sensor-truth.patch`: 15 °C barometer temperature, nonzero global truth
+  publication timestamps, and opt-in `SIM_GZ_FLAT_ALT=1` for flat Cartesian maps.
+  Flat altitude preserves the initial datum and follows world Z. Use zero for
+  intentionally spherical height simulations. GPS delay is set to 20 ms in
+  the matching SITL launch and D2/P3 profiles.
+- `hrt-periodic-reschedule.patch`: prevent duplicate insertion of a periodically
+  rescheduled POSIX timer into the timer queue. This avoids stalled callbacks.
+
+After installing from this checkout with `scripts/update_overrides.sh --src
+/path/to/sverk_gz_overrides`, rebuild PX4 (`make px4_sitl_default`) and the affected
+ROS packages. Copying models does not update the PX4 binary. The patch installer
+fails clearly on an incompatible PX4 source revision. The patches were built and
+flight-tested on the local PX4 v1.15 fork at `78bd1cc`.

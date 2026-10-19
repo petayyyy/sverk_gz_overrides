@@ -25,9 +25,9 @@ PX4_SENSORS = """
   <sensor name="magnetometer_sensor" type="magnetometer">
     <always_on>1</always_on><update_rate>100</update_rate>
     <magnetometer>
-      <x><noise type="gaussian"><stddev>0.0001</stddev></noise></x>
-      <y><noise type="gaussian"><stddev>0.0001</stddev></noise></y>
-      <z><noise type="gaussian"><stddev>0.0001</stddev></noise></z>
+      <x><noise type="gaussian"><stddev>1e-7</stddev></noise></x>
+      <y><noise type="gaussian"><stddev>1e-7</stddev></noise></y>
+      <z><noise type="gaussian"><stddev>1e-7</stddev></noise></z>
     </magnetometer>
   </sensor>
   <sensor name="imu_sensor" type="imu">

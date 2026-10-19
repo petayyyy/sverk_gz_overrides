@@ -265,7 +265,7 @@ def generate_px4(physics, rotors, summary):
     # aggregate CoM, not the arbitrary CAD root. KM matches Gazebo's -spin*kQ.
     frd = np.diag([1,-1,-1])
     com = np.array(summary['total_com_flu_m'])
-    params = dict(SIM_GZ_EN=1,SENS_EN_GPSSIM=1,SENS_EN_BAROSIM=0,SENS_EN_MAGSIM=1,
+    params = dict(SIM_GZ_FLAT_ALT=1,EKF2_GPS_DELAY=20,EKF2_HGT_REF=0,SIM_GZ_EN=1,SENS_EN_GPSSIM=1,SENS_EN_BAROSIM=0,SENS_EN_MAGSIM=1,
                   CA_AIRFRAME=0,CA_ROTOR_COUNT=8,CA_R_REV=0,THR_MDL_FAC=1,
                   MPC_THR_HOVER=physics['total_mass_kg']*9.80665/(8*physics['max_thrust_per_rotor_n']*rotors[0]['axis_flu'][2]),
                   EKF2_IMU_POS_X=-com[0],EKF2_IMU_POS_Y=com[1],EKF2_IMU_POS_Z=com[2])

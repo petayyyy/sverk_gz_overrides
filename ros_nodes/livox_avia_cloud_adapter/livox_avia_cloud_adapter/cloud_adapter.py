@@ -79,7 +79,6 @@ class LivoxAviaCloudAdapter(Node):
         self._ntex_param = int(self.get_parameter('cube_face_texels').value)
         self._ntex = None
         self._outside_warned = False
-        self._phase = 0
         self._pattern = None
         self._source_indices = None
         self._source_shape = None

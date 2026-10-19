@@ -1,0 +1,16 @@
+diff --git a/platforms/posix/src/px4/common/drv_hrt.cpp b/platforms/posix/src/px4/common/drv_hrt.cpp
+index b510229..3f484ca 100644
+--- a/platforms/posix/src/px4/common/drv_hrt.cpp
++++ b/platforms/posix/src/px4/common/drv_hrt.cpp
+@@ -459,6 +459,11 @@ hrt_call_invoke()
+ 				//PX4_INFO("call deadline set to %lu now=%lu", call->deadline,  now);
+ 			}
+ 
++			// A work-queue thread may have rescheduled this periodic entry
++			// while its callback ran without the HRT lock. Remove that
++			// insertion before re-entering, or the intrusive list can lose
++			// unrelated timers (for example battery_simulator at arming).
++			sq_rem(&call->link, &callout_queue);
+ 			hrt_call_enter(call);
+ 		}
+ 	}
