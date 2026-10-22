@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="aruco_landing_pad">
+    <static>true</static>
+    <link name="pad">
+      <!-- A physical top surface, centred 2.5 cm above the world origin. -->
+      <collision name="landing_surface">
+        <pose>0 0 0.025 0 0 0</pose>
+        <geometry><box><size>1 1 0.05</size></box></geometry>
+      </collision>
+      <visual name="aruco_land_1">
+        <!-- Single display surface, just above the collision slab's top. -->
+        <pose>0 0 0.051 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <!-- The +Z normal makes this a flat, upward-facing marker rather than
+             a textured box with the image repeated on every side. -->
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>1 1</size>
+          </plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+          <pbr>
+            <metal>
+              <albedo_map>model://aruco_landing_pad/materials/textures/aruco_land_1.png</albedo_map>
+              <roughness>0.8</roughness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

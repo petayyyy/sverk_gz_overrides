@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/BurniyGuiPosePublisher">
+    <file>BurniyGuiPosePublisher.qml</file>
+  </qresource>
+</RCC>

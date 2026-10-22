@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="burniy_landing_pad">
+    <static>true</static>
+    <link name="pad">
+      <!-- A 12 cm raised physical plinth. Its world include pose adds another
+           4 cm, putting the landing surface 16 cm above local terrain. -->
+      <collision name="landing_surface">
+        <pose>0 0 0.06 0 0 0</pose>
+        <geometry><box><size>1.5 1.5 0.12</size></box></geometry>
+      </collision>
+      <visual name="raised_plinth">
+        <pose>0 0 0.06 0 0 0</pose>
+        <geometry><box><size>1.5 1.5 0.12</size></box></geometry>
+        <material>
+          <ambient>0.20 0.22 0.23 1</ambient>
+          <diffuse>0.28 0.30 0.31 1</diffuse>
+          <pbr><metal><metalness>0</metalness><roughness>0.9</roughness></metal></pbr>
+        </material>
+      </visual>
+      <visual name="aruco_land_1">
+        <!-- Single display surface, 1 mm above the collision slab's top. -->
+        <pose>0 0 0.121 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <!-- The +Z normal makes this a flat, upward-facing marker rather than
+             a textured box with the image repeated on every side. -->
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>1.25 1.25</size>
+          </plane>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+          <pbr>
+            <metal>
+              <albedo_map>model://burniy_landing_pad/materials/textures/aruco_land_1.png</albedo_map>
+              <roughness>0.8</roughness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
