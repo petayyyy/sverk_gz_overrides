@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="porter_D2_n6_camera">
+    <static>false</static>
+    <self_collide>false</self_collide>
+    <!-- Mesh datum and FLU axes preserved; synthetic noise and provisional settings are recorded in porter_D2/config/sensor_profiles.json. -->
+    <link name="porter_D2_n6_camera_link">
+      <visual name="porter_D2_n6_camera_housing">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2_n6_camera/meshes/sensor.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name="porter_D2_n6_camera_imager" type="camera">
+        <pose relative_to="porter_D2_n6_camera_sensing">0 0 0 0 0 0</pose>
+        <topic>/porter_D2/n6/image</topic>
+        <gz_frame_id>porter_D2_n6_camera_optical</gz_frame_id>
+        <always_on>false</always_on>
+        <update_rate>30</update_rate>
+        <visualize>false</visualize>
+        <camera>
+          <horizontal_fov>1.200786525372</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <optical_frame_id>porter_D2_n6_camera_optical</optical_frame_id>
+          <camera_info_topic>/porter_D2/n6/camera_info</camera_info_topic>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.005</stddev>
+          </noise>
+        </camera>
+      </sensor>
+      <inertial>
+        <pose>0.0097260215 0.0178054005 0.022542341 0 0 0</pose>
+        <mass>0.08</mass>
+        <inertia>
+          <ixx>2.21029790436156e-05</ixx>
+          <iyy>2.44555920771223e-05</iyy>
+          <izz>1.94568571068562e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+    </link>
+    <frame name="porter_D2_n6_camera_origin" attached_to="porter_D2_n6_camera_link">
+      <pose relative_to="porter_D2_n6_camera_link">0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="porter_D2_n6_camera_sensing" attached_to="porter_D2_n6_camera_link">
+      <pose relative_to="porter_D2_n6_camera_link">0.029848000 0.017805000 0.036255000 0 0 0</pose>
+    </frame>
+    <frame name="porter_D2_n6_camera_optical" attached_to="porter_D2_n6_camera_sensing">
+      <pose relative_to="porter_D2_n6_camera_sensing">0 0 0 -1.5707963267948966 0 -1.5707963267948966</pose>
+    </frame>
+  </model>
+</sdf>

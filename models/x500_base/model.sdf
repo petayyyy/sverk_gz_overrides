@@ -69,17 +69,17 @@
         <magnetometer>
           <x>
             <noise type="gaussian">
-              <stddev>0.0001</stddev>
+              <stddev>1e-7</stddev>
             </noise>
           </x>
           <y>
             <noise type="gaussian">
-              <stddev>0.0001</stddev>
+              <stddev>1e-7</stddev>
             </noise>
           </y>
           <z>
             <noise type="gaussian">
-              <stddev>0.0001</stddev>
+              <stddev>1e-7</stddev>
             </noise>
           </z>
         </magnetometer>

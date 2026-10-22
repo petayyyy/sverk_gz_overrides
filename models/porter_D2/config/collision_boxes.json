@@ -1,0 +1,613 @@
+{
+  "model": "porter_D2",
+  "frame": "+X forward, +Y left, +Z up; metres/radians",
+  "body_mesh": "models/porter_D2/meshes/body.obj",
+  "body_mesh_sha256": "e3091ec16129d19c5d21be837fca840e90d4acd3edd7f036491cf1f8df001da2",
+  "notes": [
+    "13 airframe boxes plus the inherited Livox housing box.",
+    "Boxes fit selected structural mesh components with approximately 1 mm padding; landing soles preserve the contact plane.",
+    "Component IDs and mesh hash support containment checks. Small protrusions and propellers are omitted."
+  ],
+  "boxes": [
+    {
+      "name": "central_airframe",
+      "category": "body",
+      "center_m": [
+        0.11595223999999998,
+        -3.7384999999889867e-06,
+        0.009186501
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "size_m": [
+        0.429911316,
+        0.313249969,
+        0.269474228
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          0,
+          1,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251,
+          252,
+          253,
+          254,
+          255,
+          256,
+          257,
+          258,
+          259,
+          260,
+          261,
+          262,
+          263,
+          264,
+          265,
+          266,
+          267,
+          268,
+          269,
+          270,
+          271,
+          272,
+          273,
+          274,
+          275,
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          283,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          290,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          297,
+          298,
+          299,
+          300,
+          301,
+          302,
+          303,
+          304,
+          305,
+          306,
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          327,
+          328,
+          329,
+          330,
+          331,
+          332,
+          333,
+          334,
+          335,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          343,
+          344,
+          345,
+          346,
+          347,
+          348,
+          349,
+          350,
+          351,
+          352,
+          359,
+          366,
+          367,
+          370,
+          371
+        ],
+        "component_vertices": 26752,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Axis-aligned bounds of central frame/electronics/leg brackets, excluding outlying GPS/antenna supports."
+      }
+    },
+    {
+      "name": "arm_0",
+      "category": "arms",
+      "center_m": [
+        0.25771224658965924,
+        -0.31020286788238305,
+        -1.595918387804335e-05
+      ],
+      "rpy_rad": [
+        -0.0,
+        1.2057064647583476e-05,
+        -1.3090043329330805
+      ],
+      "size_m": [
+        0.5520007482538104,
+        0.0320290604936862,
+        0.03204434178827284
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          2,
+          3
+        ],
+        "component_vertices": 342,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Longitudinal axis from area-weighted tube side normals; transverse minimum-area rectangle for square leg stock, horizontal cross-axis for round arms; exact bundled mesh bounds."
+      }
+    },
+    {
+      "name": "arm_1",
+      "category": "arms",
+      "center_m": [
+        -0.16073876559361078,
+        0.20308556875803832,
+        -1.0768082834795188e-05
+      ],
+      "rpy_rad": [
+        -0.0,
+        -7.440546490808904e-06,
+        -0.698142206976179
+      ],
+      "size_m": [
+        0.49700070180635353,
+        0.03203360917582542,
+        0.03209550690537731
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          8,
+          9
+        ],
+        "component_vertices": 344,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Longitudinal axis from area-weighted tube side normals; transverse minimum-area rectangle for square leg stock, horizontal cross-axis for round arms; exact bundled mesh bounds."
+      }
+    },
+    {
+      "name": "arm_2",
+      "category": "arms",
+      "center_m": [
+        0.2577191544446841,
+        0.3102010109011683,
+        3.546402391129514e-06
+      ],
+      "rpy_rad": [
+        0.0,
+        -1.2156417325442868e-05,
+        1.3090103920190725
+      ],
+      "size_m": [
+        0.5520008427937823,
+        0.03202019232796577,
+        0.03201956895795953
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          6,
+          7
+        ],
+        "component_vertices": 343,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Longitudinal axis from area-weighted tube side normals; transverse minimum-area rectangle for square leg stock, horizontal cross-axis for round arms; exact bundled mesh bounds."
+      }
+    },
+    {
+      "name": "arm_3",
+      "category": "arms",
+      "center_m": [
+        -0.16074652569334283,
+        -0.20307634226822632,
+        9.00706283747492e-06
+      ],
+      "rpy_rad": [
+        0.0,
+        -4.299577298392578e-06,
+        0.6981342990761702
+      ],
+      "size_m": [
+        0.4970005343353026,
+        0.032016543751227124,
+        0.03209321758237898
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          4,
+          5
+        ],
+        "component_vertices": 341,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Longitudinal axis from area-weighted tube side normals; transverse minimum-area rectangle for square leg stock, horizontal cross-axis for round arms; exact bundled mesh bounds."
+      }
+    },
+    {
+      "name": "landing_foot_-1_-0.27655",
+      "category": "landing_gear",
+      "center_m": [
+        -0.26607010787991064,
+        -0.10994238573234832,
+        -0.31890513600000003
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -0.11006197459420582
+      ],
+      "size_m": [
+        0.06693401487438488,
+        0.0428365099650993,
+        0.05220120200000006
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          365
+        ],
+        "component_vertices": 63,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Minimum-area XY rectangle of full foot, vertical bounds to existing sole plane; no downward margin. Mesh rounding lowers one rear sole by 0.000737 mm."
+      }
+    },
+    {
+      "name": "landing_strut_-1_-0.27655",
+      "category": "landing_gear",
+      "center_m": [
+        -0.15127944751107478,
+        -0.09646316916674344,
+        -0.18941136510825035
+      ],
+      "rpy_rad": [
+        1.8770345131110173,
+        0.8861964997226562,
+        -3.0099272931513723
+      ],
+      "size_m": [
+        0.3570016171309459,
+        0.02201231352316583,
+        0.022000738709698292
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          361
+        ],
+        "component_vertices": 222,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Longitudinal axis from area-weighted tube side normals; transverse minimum-area rectangle for square leg stock, horizontal cross-axis for round arms; exact bundled mesh bounds."
+      }
+    },
+    {
+      "name": "landing_foot_-1_0.39362",
+      "category": "landing_gear",
+      "center_m": [
+        0.38616383100025314,
+        -0.18117312709494587,
+        -0.3195823845
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -0.1068994922537119
+      ],
+      "size_m": [
+        0.05796881939413362,
+        0.04260164752099628,
+        0.050851231
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          364
+        ],
+        "component_vertices": 62,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Minimum-area XY rectangle of full foot, vertical bounds to existing sole plane; no downward margin. Mesh rounding lowers one rear sole by 0.000737 mm."
+      }
+    },
+    {
+      "name": "landing_strut_-1_0.39362",
+      "category": "landing_gear",
+      "center_m": [
+        0.30743963719734885,
+        -0.1464697533201863,
+        -0.18950921375002208
+      ],
+      "rpy_rad": [
+        1.1978013902018745,
+        1.0202456224490664,
+        -0.43043526123462317
+      ],
+      "size_m": [
+        0.3290005948664345,
+        0.02200554919952738,
+        0.02200046678415174
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          360
+        ],
+        "component_vertices": 214,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Longitudinal axis from area-weighted tube side normals; transverse minimum-area rectangle for square leg stock, horizontal cross-axis for round arms; exact bundled mesh bounds."
+      }
+    },
+    {
+      "name": "landing_foot_1_-0.27655",
+      "category": "landing_gear",
+      "center_m": [
+        -0.26605294221118553,
+        0.10994456314145966,
+        -0.318926206
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -3.03137368278334
+      ],
+      "size_m": [
+        0.06695882930589467,
+        0.04283397612930856,
+        0.05215758799999998
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          363
+        ],
+        "component_vertices": 63,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Minimum-area XY rectangle of full foot, vertical bounds to existing sole plane; no downward margin. Mesh rounding lowers one rear sole by 0.000737 mm."
+      }
+    },
+    {
+      "name": "landing_strut_1_-0.27655",
+      "category": "landing_gear",
+      "center_m": [
+        -0.15127944749835945,
+        0.09646316916699482,
+        -0.189411365102424
+      ],
+      "rpy_rad": [
+        -1.877022928558396,
+        0.8861651048277606,
+        3.009942247514249
+      ],
+      "size_m": [
+        0.3570022632768143,
+        0.022023952236604208,
+        0.022000579751971283
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          369
+        ],
+        "component_vertices": 222,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Longitudinal axis from area-weighted tube side normals; transverse minimum-area rectangle for square leg stock, horizontal cross-axis for round arms; exact bundled mesh bounds."
+      }
+    },
+    {
+      "name": "landing_foot_1_0.39362",
+      "category": "landing_gear",
+      "center_m": [
+        0.38617177251314255,
+        0.18117331459419422,
+        -0.319584536
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -3.034571863504195
+      ],
+      "size_m": [
+        0.05795433964241409,
+        0.042595509564699485,
+        0.05084692800000001
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          362
+        ],
+        "component_vertices": 64,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Minimum-area XY rectangle of full foot, vertical bounds to existing sole plane; no downward margin. Mesh rounding lowers one rear sole by 0.000737 mm."
+      }
+    },
+    {
+      "name": "landing_strut_1_0.39362",
+      "category": "landing_gear",
+      "center_m": [
+        0.30743963918125466,
+        0.14646975073113788,
+        -0.18950921330652382
+      ],
+      "rpy_rad": [
+        1.943803417784985,
+        1.020268848065284,
+        0.4304492116358071
+      ],
+      "size_m": [
+        0.3290001424591786,
+        0.022003682695205418,
+        0.022001012027910966
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          368
+        ],
+        "component_vertices": 221,
+        "padding_per_face_m": [
+          0.001,
+          0.001,
+          0.001
+        ],
+        "method": "Longitudinal axis from area-weighted tube side normals; transverse minimum-area rectangle for square leg stock, horizontal cross-axis for round arms; exact bundled mesh bounds."
+      }
+    }
+  ]
+}

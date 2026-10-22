@@ -1,0 +1,68 @@
+diff --git a/src/modules/simulation/gz_bridge/GZBridge.cpp b/src/modules/simulation/gz_bridge/GZBridge.cpp
+index 56c6d02..79492e6 100644
+--- a/src/modules/simulation/gz_bridge/GZBridge.cpp
++++ b/src/modules/simulation/gz_bridge/GZBridge.cpp
+@@ -735,6 +735,16 @@ void GZBridge::navSatCallback(const gz::msgs::NavSat &nav_sat)
+ 		global_position_groundtruth.lat = nav_sat.latitude_deg();
+ 		global_position_groundtruth.lon = nav_sat.longitude_deg();
+ 		global_position_groundtruth.alt = nav_sat.altitude();
++		if (_param_flat_alt.get() && _timestamp_prev > 0) {
++			// A local Cartesian world has no ellipsoid curvature in its physics.
++			// Anchor once to NavSat, then follow world Z. Preserve spawn altitude.
++			if (!_flat_alt_initialized) {
++				_flat_alt_offset = nav_sat.altitude() + _position_prev(2);
++				_flat_alt_initialized = true;
++			}
++			global_position_groundtruth.alt = _flat_alt_offset - _position_prev(2);
++		}
++		global_position_groundtruth.timestamp = hrt_absolute_time();
+ 		_gpos_ground_truth_pub.publish(global_position_groundtruth);
+ 	}
+ 
+diff --git a/src/modules/simulation/gz_bridge/GZBridge.hpp b/src/modules/simulation/gz_bridge/GZBridge.hpp
+index 6d2e267..32e3f97 100644
+--- a/src/modules/simulation/gz_bridge/GZBridge.hpp
++++ b/src/modules/simulation/gz_bridge/GZBridge.hpp
+@@ -141,6 +141,8 @@ private:
+ 
+ 	MapProjection _pos_ref{};
+ 	double _alt_ref{}; // starting altitude reference
++	double _flat_alt_offset{};
++	bool _flat_alt_initialized{false};
+ 
+ 	matrix::Vector3d _position_prev{};
+ 	matrix::Vector3d _velocity_prev{};
+@@ -152,7 +154,11 @@ private:
+ 	const std::string _model_sim;
+ 	const std::string _model_pose;
+ 
+-	float _temperature{288.15};  // 15 degrees
++	float _temperature{15.0f};  // sensor_baro temperature is degrees Celsius
++
++	DEFINE_PARAMETERS(
++		(ParamInt<px4::params::SIM_GZ_FLAT_ALT>) _param_flat_alt
++	)
+ 
+ 	gz::transport::Node _node;
+ };
+diff --git a/src/modules/simulation/gz_bridge/parameters.c b/src/modules/simulation/gz_bridge/parameters.c
+index 8dd6022..8b35a27 100644
+--- a/src/modules/simulation/gz_bridge/parameters.c
++++ b/src/modules/simulation/gz_bridge/parameters.c
+@@ -40,3 +40,16 @@
+  */
+ PARAM_DEFINE_INT32(SIM_GZ_EN, 0);
+ 
++
++/**
++ * Use Cartesian world height for Gazebo GPS altitude
++ *
++ * Enable for flat local maps. GPS altitude is anchored at the first pose
++ * and follows world Z, avoiding artificial ellipsoid curvature with range.
++ * Disable for simulations intentionally using the spherical NavSat altitude.
++ *
++ * @boolean
++ * @reboot_required true
++ * @group Simulator
++ */
++PARAM_DEFINE_INT32(SIM_GZ_FLAT_ALT, 0);

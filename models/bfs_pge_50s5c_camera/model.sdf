@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <model name="bfs_pge_50s5c_camera">
+    <static>false</static>
+    <self_collide>false</self_collide>
+    <link name="bfs_pge_50s5c_camera_link">
+      <!-- Provisional 150 g camera + lens, uniform mesh bounding-box inertia.
+           The manufacturer's bare camera body is 36 g; the supplied lens is
+           unidentified. These values must be included in vehicle mass accounting. -->
+      <inertial>
+        <pose>0.031881781 0 0 0 0 0</pose>
+        <mass>0.15</mass>
+        <inertia>
+          <ixx>4.39496326309538e-05</ixx>
+          <iyy>0.000173149632630954</iyy>
+          <izz>0.0001733</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <!-- Original CAD datum and FLU axes preserved. OBJ coordinates are mm.
+           Payload visual only: no extra collision geometry. -->
+      <visual name="bfs_pge_50s5c_camera_visual">
+        <geometry>
+          <mesh>
+            <uri>model://bfs_pge_50s5c_camera/meshes/camera.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name="imager" type="camera">
+        <!-- Screenshot: sensing surface is +86.882 mm along mesh-local X.
+             This is an ideal pinhole placed at the user-specified surface;
+             the actual lens principal plane is unknown. Native camera looks +X. -->
+        <pose relative_to="bfs_pge_50s5c_camera_sensing">0 0 0 0 0 0</pose>
+        <!-- Subscriber-driven rendering; ROS bridging is configured separately. -->
+        <always_on>false</always_on>
+        <update_rate>24</update_rate>
+        <visualize>false</visualize>
+        <camera>
+          <!-- PROVISIONAL 60 deg horizontal FoV, approximately a 7.31 mm lens
+               on the 8.4456 mm wide IMX264. Installed C-mount lens unknown. -->
+          <horizontal_fov>1.0471975511965976</horizontal_fov>
+          <!-- Native 5 MP raster and acquisition rate. RGB is an ideal processed
+               image: hardware reaches 24 fps in BayerRG8, not full-res RGB8. -->
+          <image>
+            <width>2448</width>
+            <height>2048</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip><near>0.01</near><far>300</far></clip>
+          <optical_frame_id>bfs_pge_50s5c_camera_optical</optical_frame_id>
+          <!-- Synthetic Gaussian noise in normalized [0,1] channel intensity,
+               about one 8-bit code value RMS; not measured sensor performance. -->
+          <noise><type>gaussian</type><mean>0</mean><stddev>0.004</stddev></noise>
+        </camera>
+      </sensor>
+    </link>
+    <frame name="bfs_pge_50s5c_camera_sensing" attached_to="bfs_pge_50s5c_camera_link">
+      <pose relative_to="bfs_pge_50s5c_camera_link">0.086882 0 0 0 0 0</pose>
+    </frame>
+    <!-- Optical convention: +Z forward, +X image-right, +Y image-down.
+         This frame describes image coordinates; it does not rotate the sensor. -->
+    <frame name="bfs_pge_50s5c_camera_optical" attached_to="bfs_pge_50s5c_camera_sensing">
+      <pose relative_to="bfs_pge_50s5c_camera_sensing">0 0 0 -1.5707963267948966 0 -1.5707963267948966</pose>
+    </frame>
+  </model>
+</sdf>

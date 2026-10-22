@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="firefighter_P3_hflow">
+    <static>false</static>
+    <self_collide>false</self_collide>
+    <link name="firefighter_P3_hflow_link">
+      <visual name="firefighter_P3_hflow_housing">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://porter_D2_hflow/meshes/sensor.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name="firefighter_P3_hflow_imager" type="camera">
+        <pose relative_to="firefighter_P3_hflow_sensing">0 0 0 0 0 0</pose>
+        <topic>/firefighter_P3/hflow/flow/image</topic>
+        <always_on>false</always_on>
+        <update_rate>100</update_rate>
+        <visualize>false</visualize>
+        <camera>
+          <horizontal_fov>0.733038285838</horizontal_fov>
+          <image>
+            <width>128</width>
+            <height>128</height>
+            <format>L_INT8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>35</far>
+          </clip>
+          <optical_frame_id>firefighter_P3_hflow_optical</optical_frame_id>
+          <camera_info_topic>/firefighter_P3/hflow/flow/camera_info</camera_info_topic>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.004</stddev>
+          </noise>
+        </camera>
+      </sensor>
+      <sensor name="firefighter_P3_hflow_tof" type="gpu_lidar">
+        <pose relative_to="firefighter_P3_hflow_tof">0 0 0 0 0 0</pose>
+        <topic>/firefighter_P3/hflow/tof/scan</topic>
+        <gz_frame_id>firefighter_P3_hflow_tof</gz_frame_id>
+        <always_on>false</always_on>
+        <update_rate>50</update_rate>
+        <visualize>false</visualize>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>8</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.108210413624</min_angle>
+              <max_angle>0.108210413624</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>4</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.054105206812</min_angle>
+              <max_angle>0.054105206812</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.08</min>
+            <max>30.0</max>
+            <resolution>0.001</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.02</stddev>
+          </noise>
+        </lidar>
+      </sensor>
+      <sensor name="firefighter_P3_hflow_imu" type="imu">
+        <pose relative_to="firefighter_P3_hflow_imu">0 0 0 0 0 0</pose>
+        <topic>/firefighter_P3/hflow/imu</topic>
+        <gz_frame_id>firefighter_P3_hflow_imu</gz_frame_id>
+        <always_on>false</always_on>
+        <update_rate>200</update_rate>
+        <visualize>false</visualize>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.002</stddev>
+                <bias_mean>0</bias_mean>
+                <bias_stddev>0.0002</bias_stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.002</stddev>
+                <bias_mean>0</bias_mean>
+                <bias_stddev>0.0002</bias_stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.002</stddev>
+                <bias_mean>0</bias_mean>
+                <bias_stddev>0.0002</bias_stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.02</stddev>
+                <bias_mean>0</bias_mean>
+                <bias_stddev>0.01</bias_stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.02</stddev>
+                <bias_mean>0</bias_mean>
+                <bias_stddev>0.01</bias_stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.02</stddev>
+                <bias_mean>0</bias_mean>
+                <bias_stddev>0.01</bias_stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+      <inertial>
+        <pose>0.0017232375 -0.002 -2.58049999999916e-06 0 0 0</pose>
+        <mass>0.03</mass>
+        <inertia>
+          <ixx>6.21638676320629e-06</ixx>
+          <iyy>2.51597409190386e-06</iyy>
+          <izz>4.70102644593055e-06</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+    </link>
+    <frame name="firefighter_P3_hflow_origin" attached_to="firefighter_P3_hflow_link">
+      <pose relative_to="firefighter_P3_hflow_link">0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="firefighter_P3_hflow_sensing" attached_to="firefighter_P3_hflow_link">
+      <pose relative_to="firefighter_P3_hflow_link">0.008518000 0.008700000 0.003165000 0 0 0</pose>
+    </frame>
+    <frame name="firefighter_P3_hflow_optical" attached_to="firefighter_P3_hflow_sensing">
+      <pose relative_to="firefighter_P3_hflow_sensing">0 0 0 -1.5707963267948966 0 -1.5707963267948966</pose>
+    </frame>
+    <frame name="firefighter_P3_hflow_tof" attached_to="firefighter_P3_hflow_link">
+      <pose relative_to="firefighter_P3_hflow_link">0.008518000 0.008700000 0.003165000 0 0 0</pose>
+    </frame>
+    <frame name="firefighter_P3_hflow_imu" attached_to="firefighter_P3_hflow_link">
+      <pose relative_to="firefighter_P3_hflow_link">0.000000000 0.000000000 0.000000000 0 0 0</pose>
+    </frame>
+  </model>
+</sdf>

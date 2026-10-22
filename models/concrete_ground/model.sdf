@@ -18,18 +18,6 @@
       </collision>
       <visual name="visual">
         <cast_shadows>false</cast_shadows>
-        <material>
-          <diffuse>1 1 1 1</diffuse>
-          <specular>0 0 0 1</specular>
-          <!-- Keep the ground bright without affecting vehicles. -->
-          <pbr>
-            <metal>
-              <albedo_map>model://concrete_ground/materials/textures/concrete_neutral_color.png</albedo_map>
-              <emissive_map>model://concrete_ground/materials/textures/concrete_neutral_color.png</emissive_map>
-              <roughness>1.0</roughness>
-            </metal>
-          </pbr>
-        </material>
         <geometry>
           <mesh>
             <uri>model://concrete_ground/meshes/concrete_ground.obj</uri>

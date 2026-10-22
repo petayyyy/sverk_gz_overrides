@@ -1,0 +1,148 @@
+{
+  "sources": {
+    "П-3.step": {
+      "bytes": 103793285,
+      "sha256": "ca5cced1d8528953b69b877b4fedaf6e8ce38ed0b6c106164e561de0b444873f"
+    },
+    "П-3 v3.obj": {
+      "bytes": 1343549161,
+      "sha256": "a3626236bdcaf18969c8c8896aaefd1125096c1e1441fa5cc8cb97b2f6a690de"
+    },
+    "П-3 v3.mtl": {
+      "bytes": 1900,
+      "sha256": "e08d2e47ab160c678ed4775e34f16084e2e2506fa5dde12679598abbf2d61254"
+    },
+    "П-3_BFS-PGE-50S5-C v2.obj": {
+      "bytes": 2113376,
+      "sha256": "0de01c2f9967a7b6f4a0583c03f342ed34dc8f1230190c6b34886fe655648060"
+    },
+    "П-3_BFS-PGE-50S5-C v2.mtl": {
+      "bytes": 115,
+      "sha256": "2dd4958385c860752109982f317ce7a290a05ba283b85fc2ff96a75de6c3c6e3"
+    }
+  },
+  "body_preparation": {
+    "source": "П-3 v3.obj",
+    "source_sha256": "a3626236bdcaf18969c8c8896aaefd1125096c1e1441fa5cc8cb97b2f6a690de",
+    "source_triangles": 10733490,
+    "kept_groups": 93,
+    "excluded_groups": 1808,
+    "excluded_categories": "Velox motors and T-MOTOR T9048 propellers only",
+    "mapping": "OBJ bodies matched to STEP solid order and geometry; motor and propeller bodies omitted."
+  },
+  "original_body_step_sha256": "d72e96dd79bae7f217001ea8cd9f9d1eb16d0b3d5620ab909f077061dfcb4030",
+  "decimation": [
+    {
+      "file": "П-3_BFS-PGE-50S5-C v2.obj",
+      "original": {
+        "vertices": 8994,
+        "triangles": 17980,
+        "components": 2,
+        "materials_used": 1,
+        "minimum": [
+          -23.11821937561035,
+          -21.0,
+          -20.928274154663086
+        ],
+        "maximum": [
+          86.88178253173828,
+          21.0,
+          20.928274154663086
+        ]
+      },
+      "decimated": {
+        "vertices": 2012,
+        "triangles": 4016,
+        "components": 2,
+        "materials_used": 1,
+        "minimum": [
+          -23.118221282958984,
+          -21.0,
+          -20.928274154663086
+        ],
+        "maximum": [
+          86.88178253173828,
+          21.0,
+          20.928274154663086
+        ]
+      },
+      "reduction_percent": 77.66407119021135,
+      "axis_conversion": "none; source mm and FLU datum retained"
+    },
+    {
+      "file": "П-3 v3.obj",
+      "original": {
+        "vertices": 158705,
+        "triangles": 318914,
+        "components": 98,
+        "materials_used": 24,
+        "minimum": [
+          -290.3406982421875,
+          -213.67535400390625,
+          -323.0
+        ],
+        "maximum": [
+          167.8878631591797,
+          213.67535400390625,
+          105.0
+        ]
+      },
+      "decimated": {
+        "vertices": 26605,
+        "triangles": 54714,
+        "components": 98,
+        "materials_used": 24,
+        "minimum": [
+          -290.32171630859375,
+          -213.6714324951172,
+          -322.96197509765625
+        ],
+        "maximum": [
+          167.92098999023438,
+          213.6688690185547,
+          104.92975616455078
+        ]
+      },
+      "reduction_percent": 82.84365063935732,
+      "axis_conversion": "none; source mm and FLU datum retained"
+    }
+  ],
+  "bundled_assets": [
+    {
+      "path": "models/firefighter_P3/meshes/body.obj",
+      "sha256": "5c345da46abdabc51849c7815e5cc8ea725b32e2812b83b0a4155d0c0f8bf529"
+    },
+    {
+      "path": "models/firefighter_P3/meshes/body.mtl",
+      "sha256": "2b9bff4d3d3cb6c0c78572e769e3612969022f37d9bb6ab0763a6408edf28788"
+    },
+    {
+      "path": "models/bfs_pge_50s5c_camera/meshes/camera.obj",
+      "sha256": "9a999c29bf561c2162615c1b1ce61daa6269782f4f79470388eaf21ce01bc332"
+    },
+    {
+      "path": "models/bfs_pge_50s5c_camera/meshes/camera.mtl",
+      "sha256": "3d34a08114a1500d653402a7b3a5cad7a13f2bbc6c280867574c48fb0e1a7f96"
+    },
+    {
+      "path": "models/firefighter_P3/meshes/motor.obj",
+      "sha256": "e03aa41d8a29096642600e6065a5d5dd92343f780f81c929743e82556c3a1552"
+    },
+    {
+      "path": "models/firefighter_P3/meshes/propeller.obj",
+      "sha256": "c91d1b86756d83f3e209b47a319bf833cf3c3c334e64961511b46f7728f03f64"
+    },
+    {
+      "path": "models/firefighter_P3/meshes/vmg.mtl",
+      "sha256": "689256f2aac5b9cb0d7034244e6b699c7395e877f541f9ab11605f03e26c5b7c"
+    }
+  ],
+  "vmg_preparation": {
+    "source": "models/x500_obrik_firefighter_base/meshes/vmg.obj",
+    "source_sha256": "f283ea423a39b34b2473ef29314e55955473cbfe34ffa02435a694f8c95100a8",
+    "source_faces": 7028,
+    "motor_faces": 6048,
+    "propeller_faces": 980,
+    "method": "Connected components: propeller and retaining nut rotate; motor geometry stays fixed. Original metre units and motor datum retained."
+  }
+}

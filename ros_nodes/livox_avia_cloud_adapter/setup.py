@@ -15,6 +15,7 @@ setup(
         (f'share/{package_name}/rviz', ['rviz/livox_avia.rviz']),
     ],
     install_requires=['setuptools'],
+    tests_require=['pytest'],
     zip_safe=False,
     maintainer='sverk',
     maintainer_email='petayyyy@gmail.com',

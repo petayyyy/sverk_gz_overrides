@@ -9,3 +9,8 @@ Thumbs.db
 
 # Gazebo local state
 log/
+
+# Python tests
+__pycache__/
+*.py[cod]
+.pytest_cache/

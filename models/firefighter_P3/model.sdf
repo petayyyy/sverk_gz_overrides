@@ -1,0 +1,864 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="firefighter_P3" canonical_link="base_link">
+    <!-- Original CAD root, +X forward/+Y left/+Z up; PROVISIONAL physics. -->
+    <static>false</static>
+    <self_collide>false</self_collide>
+    <link name="base_link">
+      <inertial>
+        <pose>-0.02 0 0.015 0 0 0</pose>
+        <mass>1.6318000000000001</mass>
+        <inertia>
+          <ixx>0.0104979133333333</ixx>
+          <iyy>0.0165899666666667</iyy>
+          <izz>0.0217573333333333</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="decimated_body">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/body.obj</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="upper_front_right_motor_housing">
+        <pose>0.130762 -0.165981 0.0374 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/motor.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="upper_rear_left_motor_housing">
+        <pose>-0.130762 0.165981 0.0374 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/motor.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="upper_front_left_motor_housing">
+        <pose>0.130762 0.165981 0.0374 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/motor.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="upper_rear_right_motor_housing">
+        <pose>-0.130762 -0.165981 0.0374 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/motor.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="lower_front_right_motor_housing">
+        <pose>0.130626 -0.166042 -0.0224 3.14159265358979 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/motor.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="lower_rear_left_motor_housing">
+        <pose>-0.130626 0.166042 -0.0224 3.14159265358979 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/motor.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="lower_front_left_motor_housing">
+        <pose>0.130626 0.166042 -0.0224 3.14159265358979 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/motor.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="lower_rear_right_motor_housing">
+        <pose>-0.130626 -0.166042 -0.0224 3.14159265358979 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/motor.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="central_body">
+        <pose>0.00305616 -5.91890000000012e-05 0.023483162 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.323584092 0.16268193 0.164893188</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="upper_front_right_arm">
+        <pose>0.0923185343002952 -0.101935501280652 0.0075 0 -0 -0.912292431316473</pose>
+        <geometry>
+          <box>
+            <size>0.195271507294454 0.0571617049010793 0.017</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="upper_rear_left_arm">
+        <pose>-0.0923185587696609 0.101935498418137 0.0075 0 -0 2.2293001927221</pose>
+        <geometry>
+          <box>
+            <size>0.195271500862588 0.0571617056469639 0.017</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="upper_front_left_arm">
+        <pose>0.0923201363900915 0.101934242256751 0.0075 0 -0 -2.22930024523907</pose>
+        <geometry>
+          <box>
+            <size>0.195271514187016 0.0571658187433366 0.017</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="upper_rear_right_arm">
+        <pose>-0.0923185343002952 -0.101935501280652 0.0075 0 -0 0.912292431316473</pose>
+        <geometry>
+          <box>
+            <size>0.195271507294454 0.0571617049010793 0.017</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_pad_0">
+        <pose>-0.147085559728958 -0.189546195966353 -0.3106300505 0 -0 0.959886267606862</pose>
+        <geometry>
+          <box>
+            <size>0.0481064154954489 0.0209639541314949 0.024739899</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_strut_0">
+        <pose>-0.0990148602769179 -0.120894264875762 -0.165304382600415 1.57079535607898 1.04719718030703 -2.18166249279216</pose>
+        <geometry>
+          <box>
+            <size>0.352000006289037 0.0170000077505731 0.0170000037700958</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_pad_1">
+        <pose>-0.14708609697613 0.189545817498004 -0.3106300505 0 -0 2.18170638598293</pose>
+        <geometry>
+          <box>
+            <size>0.0481063946043566 0.0209652684669533 0.024739899</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_strut_1">
+        <pose>-0.0990148602676542 0.120894264882249 -0.165304382600415 -1.57079535822449 1.04719718030703 2.18166249279216</pose>
+        <geometry>
+          <box>
+            <size>0.352000006289037 0.0170000077183904 0.0170000037796606</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_pad_2">
+        <pose>0.150295177333163 -0.194134029377429 -0.3106200255 0 -0 2.18137890639759</pose>
+        <geometry>
+          <box>
+            <size>0.0368097126237306 0.0209670172530877 0.024759949</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_strut_2">
+        <pose>0.0990147555305919 -0.120894265528891 -0.1653044435 -1.05641191379033e-07 1.04719754826053 -0.959931089544934</pose>
+        <geometry>
+          <box>
+            <size>0.352000001051855 0.0170000138070685 0.0170000077824494</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_pad_3">
+        <pose>0.150287393292717 0.194122365313657 -0.310619858 0 -0 -0.61076391308758</pose>
+        <geometry>
+          <box>
+            <size>0.0209651583899508 0.0368387936443712 0.024760284</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="landing_strut_3">
+        <pose>0.099014755530592 0.120894265528891 -0.1653044435 1.05641191490055e-07 1.04719754826053 0.959931089544934</pose>
+        <geometry>
+          <box>
+            <size>0.352000001051855 0.0170000138070685 0.0170000077824494</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <sensor name="imu_sensor" type="imu">
+        <always_on>true</always_on>
+        <update_rate>250</update_rate>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.0008726646</stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00637</stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+      <sensor name="air_pressure_sensor" type="air_pressure">
+        <always_on>true</always_on>
+        <update_rate>50</update_rate>
+        <air_pressure>
+          <pressure>
+            <noise type="gaussian">
+              <mean>0</mean>
+              <stddev>3</stddev>
+            </noise>
+          </pressure>
+        </air_pressure>
+      </sensor>
+      <sensor name="magnetometer_sensor" type="magnetometer">
+        <always_on>true</always_on>
+        <update_rate>100</update_rate>
+        <magnetometer>
+          <x>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <stddev>0.0001</stddev>
+            </noise>
+          </z>
+        </magnetometer>
+      </sensor>
+      <sensor name="navsat_sensor" type="navsat">
+        <always_on>true</always_on>
+        <update_rate>30</update_rate>
+      </sensor>
+    </link>
+    <link name="rotor_0">
+      <pose relative_to="base_link">0.130762 -0.165981 0.0374 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.06</mass>
+        <inertia>
+          <ixx>5e-05</ixx>
+          <iyy>5e-05</iyy>
+          <izz>0.0001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="upper_front_right_propeller">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/propeller.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_0_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_0</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_0_joint</jointName>
+      <linkName>rotor_0</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.025</timeConstantUp>
+      <timeConstantDown>0.05</timeConstantDown>
+      <maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>1.2e-05</motorConstant>
+      <momentConstant>0.015</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>0</actuator_number>
+      <rotorDragCoefficient>5e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <link name="rotor_1">
+      <pose relative_to="base_link">-0.130762 0.165981 0.0374 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.06</mass>
+        <inertia>
+          <ixx>5e-05</ixx>
+          <iyy>5e-05</iyy>
+          <izz>0.0001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="upper_rear_left_propeller">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/propeller.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_1_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_1_joint</jointName>
+      <linkName>rotor_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.025</timeConstantUp>
+      <timeConstantDown>0.05</timeConstantDown>
+      <maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>1.2e-05</motorConstant>
+      <momentConstant>0.015</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>1</actuator_number>
+      <rotorDragCoefficient>5e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <link name="rotor_2">
+      <pose relative_to="base_link">0.130762 0.165981 0.0374 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.06</mass>
+        <inertia>
+          <ixx>5e-05</ixx>
+          <iyy>5e-05</iyy>
+          <izz>0.0001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="upper_front_left_propeller">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/propeller.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_2_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_2_joint</jointName>
+      <linkName>rotor_2</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.025</timeConstantUp>
+      <timeConstantDown>0.05</timeConstantDown>
+      <maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>1.2e-05</motorConstant>
+      <momentConstant>0.015</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>2</actuator_number>
+      <rotorDragCoefficient>5e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <link name="rotor_3">
+      <pose relative_to="base_link">-0.130762 -0.165981 0.0374 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.06</mass>
+        <inertia>
+          <ixx>5e-05</ixx>
+          <iyy>5e-05</iyy>
+          <izz>0.0001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="upper_rear_right_propeller">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/propeller.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_3_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_3_joint</jointName>
+      <linkName>rotor_3</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.025</timeConstantUp>
+      <timeConstantDown>0.05</timeConstantDown>
+      <maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>1.2e-05</motorConstant>
+      <momentConstant>0.015</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>3</actuator_number>
+      <rotorDragCoefficient>5e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <link name="rotor_4">
+      <pose relative_to="base_link">0.130626 -0.166042 -0.0224 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.06</mass>
+        <inertia>
+          <ixx>5e-05</ixx>
+          <iyy>5e-05</iyy>
+          <izz>0.0001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="lower_front_right_propeller">
+        <pose>0 0 0 3.14159265358979 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/propeller.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_4_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_4_joint</jointName>
+      <linkName>rotor_4</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.025</timeConstantUp>
+      <timeConstantDown>0.05</timeConstantDown>
+      <maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>1.2e-05</motorConstant>
+      <momentConstant>0.015</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>4</actuator_number>
+      <rotorDragCoefficient>5e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <link name="rotor_5">
+      <pose relative_to="base_link">-0.130626 0.166042 -0.0224 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.06</mass>
+        <inertia>
+          <ixx>5e-05</ixx>
+          <iyy>5e-05</iyy>
+          <izz>0.0001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="lower_rear_left_propeller">
+        <pose>0 0 0 3.14159265358979 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/propeller.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_5_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_5_joint</jointName>
+      <linkName>rotor_5</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.025</timeConstantUp>
+      <timeConstantDown>0.05</timeConstantDown>
+      <maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>1.2e-05</motorConstant>
+      <momentConstant>0.015</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>5</actuator_number>
+      <rotorDragCoefficient>5e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <link name="rotor_6">
+      <pose relative_to="base_link">0.130626 0.166042 -0.0224 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.06</mass>
+        <inertia>
+          <ixx>5e-05</ixx>
+          <iyy>5e-05</iyy>
+          <izz>0.0001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="lower_front_left_propeller">
+        <pose>0 0 0 3.14159265358979 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/propeller.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_6_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_6</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_6_joint</jointName>
+      <linkName>rotor_6</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.025</timeConstantUp>
+      <timeConstantDown>0.05</timeConstantDown>
+      <maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>1.2e-05</motorConstant>
+      <momentConstant>0.015</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>6</actuator_number>
+      <rotorDragCoefficient>5e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <link name="rotor_7">
+      <pose relative_to="base_link">-0.130626 -0.166042 -0.0224 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.06</mass>
+        <inertia>
+          <ixx>5e-05</ixx>
+          <iyy>5e-05</iyy>
+          <izz>0.0001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="lower_rear_right_propeller">
+        <pose>0 0 0 3.14159265358979 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P3/meshes/propeller.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="rotor_7_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_7</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <plugin name="gz::sim::systems::MulticopterMotorModel" filename="gz-sim-multicopter-motor-model-system">
+      <jointName>rotor_7_joint</jointName>
+      <linkName>rotor_7</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.025</timeConstantUp>
+      <timeConstantDown>0.05</timeConstantDown>
+      <maxRotVelocity>1000</maxRotVelocity>
+      <motorConstant>1.2e-05</motorConstant>
+      <momentConstant>0.015</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>7</actuator_number>
+      <rotorDragCoefficient>5e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <motorType>velocity</motorType>
+    </plugin>
+    <include>
+      <uri>model://firefighter_P3_hflow</uri>
+      <name>hflow_sensor</name>
+      <pose relative_to="base_link">0.0678006527281571 -4.74415978753279e-16 -0.0133500000000001 0 1.57079632679489 3.14159265358882</pose>
+    </include>
+    <joint name="hflow_mount" type="fixed">
+      <parent>base_link</parent>
+      <child>hflow_sensor::firefighter_P3_hflow_link</child>
+    </joint>
+    <include>
+      <uri>model://firefighter_P3_rangefinder_200m</uri>
+      <name>rangefinder_200m_sensor</name>
+      <pose relative_to="base_link">0.112800652728157 1.1536601202093e-14 0.035499999999999 0 1.57079632679489 -9.7723218406287e-13</pose>
+    </include>
+    <joint name="rangefinder_200m_mount" type="fixed">
+      <parent>base_link</parent>
+      <child>rangefinder_200m_sensor::firefighter_P3_rangefinder_200m_link</child>
+    </joint>
+    <include>
+      <uri>model://firefighter_P3_n6_camera</uri>
+      <name>n6_sensor</name>
+      <pose relative_to="base_link">-0.0605359043052601 0.0223773996533815 -0.0437999604343591 -1.57079632687983 1.5707956732051 3.14159265350486</pose>
+    </include>
+    <joint name="n6_mount" type="fixed">
+      <parent>base_link</parent>
+      <child>n6_sensor::firefighter_P3_n6_camera_link</child>
+    </joint>
+    <include>
+      <uri>model://firefighter_P3_foxeer_camera</uri>
+      <name>foxeer_sensor</name>
+      <pose relative_to="base_link">0.112300652728158 -4.34916030134529e-14 0.0539999999999999 -1.5707963267949 -1.51645155579853e-16 -9.78148118058186e-13</pose>
+    </include>
+    <joint name="foxeer_mount" type="fixed">
+      <parent>base_link</parent>
+      <child>foxeer_sensor::firefighter_P3_foxeer_camera_link</child>
+    </joint>
+    <include>
+      <uri>model://bfs_pge_50s5c_camera</uri>
+      <name>blackfly_sensor</name>
+      <pose relative_to="base_link">-0.00938030986729509 -0.0551000000000644 -0.046533903916932 0 1.5707963267949 -0</pose>
+    </include>
+    <joint name="blackfly_mount" type="fixed">
+      <parent>base_link</parent>
+      <child>blackfly_sensor::bfs_pge_50s5c_camera_link</child>
+    </joint>
+    <include>
+      <uri>model://livox_avia</uri>
+      <name>livox_avia_sensor</name>
+      <pose relative_to="base_link">0.0214754380736991 0.000274955521872378 -0.0993762691169301 1.55450447797799 1.39381766564793 -0.00377301957203143</pose>
+    </include>
+    <joint name="livox_avia_mount" type="fixed">
+      <parent>base_link</parent>
+      <child>livox_avia_sensor::livox_avia_link</child>
+    </joint>
+    <plugin filename="gz-sim-odometry-publisher-system" name="gz::sim::systems::OdometryPublisher">
+      <odom_frame>firefighter_P3/odom</odom_frame>
+      <robot_base_frame>firefighter_P3/base_link</robot_base_frame>
+      <dimensions>3</dimensions>
+      <odom_publish_frequency>50</odom_publish_frequency>
+      <odom_topic>/firefighter_P3/ground_truth/odometry</odom_topic>
+      <tf_topic>/firefighter_P3/ground_truth/tf</tf_topic>
+    </plugin>
+  </model>
+</sdf>
