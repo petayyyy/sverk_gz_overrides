@@ -371,10 +371,14 @@
                This mask hides every visual of the model from THIS sensor only;
                the GUI still renders the drone normally. -->
           <visibility_mask>0x0000FFFF</visibility_mask>
-          <horizontal_fov>1.361</horizontal_fov>
+          <!-- 80.19 deg: same angular field as the MARS-LVIG reference camera.
+               With 1224x1024 this gives fx=fy=726.90 px/rad and a 70.32 deg
+               vertical field, i.e. exactly half of AMvalley 2448x2048/1453.88
+               on every side, so camera.scale 0.5 reproduces that dataset. -->
+          <horizontal_fov>1.399579527</horizontal_fov>
           <image>
-            <width>1280</width>
-            <height>720</height>
+            <width>1224</width>
+            <height>1024</height>
           </image>
           <clip>
             <near>0.050000000000000003</near>
