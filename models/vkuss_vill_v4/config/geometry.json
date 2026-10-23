@@ -1,0 +1,501 @@
+{
+  "status": "Measured П-4 placements (21.10 Inventor STEP + rig_mv133 calibration); physics provisional",
+  "model_axes": "P4 Inventor/Fusion model: +Xm left, +Ym up, +Zm forward, millimetres",
+  "model_to_flu": "x_FLU = Zm, y_FLU = Xm, z_FLU = Ym (proper rotation, det +1)",
+  "base_link": "FLU at the geometric centre of the \"Cube контроллер\" box = PX4 imu_sensor position (SITL board rotation 0)",
+  "cube_centre_model_mm": [
+    -20.0,
+    47.0,
+    -102.75
+  ],
+  "cube_centre_candidates_model_mm": {
+    "fusion_2210": {
+      "value": [
+        -20.0,
+        47.0,
+        -102.75
+      ],
+      "source": "Пожарник П-4.zip work/frame.json, box Xm -39.25..-0.75, Ym 38..56, Zm -122..-83.5"
+    },
+    "step_1710_coordinator": {
+      "value": [
+        -22.5,
+        47.0,
+        -97.75
+      ],
+      "source": "sverk-ros2 fireman frames/vkuss_vill_v4.yaml (OpenCascade, STEP 17.10)",
+      "note": "NOT used: no Cube face lies there in the 21.10 STEP; board frame vkuss_vill_v4.yaml still uses it (FLU +5.0/-2.5/0 mm shift)"
+    },
+    "step_2110_inventor": {
+      "value": [
+        -20.0,
+        47.0,
+        -102.75
+      ],
+      "source": "21.10 STEP: Cube faces Xm -39.25/-0.75, Zm -122/-83.5, Ym 38..56 (18 mm convention)"
+    }
+  },
+  "avia": {
+    "window_centroid_model_mm": [
+      0.0,
+      -140.0,
+      -5.0
+    ],
+    "window_normal_model": [
+      0.0,
+      -0.984807753012208,
+      0.17364817766693
+    ],
+    "window_normal_note": "CAD face normal (0,-0.98481,0.17365) = exactly 10 deg toward the nose",
+    "native_y_hint_model": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "origin_offset_native_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "origin_note": "Point-cloud origin taken at the window centroid (same convention as vkuss_vill_v4.yaml). model://livox_avia mesh registration puts its origin 4.32 mm behind the window (native [-4.32,-1.67,-0.30] in its own mesh axes); set origin_offset_native_mm=[-4.32,0,0] to follow it on-axis.",
+    "orientation_note": "Native Y = body left (61.2 mm housing width lies along body Y in the P4 CAD), Z toward the nose, matching the real-flight /livox/imu check. Do NOT reuse the housing-registration roll of firefighter_P3 / porter_D2: model://livox_avia mesh is rolled 90 deg about its optical axis."
+  },
+  "camera": {
+    "pose_source": "calibration",
+    "rig": {
+      "source": "livox-odometry a97d876 fast_livo/config/rig_mv133.yaml (2026-10-20)",
+      "convention": "p_cam_optical = Rcl * p_lidar + Pcl (FAST-LIVO2 vio.cpp); lidar = Avia point-cloud frame",
+      "Rcl": [
+        -0.000515,
+        -0.999917,
+        0.012897,
+        0.011657,
+        -0.012902,
+        -0.999849,
+        0.999932,
+        -0.000364,
+        0.011663
+      ],
+      "Pcl": [
+        -0.0667,
+        0.0202,
+        0.0071
+      ],
+      "extrinsic_T": [
+        0.04165,
+        0.02326,
+        -0.0284
+      ]
+    },
+    "cad_lens_front_disc_model_mm": [
+      -59.6,
+      -135.982,
+      18.763
+    ],
+    "cad_optical_centre_depth_mm": 7.5,
+    "note": "pose_source=calibration: optical frame = lidar o (Rcl^T, -Rcl^T Pcl); pose_source=cad: lens disc + 7.5 mm along the Avia axis, image x = body right"
+  },
+  "motors_model_mm": {
+    "FLU": [
+      165.981,
+      46.3375,
+      130.762
+    ],
+    "FLL": [
+      166.041,
+      -21.3375,
+      130.627
+    ],
+    "RLL": [
+      166.042,
+      -21.3375,
+      -130.626
+    ],
+    "RLU": [
+      165.981,
+      46.3375,
+      -130.762
+    ],
+    "RRU": [
+      -165.981,
+      46.3375,
+      -130.762
+    ],
+    "RRL": [
+      -166.041,
+      -21.3375,
+      -130.628
+    ],
+    "FRL": [
+      -166.042,
+      -21.3375,
+      130.626
+    ],
+    "FRU": [
+      -165.981,
+      46.3375,
+      130.762
+    ]
+  },
+  "motor_point_definition": "rotation axis at mid-height of the propeller hub cylinder (d 12.376 mm, h 7.875 mm)",
+  "lowest_point_model_ym_mm": -308.462,
+  "collision_boxes_frame": "P4 model origin, FLU (x=Zm, y=Xm, z=Ym), metres/radians; generator subtracts the Cube centre",
+  "collision_boxes": [
+    {
+      "name": "central_body",
+      "center_m": [
+        -0.01,
+        0.0,
+        0.003759500000000003
+      ],
+      "size_m": [
+        0.29,
+        0.162,
+        0.148481
+      ],
+      "rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "source": "bbox of central carbon/shell bodies 17,18,23,24,30,31,32,37,38,44,63,64 + Cube"
+    },
+    {
+      "name": "arm_FL",
+      "center_m": [
+        0.08886096312933682,
+        0.09967944777282738,
+        0.0125
+      ],
+      "size_m": [
+        0.1846791727216239,
+        0.05406241751659246,
+        0.015
+      ],
+      "rpy_rad": [
+        0,
+        0,
+        0.9035307452126699
+      ],
+      "source": "carbon Body1+Body2 projected on centre->motor FLU"
+    },
+    {
+      "name": "arm_RL",
+      "center_m": [
+        -0.08886096312933682,
+        0.09967944777282738,
+        0.0125
+      ],
+      "size_m": [
+        0.1846791727216239,
+        0.05406241751659246,
+        0.015
+      ],
+      "rpy_rad": [
+        0,
+        0,
+        2.2380619083771234
+      ],
+      "source": "carbon Body5+Body6 projected on centre->motor RLU"
+    },
+    {
+      "name": "arm_RR",
+      "center_m": [
+        -0.08886096312933682,
+        -0.09967944777282738,
+        0.0125
+      ],
+      "size_m": [
+        0.1846791727216239,
+        0.05406241751659246,
+        0.015
+      ],
+      "rpy_rad": [
+        0,
+        0,
+        -2.2380619083771234
+      ],
+      "source": "carbon Body9+Body10 projected on centre->motor RRU"
+    },
+    {
+      "name": "arm_FR",
+      "center_m": [
+        0.08886096312933682,
+        -0.09967944777282738,
+        0.0125
+      ],
+      "size_m": [
+        0.1846791727216239,
+        0.05406241751659246,
+        0.015
+      ],
+      "rpy_rad": [
+        0,
+        0,
+        -0.9035307452126699
+      ],
+      "source": "carbon Body13+Body14 projected on centre->motor FRU"
+    },
+    {
+      "name": "leg_19",
+      "center_m": [
+        -0.11920580520243444,
+        -0.11920580520243444,
+        -0.1558086102610531
+      ],
+      "size_m": [
+        0.35000070290490043,
+        0.015,
+        0.015
+      ],
+      "rpy_rad": [
+        0,
+        0.9599313422191277,
+        -2.356194490192345
+      ],
+      "source": "carbon Body19 15x15 tube, PCA axis"
+    },
+    {
+      "name": "foot_26",
+      "center_m": [
+        -0.1905545,
+        -0.1905545,
+        -0.292966
+      ],
+      "size_m": [
+        0.040423,
+        0.040423,
+        0.03099199999999996
+      ],
+      "rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "source": "bbox carbon Body26; lowest P4 point Ym -308.462 mm"
+    },
+    {
+      "name": "leg_20",
+      "center_m": [
+        0.11920580520243444,
+        -0.11920580520243444,
+        -0.1558086102610531
+      ],
+      "size_m": [
+        0.35000070290490043,
+        0.015,
+        0.015
+      ],
+      "rpy_rad": [
+        0,
+        0.9599313422191276,
+        -0.7853981633974481
+      ],
+      "source": "carbon Body20 15x15 tube, PCA axis"
+    },
+    {
+      "name": "foot_27",
+      "center_m": [
+        0.1905545,
+        -0.1905545,
+        -0.292966
+      ],
+      "size_m": [
+        0.040423,
+        0.040423,
+        0.03099199999999996
+      ],
+      "rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "source": "bbox carbon Body27; lowest P4 point Ym -308.462 mm"
+    },
+    {
+      "name": "leg_21",
+      "center_m": [
+        0.11920580520243444,
+        0.11920580520243444,
+        -0.1558086102610531
+      ],
+      "size_m": [
+        0.35000070290490043,
+        0.015,
+        0.015
+      ],
+      "rpy_rad": [
+        0,
+        0.9599313422191277,
+        0.7853981633974483
+      ],
+      "source": "carbon Body21 15x15 tube, PCA axis"
+    },
+    {
+      "name": "foot_28",
+      "center_m": [
+        0.1905545,
+        0.1905545,
+        -0.292966
+      ],
+      "size_m": [
+        0.040423,
+        0.040423,
+        0.03099199999999996
+      ],
+      "rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "source": "bbox carbon Body28; lowest P4 point Ym -308.462 mm"
+    },
+    {
+      "name": "leg_22",
+      "center_m": [
+        -0.11920580520243444,
+        0.11920580520243444,
+        -0.1558086102610531
+      ],
+      "size_m": [
+        0.35000070290490043,
+        0.015,
+        0.015
+      ],
+      "rpy_rad": [
+        0,
+        0.9599313422191276,
+        2.3561944901923453
+      ],
+      "source": "carbon Body22 15x15 tube, PCA axis"
+    },
+    {
+      "name": "foot_29",
+      "center_m": [
+        -0.1905545,
+        0.1905545,
+        -0.292966
+      ],
+      "size_m": [
+        0.040423,
+        0.040423,
+        0.03099199999999996
+      ],
+      "rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "source": "bbox carbon Body29; lowest P4 point Ym -308.462 mm"
+    }
+  ],
+  "camera_spec": {
+    "path": "sverk-ros2 scripts/sitl/cameras/mv_sua133gc_6mm.yaml @ 14e21a0b",
+    "sha256": "a0ead87b04bc06eb0fe8875c966c02d6c49fa00cefe9e642fa8828aa8ada9425",
+    "schema": "sverk_sim_camera/v1",
+    "id": "mv_sua133gc_6mm",
+    "label": "MindVision MV-SUA133GC + 6 мм",
+    "sensor": "MindVision MV-SUA133GC-T1V-C, 1/2.7\", 1280×1024, пиксель 4.0 мкм, глобальный затвор, Bayer BGGR 8 бит",
+    "lens": "C-mount 6 мм, f/2.8, фокус ~7 м (интринсики номинальные, без калибровки)",
+    "camera": {
+      "width": 1280,
+      "height": 1024,
+      "fx": 1500.0,
+      "fy": 1500.0,
+      "cx": 639.5,
+      "cy": 511.5
+    },
+    "rate_hz_spec": 10.0,
+    "note": "Spec file (generic rig, ESP32 10 Hz default) kept for label/sensor/lens; intrinsics and rate below are the П-4 choices."
+  },
+  "source_step": {
+    "file": "П-4.stp (Autodesk Inventor 2027, 2026-10-21T10:15+03:00, AP214)",
+    "sha256_prefix": "fc0156fe",
+    "note": "Cube, Avia window, lens disc and hub points parsed twice independently (p4_tf, step_indep) and equal to Fusion 22.10 to 1e-4 mm"
+  },
+  "hflow": {
+    "step_product": "H-FLOW",
+    "step_path": "П-4/H-FLOW:1",
+    "part_to_model_mm": [
+      [
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        -64.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -74.2
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "part_to_model_note": "STEP 21.10 NAUO H-FLOW:1, T(root<-part)=A(item2)*A(item1)^-1 (p4_tf/asm.json); model axes",
+    "cad_to_mesh": {
+      "rotation": [
+        [
+          -0.0,
+          -0.0,
+          -1.0
+        ],
+        [
+          -1.0,
+          -0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_mm": 4.175523532721105e-07,
+      "p95_mm": 0.7532829232636544,
+      "matched_fraction": 0.9308797127468582
+    },
+    "cad_to_mesh_note": "Same STEP product H-FLOW as П-3; registration of the part to model://porter_D2_hflow mesh copied from firefighter_P3/config/mounting_poses.json. Check on П-4: mesh vertices placed by this pose lie on the 21.10 CAD H-FLOW vertices with median 0.098 mm / p95 1.7 mm (5716 mesh vertices), and the CAD author's ray marker (Body33) starts at the derived sensing point (31.72, 28.70, -119.87) mm FLU from the Cube to 0.01 mm.",
+    "mesh_model": "porter_D2_hflow"
+  },
+  "camera_intrinsics": {
+    "source": "livox-odometry 364a8f9 fast_livo/config/camera_mv133.yaml (calibrated 2026-10-12, RMS 0.491 px, unchanged at a97d876)",
+    "convention": "OpenCV pixel centres; SDF <lens><intrinsics> cx/cy = these + 0.5 px; distortion not rendered (d0..d3 = 0 in SITL)",
+    "width": 1280,
+    "height": 1024,
+    "fx": 1528.480242,
+    "fy": 1528.218868,
+    "cx": 638.7788783,
+    "cy": 511.2066348,
+    "real_distortion_plumb_bob": [
+      -0.004497302907,
+      0.01063240854,
+      -0.003275024126,
+      -0.002263143735
+    ]
+  },
+  "camera_rate": {
+    "rate_hz": 20.0,
+    "source": "vkuss_vill_v4 board: ESP mars_sync trigger MARS_CAM_HZ = 20 (image_builder/types.yaml frame_vkuss_vill_v4 FAST_LIVO_MV_FPS \"20\", frames/vkuss_vill_v4.yaml header); spec default 10 Hz is the generic rig value"
+  },
+  "ground_clearance_note": "lowest foot collision bottom = Ym -308.462 mm -> 0.355462 m below base_link; spawn z 0.372",
+  "visual_reuse": {
+    "rotor_meshes": "model://firefighter_P3/meshes/{motor,propeller}.obj at the П-4 hub points",
+    "body": "box visuals = collision_boxes (P3 body.obj not used: at the П-4 model origin it blocks ~29 % of the H-Flow view and is not П-4 geometry)"
+  }
+}

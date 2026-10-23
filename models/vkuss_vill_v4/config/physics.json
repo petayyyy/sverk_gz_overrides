@@ -1,0 +1,63 @@
+{
+  "total_mass_kg": 3.0,
+  "base_equivalent_box_m": [
+    0.32,
+    0.24,
+    0.14
+  ],
+  "rotor_mass_kg": 0.06,
+  "rotor_inertia_kg_m2": [
+    5e-05,
+    5e-05,
+    0.0001
+  ],
+  "max_omega_rad_s": 1000,
+  "idle_omega_rad_s": 30,
+  "max_thrust_per_rotor_n": 12,
+  "moment_constant_m": 0.015,
+  "time_constant_up_s": 0.025,
+  "time_constant_down_s": 0.05,
+  "rotor_drag_coefficient": 5e-05,
+  "rolling_moment_coefficient": 1e-06,
+  "rotor_velocity_slowdown_sim": 10,
+  "motor_order": [
+    "upper_front_right",
+    "upper_rear_left",
+    "upper_front_left",
+    "upper_rear_right",
+    "lower_front_right",
+    "lower_rear_left",
+    "lower_front_left",
+    "lower_rear_right"
+  ],
+  "turning_directions": [
+    "ccw",
+    "ccw",
+    "cw",
+    "cw",
+    "cw",
+    "cw",
+    "ccw",
+    "ccw"
+  ],
+  "status": "PROVISIONAL: P3 propulsion/mass profile reused; weigh П-4 and replace total_mass_kg / target CoM.",
+  "motor_ids": {
+    "upper_front_right": "FRU",
+    "upper_rear_left": "RLU",
+    "upper_front_left": "FLU",
+    "upper_rear_right": "RRU",
+    "lower_front_right": "FRL",
+    "lower_rear_left": "RLL",
+    "lower_front_left": "FLL",
+    "lower_rear_right": "RRL"
+  },
+  "target_total_com_model_mm": null,
+  "target_total_com_note": "null -> thrust centroid of the 8 hub points (model mm); base_link CoM is solved so the aggregate CoM lands there",
+  "payload_masses_kg": {
+    "mv133": 0.1
+  },
+  "caveats": [
+    "Mass, inertia, propulsion and spin directions are provisional (P3 values); CAD has no CW/CCW.",
+    "Coaxial interference not simulated."
+  ]
+}

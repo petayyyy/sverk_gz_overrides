@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="vkuss_vill_v4_mv133_camera">
+    <static>false</static>
+    <self_collide>false</self_collide>
+    <!-- MindVision MV-SUA133GC + 6 мм; model origin = optical centre, +X optical axis, +Y image-left, +Z image-up. Intrinsics: livox-odometry 364a8f9 fast_livo/config/camera_mv133.yaml (calibrated 2026-10-12, RMS 0.491 px, unchanged at a97d876); SDF cx/cy = OpenCV + 0.5 px (gz pixel-edge convention), distortion not rendered. Rate 20 Hz: vkuss_vill_v4 board: ESP mars_sync trigger MARS_CAM_HZ = 20 (image_builder/types.yaml frame_vkuss_vill_v4 FAST_LIVO_MV_FPS "20", frames/vkuss_vill_v4.yaml header); spec default 10 Hz is the generic rig value. -->
+    <link name="vkuss_vill_v4_mv133_camera_link">
+      <inertial>
+        <pose>-0.03 0 0 0 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>1.5e-05</ixx>
+          <iyy>3.75e-05</iyy>
+          <izz>3.75e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <sensor name="imager" type="camera">
+        <pose relative_to="vkuss_vill_v4_mv133_camera_sensing">0 0 0 0 0 0</pose>
+        <topic>/vkuss_vill_v4/mv133/image</topic>
+        <always_on>false</always_on>
+        <update_rate>20</update_rate>
+        <visualize>false</visualize>
+        <camera>
+          <horizontal_fov>0.793073017010</horizontal_fov>
+          <lens>
+            <intrinsics>
+              <fx>1528.4802420</fx>
+              <fy>1528.2188680</fy>
+              <cx>639.2788783</cx>
+              <cy>511.7066348</cy>
+              <s>0</s>
+            </intrinsics>
+          </lens>
+          <image>
+            <width>1280</width>
+            <height>1024</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.05</near>
+            <far>300</far>
+          </clip>
+          <optical_frame_id>vkuss_vill_v4_mv133_camera_optical</optical_frame_id>
+          <camera_info_topic>/vkuss_vill_v4/mv133/camera_info</camera_info_topic>
+        </camera>
+      </sensor>
+    </link>
+    <frame name="vkuss_vill_v4_mv133_camera_sensing" attached_to="vkuss_vill_v4_mv133_camera_link">
+      <pose relative_to="vkuss_vill_v4_mv133_camera_link">0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="vkuss_vill_v4_mv133_camera_optical" attached_to="vkuss_vill_v4_mv133_camera_sensing">
+      <pose relative_to="vkuss_vill_v4_mv133_camera_sensing">0 0 0 -1.5707963267948966 0 -1.5707963267948966</pose>
+    </frame>
+  </model>
+</sdf>

@@ -1,0 +1,47 @@
+{
+  "FAST_LIVO_MOUNT_XYZ": [
+    0.118486,
+    -0.00326,
+    -0.141051
+  ],
+  "FAST_LIVO_MOUNT_RPY": [
+    0.0,
+    1.3962634,
+    0.0
+  ],
+  "lidar_tf_xyz_rpy": [
+    0.09775,
+    0.02,
+    -0.187,
+    0.0,
+    1.3962634,
+    0.0
+  ],
+  "camera_optical_tf_xyz_rpy": [
+    0.117126,
+    -0.046431,
+    -0.1761,
+    -2.9554163,
+    -0.0027464,
+    -1.5581843
+  ],
+  "ekf2_imu_pos_frd": [
+    -0.10275,
+    0.02,
+    -0.0345
+  ],
+  "hflow": {
+    "xyz_flu": [
+      0.031715,
+      0.0287,
+      -0.119868
+    ],
+    "rpy_flu": [
+      0.0,
+      1.570796327,
+      0.0
+    ],
+    "ground_clearance_m": 0.355462,
+    "note": "H-Flow flow/ToF optical centre in base_link FLU (calibration.json[\"hflow\"] schema of full_system_sitl); ground_clearance_m = base_link height over flat ground at rest (lowest foot collision)."
+  }
+}

@@ -40,6 +40,7 @@ sverk_gz_overrides/
     ├── porter/                       # P-2.2 / Porter X8 with source mass and inertia
     ├── porter_D2/                    # Porter D2 X8 with five payload sensors
     ├── firefighter_P3/               # Firefighter P3 X8 with six payload sensors
+    ├── vkuss_vill_v4/                # П-4 X8: base_link = Cube FC, Avia, MV-SUA133GC, H-Flow
     ├── x500_obrik_graffiti_base/    # legacy graffiti body and mechanism
     ├── x500_obrik_graffiti_old/     # legacy gear-and-lever graffiti configuration
     ├── x500_obrik_graffiti_cam_base/ # current graffiti body with standard Obrik rotors
@@ -81,6 +82,8 @@ sverk_gz_overrides/
 | `firefighter_P3` | `livox_avia`, `bfs_pge_50s5c_camera`, `firefighter_P3_hflow`, `firefighter_P3_rangefinder_200m`, `firefighter_P3_n6_camera`, `firefighter_P3_foxeer_camera`; VMG mesh from `x500_obrik_firefighter_base` |
 | `firefighter_P3_hflow`, `firefighter_P3_rangefinder_200m`, `firefighter_P3_n6_camera` | Meshes from the corresponding `porter_D2_*` models |
 | `firefighter_P3_foxeer_camera` | `foxeer_t_rex_mini_camera` mesh |
+| `vkuss_vill_v4` | `livox_avia`, `vkuss_vill_v4_mv133_camera`, `vkuss_vill_v4_hflow`; rotor meshes from `firefighter_P3` |
+| `vkuss_vill_v4_hflow` | Mesh from `porter_D2_hflow` |
 | `x500_obrik_gigaobrik_lidar` | `x500_obrik_gigaobrik_lidar_base`, `mtf01`, `brio_95_camera` (downward), `unitree_l2` |
 | `x500_obrik_gigaobrik_lidar_base` | original Gigaobrik VMG meshes; the supplied clean body mesh; the same X500 collision and motor model |
 | `x500_obrik_graffiti` | `x500_obrik_graffiti_cam_base`, `rpi_camera` |
@@ -217,7 +220,14 @@ regeneration commands:
 
 - [Porter D2](models/porter_D2/README.txt)
 - [Firefighter P3](models/firefighter_P3/README.txt)
+- [vkuss_vill_v4 / П-4](models/vkuss_vill_v4/README.txt)
 - [Blackfly S camera](models/bfs_pge_50s5c_camera/README.txt)
+
+`vkuss_vill_v4` (П-4, `scripts/generate_vkuss_vill_v4.py`) puts `base_link` at the
+Cube flight controller, the datum of the real drone's `base_link`, so the PX4
+IMU sits at its origin and the Avia, MindVision MV-SUA133GC (calibrated
+intrinsics, 20 Hz) and H-Flow poses come from the 21.10 STEP and the
+`rig_mv133.yaml` Rcl/Pcl; `tests/test_vkuss_vill_v4.py` pins them.
 
 The P3 Foxeer FPV image bridge is off by default. Use an existing world such
 as `obrik_aruco`; the shared sverk-ros2 launch spawns the selected vehicle.

@@ -1,0 +1,175 @@
+{
+  "target": "Gazebo Harmonic / SDFormat 1.9 / ROS 2 Humble or Jazzy",
+  "topic_prefix": "/vkuss_vill_v4",
+  "sensor_axes": "+X sensing, +Y left, +Z up",
+  "body_frame": "vkuss_vill_v4/base_link",
+  "base_link": "FLU at the geometric centre of the \"Cube контроллер\" box = PX4 imu_sensor position (SITL board rotation 0)",
+  "payload_physics": "П-4 provisional payload masses; see models/vkuss_vill_v4/config/physics.json",
+  "noise_status": "H-Flow noise values are synthetic simulation defaults copied from porter_D2_hflow.",
+  "sensors": [
+    {
+      "name": "vkuss_vill_v4_hflow",
+      "kind": "optical_flow",
+      "topic": "hflow",
+      "mesh_source": "Доставщик 09.10_Датчик оптического потока H-FLOW v2.obj",
+      "origin_mm": [
+        8.518,
+        8.7,
+        3.165
+      ],
+      "origin_status": "Measured sensing-surface offset from the mesh origin.",
+      "hardware_assumption": "Holybro H-Flow; confirm exact installed hardware.",
+      "sources": [
+        "https://docs.holybro.com/peripherals/h-flow-dronecan/overview",
+        "https://docs.holybro.com/peripherals/h-flow-dronecan/setup-guide"
+      ],
+      "camera": {
+        "width": 128,
+        "height": 128,
+        "fps": 100,
+        "horizontal_fov_deg": 42.0,
+        "format": "L_INT8",
+        "clip_near_m": 0.02,
+        "clip_far_m": 35,
+        "image_noise_stddev": 0.004
+      },
+      "range": {
+        "origin_mm": [
+          8.518,
+          8.7,
+          3.165
+        ],
+        "min_m": 0.08,
+        "max_m": 30.0,
+        "fps": 50,
+        "horizontal_samples": 8,
+        "vertical_samples": 4,
+        "horizontal_fov_deg": 12.4,
+        "vertical_fov_deg": 6.2,
+        "noise_stddev_m": 0.02
+      },
+      "imu": {
+        "origin_mm": [
+          0,
+          0,
+          0
+        ],
+        "fps": 200,
+        "gyro_noise_stddev_rad_s": 0.002,
+        "gyro_bias_stddev_rad_s": 0.0002,
+        "accel_noise_stddev_m_s2": 0.02,
+        "accel_bias_stddev_m_s2": 0.01
+      },
+      "flow": {
+        "max_rate_rad_s": 7.4,
+        "min_distance_m": 0.08,
+        "max_distance_m": 30.0,
+        "white_noise_rate_rad_s": 0.002,
+        "bias_rate_stddev_rad_s": 0.0005,
+        "range_max_age_s": 0.15,
+        "max_image_gap_s": 0.1,
+        "seed": 1310
+      },
+      "verified_parameters": [
+        "Flow effective FoV up to 42 degrees",
+        "Flow working distance 0.08-30 m",
+        "Flow maximum 7.4 rad/s",
+        "ToF FoV 12.4 x 6.2 degrees / 32 pixels / typical maximum 30 m",
+        "Onboard 6-axis IMU"
+      ],
+      "provisional_parameters": [
+        "Debug image resolution/rate (not a real H-Flow video output)",
+        "ToF/IMU output rates",
+        "8x4 ray grid and median reduction approximate the Broadcom return processing",
+        "ToF is temporarily co-located with the measured flow origin; measure its separate optical centre",
+        "IMU datum temporarily equals the mesh origin",
+        "42-degree effective view modelled as square pinhole HFoV",
+        "Noise/latency and IR illumination response are not calibrated"
+      ]
+    },
+    {
+      "name": "vkuss_vill_v4_mv133_camera",
+      "kind": "camera",
+      "topic": "mv133",
+      "origin_mm": [
+        0,
+        0,
+        0
+      ],
+      "camera": {
+        "width": 1280,
+        "height": 1024,
+        "fps": 20.0,
+        "horizontal_fov_deg": 45.439736720391416,
+        "fx": 1528.480242,
+        "fy": 1528.218868,
+        "cx": 638.7788783,
+        "cy": 511.2066348
+      },
+      "intrinsics_source": "livox-odometry 364a8f9 fast_livo/config/camera_mv133.yaml (calibrated 2026-10-12, RMS 0.491 px, unchanged at a97d876)",
+      "hardware_assumption": "MindVision MV-SUA133GC + 6 мм"
+    }
+  ],
+  "mount_transforms": [
+    {
+      "parent": "vkuss_vill_v4/base_link",
+      "child": "vkuss_vill_v4_hflow_origin",
+      "xyz_mm": [
+        28.549999999999997,
+        20.0,
+        -111.35
+      ],
+      "quaternion_xyzw": [
+        -0.0,
+        0.7071067811865475,
+        -0.0,
+        0.7071067811865475
+      ]
+    },
+    {
+      "parent": "vkuss_vill_v4/base_link",
+      "child": "vkuss_vill_v4_mv133_camera_origin",
+      "xyz_mm": [
+        117.12604834007503,
+        -46.43123569738568,
+        -176.10047365976533
+      ],
+      "quaternion_xyzw": [
+        -0.005082239595470299,
+        0.6382970901606381,
+        0.003977630865437551,
+        0.769763063536992
+      ]
+    },
+    {
+      "parent": "vkuss_vill_v4/base_link",
+      "child": "vkuss_vill_v4_avia",
+      "xyz_mm": [
+        97.75,
+        20.0,
+        -187.0
+      ],
+      "quaternion_xyzw": [
+        -0.0,
+        0.6427876096865394,
+        -0.0,
+        0.7660444431189779
+      ]
+    },
+    {
+      "parent": "vkuss_vill_v4_avia",
+      "child": "vkuss_vill_v4_avia_imu",
+      "xyz_mm": [
+        -41.65,
+        -23.259999999999998,
+        28.400000000000002
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  ]
+}
