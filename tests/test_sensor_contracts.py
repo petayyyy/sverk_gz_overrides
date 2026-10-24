@@ -31,3 +31,20 @@ def test_calibrated_camera_is_separate_and_uses_edge_centres():
     assert float(cam.findtext('lens/intrinsics/cy'))-.5 == 518.5569
     assert abs(float(cam.findtext('horizontal_fov'))-2*math.atan(612/871.6628))<1e-11
     assert ET.parse(ROOT/'models/bfs_pge_50s5c_camera/model.sdf').find('.//lens') is None
+
+# ros_gz_bridge 1.0.24 (Jazzy) knows only these names; any other (e.g. "DEFAULT") makes BridgeConfig log
+# "Could not parse entry: Invalid QoS profile" and silently drop the whole entry — the Avia cloud never reached ROS.
+ROS_GZ_BRIDGE_QOS={'SYSTEM_DEFAULT','SENSOR_DATA','BEST_AVAILABLE','CLOCK','PARAMETERS','PARAMETER_EVENTS','ROSOUT','SERVICES'}
+
+def test_bridge_qos_profiles_are_valid_and_avia_cloud_reliable():
+    import yaml
+    paths=sorted((ROOT/'ros_nodes/porter_sensor_adapters/config').glob('*bridge*.yaml'))
+    assert paths
+    for path in paths:
+        for entry in yaml.safe_load(path.read_text()):
+            assert entry.get('qos_profile','SYSTEM_DEFAULT') in ROS_GZ_BRIDGE_QOS, (path.name, entry['ros_topic_name'])
+            if entry['ros_topic_name'].endswith('/avia/raw_points'):
+                # livox_avia_cloud_adapter subscribes with depth 2 (RELIABLE): a BEST_EFFORT publisher never matches
+                assert entry['qos_profile']=='SYSTEM_DEFAULT', path.name
+    for gen in (ROOT/'scripts').glob('generate_*.py'):
+        assert "qos_profile='DEFAULT'" not in gen.read_text(), gen.name

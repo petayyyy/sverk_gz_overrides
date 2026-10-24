@@ -209,7 +209,7 @@ def bridges(sensors):
                          ('/avia/raw_imu','/livox_avia/imu','sensor_msgs/msg/Imu','gz.msgs.IMU'),
                          ('/ground_truth/odometry','/'+NAME+'/ground_truth/odometry','nav_msgs/msg/Odometry','gz.msgs.Odometry')]:
         entries.append(dict(ros_topic_name='/'+NAME+ros,gz_topic_name=gz,ros_type_name=rt,gz_type_name=gt,
-                            direction='GZ_TO_ROS',qos_profile='DEFAULT' if 'raw_points' in ros else 'SENSOR_DATA'))
+                            direction='GZ_TO_ROS',qos_profile='SYSTEM_DEFAULT' if 'raw_points' in ros else 'SENSOR_DATA'))
     bridge_file(ROS/(NAME+'_bridge.yaml'),entries)
     bridge_file(ROS/(NAME+'_bridge_no_clock.yaml'),[e for e in entries if e['ros_topic_name']!='/clock'])
 

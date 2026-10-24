@@ -245,7 +245,7 @@ def generate_ros(sensors, mounts, physics):
                          ('/porter_D2/avia/raw_imu','/livox_avia/imu','sensor_msgs/msg/Imu','gz.msgs.IMU'),
                          ('/porter_D2/ground_truth/odometry','/porter_D2/ground_truth/odometry','nav_msgs/msg/Odometry','gz.msgs.Odometry')]:
         # The existing Avia adapter subscribes with reliable QoS (depth 2).
-        entries.append(dict(ros_topic_name=ros,gz_topic_name=gz,ros_type_name=rt,gz_type_name=gt,direction='GZ_TO_ROS',qos_profile='DEFAULT' if 'raw_points' in ros else 'SENSOR_DATA'))
+        entries.append(dict(ros_topic_name=ros,gz_topic_name=gz,ros_type_name=rt,gz_type_name=gt,direction='GZ_TO_ROS',qos_profile='SYSTEM_DEFAULT' if 'raw_points' in ros else 'SENSOR_DATA'))
     lines = []
     for entry in entries:
         for index,(key,val) in enumerate(entry.items()):

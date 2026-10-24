@@ -27,7 +27,7 @@
    ros_type_name: "sensor_msgs/msg/PointCloud2"
    gz_type_name: "gz.msgs.PointCloudPacked"
    direction: "GZ_TO_ROS"
-   qos_profile: "DEFAULT"
+   qos_profile: "SYSTEM_DEFAULT"
  - ros_topic_name: "/vkuss_vill_v4/avia/raw_imu"
    gz_topic_name: "/livox_avia/imu"
    ros_type_name: "sensor_msgs/msg/Imu"
