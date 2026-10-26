@@ -13,7 +13,7 @@ setup(
     ],
     install_requires=['setuptools'], zip_safe=True,
     maintainer='sverk', maintainer_email='petayyyy@gmail.com',
-    description='Image-based H-Flow, range and mounting TF for Porter D2 and Firefighter P3.', license='Apache-2.0',
+    description='Image-based H-Flow, range and mounting TF for Porter D2 and Firefighter P3/P4.', license='Apache-2.0',
     entry_points={'console_scripts': [
         'hflow_adapter = porter_sensor_adapters.nodes:hflow_main',
         'range_adapters = porter_sensor_adapters.nodes:range_main',

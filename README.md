@@ -41,6 +41,7 @@ sverk_gz_overrides/
     ├── porter_D2/                    # Porter D2 X8 with five payload sensors
     ├── firefighter_P3/               # Firefighter P3 X8 with six payload sensors
     ├── vkuss_vill_v4/                # П-4 X8: base_link = Cube FC, Avia, MV-SUA133GC, H-Flow
+    ├── firefighter_P4/               # Firefighter P4 X8 with updated CAD and six payload sensors
     ├── x500_obrik_graffiti_base/    # legacy graffiti body and mechanism
     ├── x500_obrik_graffiti_old/     # legacy gear-and-lever graffiti configuration
     ├── x500_obrik_graffiti_cam_base/ # current graffiti body with standard Obrik rotors
@@ -80,6 +81,7 @@ sverk_gz_overrides/
 | `porter` | `livox_avia` (full coaxial-X8 vehicle generated from the P-2.2 description) |
 | `porter_D2` | `livox_avia`, `porter_D2_hflow`, `porter_D2_rangefinder_200m`, `porter_D2_n6_camera`, `porter_D2_mv_ca050_camera` |
 | `firefighter_P3` | `livox_avia`, `bfs_pge_50s5c_camera`, `firefighter_P3_hflow`, `firefighter_P3_rangefinder_200m`, `firefighter_P3_n6_camera`, `firefighter_P3_foxeer_camera`; VMG mesh from `x500_obrik_firefighter_base` |
+| `firefighter_P4` | six `firefighter_P4_*` sensor modules; P3 motor/propeller geometry; updated P4 body and camera meshes |
 | `firefighter_P3_hflow`, `firefighter_P3_rangefinder_200m`, `firefighter_P3_n6_camera` | Meshes from the corresponding `porter_D2_*` models |
 | `firefighter_P3_foxeer_camera` | `foxeer_t_rex_mini_camera` mesh |
 | `vkuss_vill_v4` | `livox_avia`, `vkuss_vill_v4_mv133_camera`, `vkuss_vill_v4_hflow`; rotor meshes from `firefighter_P3` |
@@ -232,6 +234,17 @@ intrinsics, 20 Hz) and H-Flow poses come from the 21.10 STEP and the
 The P3 Foxeer FPV image bridge is off by default. Use an existing world such
 as `obrik_aruco`; the shared sverk-ros2 launch spawns the selected vehicle.
 The shared Avia topics currently allow one Avia instance per world.
+
+## Firefighter P4
+
+`firefighter_P4` adds the updated P4 CAD body, corrected Blackfly camera,
+eight physical VMGs and six payload sensors. It retains the original FLU
+assembly datum, with meshes in metres. Mass/inertia/propulsion, unidentified
+lenses and sensor noise are provisional. Collisions use fitted box primitives.
+
+See [the P4 model documentation](models/firefighter_P4/README.txt) for launch
+commands, ROS topics, camera selection and regeneration. The companion
+`sverk-ros2` selector must support `firefighter_P4`; Foxeer bridging is off by default.
 
 ## Использование в sverk-ros2
 

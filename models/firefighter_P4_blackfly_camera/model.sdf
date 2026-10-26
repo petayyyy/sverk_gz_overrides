@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="firefighter_P4_blackfly_camera">
+    <static>false</static>
+    <self_collide>false</self_collide>
+    <link name="firefighter_P4_blackfly_camera_link">
+      <sensor name="imager" type="camera">
+        <pose relative_to="firefighter_P4_blackfly_camera_sensing">0 0 0 0 0 0</pose>
+        <always_on>false</always_on>
+        <update_rate>24</update_rate>
+        <visualize>false</visualize>
+        <camera>
+          <horizontal_fov>1.0471975511965976</horizontal_fov>
+          <image>
+            <width>2448</width>
+            <height>2048</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.01</near>
+            <far>300</far>
+          </clip>
+          <optical_frame_id>firefighter_P4_blackfly_camera_optical</optical_frame_id>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.004</stddev>
+          </noise>
+          <camera_info_topic>/firefighter_P4/blackfly/camera_info</camera_info_topic>
+        </camera>
+        <topic>/firefighter_P4/blackfly/image</topic>
+      </sensor>
+      <inertial>
+        <pose>0.031882 0 0 0 0 0</pose>
+        <mass>0.15</mass>
+        <inertia>
+          <ixx>4.411892305e-05</ixx>
+          <iyy>0.00017333991805</iyy>
+          <izz>0.000173279005</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="housing_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P4_blackfly_camera/meshes/sensor.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="housing_collision">
+        <pose>0.031882 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.111 0.04298 0.043038</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <frame name="firefighter_P4_blackfly_camera_sensing" attached_to="firefighter_P4_blackfly_camera_link">
+      <pose relative_to="firefighter_P4_blackfly_camera_link">0.086882 0 0 0 0 0</pose>
+    </frame>
+    <frame name="firefighter_P4_blackfly_camera_optical" attached_to="firefighter_P4_blackfly_camera_sensing">
+      <pose relative_to="firefighter_P4_blackfly_camera_sensing">0 0 0 -1.5707963267948966 0 -1.5707963267948966</pose>
+    </frame>
+  </model>
+</sdf>

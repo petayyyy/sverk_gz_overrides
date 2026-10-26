@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="firefighter_P4_foxeer_camera">
+    <self_collide>false</self_collide>
+    <static>false</static>
+    <link name="firefighter_P4_foxeer_camera_link">
+      <sensor name="imager" type="camera">
+        <pose relative_to="firefighter_P4_foxeer_camera_sensing">0 0 0 0 0 0</pose>
+        <camera>
+          <horizontal_fov>2.0943951023931953</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.01</near>
+            <far>50</far>
+          </clip>
+          <camera_info_topic>/firefighter_P4/foxeer/camera_info</camera_info_topic>
+          <optical_frame_id>firefighter_P4_foxeer_camera_optical</optical_frame_id>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.004</stddev>
+          </noise>
+        </camera>
+        <always_on>false</always_on>
+        <update_rate>30</update_rate>
+        <visualize>false</visualize>
+        <topic>/firefighter_P4/foxeer/image</topic>
+      </sensor>
+      <inertial>
+        <pose>0.01125 4.99999999999633e-07 0 0 0 0</pose>
+        <mass>0.0102</mass>
+        <inertia>
+          <ixx>8.0787094085e-07</ixx>
+          <iyy>9.141665e-07</iyy>
+          <izz>9.1412944085e-07</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="housing_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P4_foxeer_camera/meshes/sensor.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="housing_collision">
+        <pose>0.01125 4.99999999999633e-07 0 0 1.5707963267949 0</pose>
+        <geometry>
+          <box>
+            <size>0.0228 0.022799 0.0255</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <frame name="firefighter_P4_foxeer_camera_sensing" attached_to="firefighter_P4_foxeer_camera_link">
+      <pose relative_to="firefighter_P4_foxeer_camera_link">0.0215 0 0 1.5707963267948966 0 0</pose>
+    </frame>
+    <frame name="firefighter_P4_foxeer_camera_optical" attached_to="firefighter_P4_foxeer_camera_sensing">
+      <pose relative_to="firefighter_P4_foxeer_camera_sensing">0 0 0 -1.5707963267948966 0 -1.5707963267948966</pose>
+    </frame>
+  </model>
+</sdf>

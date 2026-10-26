@@ -1,0 +1,316 @@
+{
+  "target": "Gazebo Harmonic / SDFormat 1.9 / ROS 2 Humble or Jazzy",
+  "topic_prefix": "/firefighter_P4",
+  "mesh_units": "metres",
+  "sensor_axes": "+X sensing, +Y left, +Z up",
+  "payload_physics": "Provisional P4 payload masses; see models/firefighter_P4/config/physics.json",
+  "noise_status": "All noise values below are synthetic simulation tuning defaults, not measured hardware specifications.",
+  "sensors": [
+    {
+      "name": "firefighter_P4_hflow",
+      "kind": "optical_flow",
+      "topic": "hflow",
+      "mesh_source": "Updated P4 STEP; normalized bundled sensor.obj (metres)",
+      "origin_mm": [
+        8.518,
+        8.7,
+        3.165
+      ],
+      "origin_status": "Measured sensing-surface offset from the mesh origin.",
+      "hardware_assumption": "Holybro H-Flow; confirm exact installed hardware.",
+      "sources": [
+        "https://docs.holybro.com/peripherals/h-flow-dronecan/overview",
+        "https://docs.holybro.com/peripherals/h-flow-dronecan/setup-guide"
+      ],
+      "camera": {
+        "width": 128,
+        "height": 128,
+        "fps": 100,
+        "horizontal_fov_deg": 42.0,
+        "format": "L_INT8",
+        "clip_near_m": 0.02,
+        "clip_far_m": 35,
+        "image_noise_stddev": 0.004
+      },
+      "range": {
+        "origin_mm": [
+          8.518,
+          8.7,
+          3.165
+        ],
+        "min_m": 0.08,
+        "max_m": 30.0,
+        "fps": 50,
+        "horizontal_samples": 8,
+        "vertical_samples": 4,
+        "horizontal_fov_deg": 12.4,
+        "vertical_fov_deg": 6.2,
+        "noise_stddev_m": 0.02
+      },
+      "imu": {
+        "origin_mm": [
+          0,
+          0,
+          0
+        ],
+        "fps": 200,
+        "gyro_noise_stddev_rad_s": 0.002,
+        "gyro_bias_stddev_rad_s": 0.0002,
+        "accel_noise_stddev_m_s2": 0.02,
+        "accel_bias_stddev_m_s2": 0.01
+      },
+      "flow": {
+        "max_rate_rad_s": 7.4,
+        "min_distance_m": 0.08,
+        "max_distance_m": 30.0,
+        "white_noise_rate_rad_s": 0.002,
+        "bias_rate_stddev_rad_s": 0.0005,
+        "range_max_age_s": 0.15,
+        "max_image_gap_s": 0.1,
+        "seed": 1310
+      },
+      "verified_parameters": [
+        "Flow effective FoV up to 42 degrees",
+        "Flow working distance 0.08-30 m",
+        "Flow maximum 7.4 rad/s",
+        "ToF FoV 12.4 x 6.2 degrees / 32 pixels / typical maximum 30 m",
+        "Onboard 6-axis IMU"
+      ],
+      "provisional_parameters": [
+        "Debug image resolution/rate (not a real H-Flow video output)",
+        "ToF/IMU output rates",
+        "8x4 ray grid and median reduction approximate the Broadcom return processing",
+        "ToF is temporarily co-located with the measured flow origin; measure its separate optical centre",
+        "IMU datum temporarily equals the mesh origin",
+        "42-degree effective view modelled as square pinhole HFoV",
+        "Noise/latency and IR illumination response are not calibrated"
+      ]
+    },
+    {
+      "name": "firefighter_P4_rangefinder_200m",
+      "kind": "range",
+      "topic": "rangefinder_200m",
+      "mesh_source": "Updated P4 STEP; normalized bundled sensor.obj (metres)",
+      "origin_mm": [
+        50.0,
+        0.0,
+        0.0
+      ],
+      "origin_status": "Measured sensing-surface offset from the mesh origin.",
+      "hardware_assumption": "Generic single-beam 200 m rangefinder.",
+      "sources": [],
+      "range": {
+        "min_m": 0.1,
+        "max_m": 200.0,
+        "fps": 20,
+        "horizontal_samples": 1,
+        "vertical_samples": 1,
+        "horizontal_fov_deg": 0,
+        "vertical_fov_deg": 0,
+        "noise_stddev_m": 0.05
+      },
+      "verified_parameters": [
+        "Generic single ray, nominal maximum 200 m"
+      ],
+      "provisional_parameters": [
+        "Minimum range, rate and noise are adjustable generic defaults",
+        "Single ideal beam; divergence and reflectivity response not modelled",
+        "No vendor-specific serial or CAN protocol emulation"
+      ]
+    },
+    {
+      "name": "firefighter_P4_n6_camera",
+      "kind": "camera",
+      "topic": "n6",
+      "mesh_source": "Updated P4 STEP; normalized bundled sensor.obj (metres)",
+      "origin_mm": [
+        29.848,
+        17.805,
+        36.255
+      ],
+      "origin_status": "Measured sensing-surface offset from the mesh origin; optical principal plane uncalibrated.",
+      "hardware_assumption": "OpenMV N6 with a provisional PAG7936/2.8 mm lens reference profile; installed module unconfirmed.",
+      "sources": [
+        "https://github.com/openmv/openmv-datasheets/blob/main/products/cameras/openmv-n6.yaml",
+        "https://openmv.io/products/openmv-n6",
+        "https://docs.openmv.io/dev/openmvcam/quickref/openmv-n6.html"
+      ],
+      "source_discrepancy": "Product YAML Rev 1 describes a default 5 MP HDR / 30 fps camera and an alternative 1 MP global-shutter module. Current product page describes PAG7936 1 MP as supplied. N6 supports interchangeable modules, so the active profile must be checked against the installed camera.",
+      "active_camera_reference": "pag7936_1mp_2p8mm",
+      "camera": {
+        "width": 1280,
+        "height": 800,
+        "fps": 30,
+        "horizontal_fov_deg": 68.8,
+        "format": "R8G8B8",
+        "clip_near_m": 0.02,
+        "clip_far_m": 300,
+        "image_noise_stddev": 0.005
+      },
+      "verified_parameters": [
+        "PAG7936 reference module: 1280x800 colour global shutter",
+        "Manufacturer PAG7936/lens reference HFoV 68.8 degrees",
+        "PAG7936 sensor maximum 120 fps at 1280x800; simulation defaults to 30 fps",
+        "Product YAML describes a 5 MP HDR module but does not specify its resolution/FoV or intrinsics"
+      ],
+      "provisional_parameters": [
+        "Installed module: 5 MP HDR versus PAG7936 1 MP global shutter; lens/intrinsics",
+        "PAG7936 reference profile is active until the installed module is confirmed",
+        "30 fps operating rate",
+        "Pinhole approximation: lens distortion is not calibrated or reproduced",
+        "Noise and exposure response",
+        "NPU, onboard algorithms, ISP, codecs and N6 IMU are not emulated"
+      ]
+    },
+    {
+      "name": "firefighter_P4_foxeer_camera",
+      "kind": "camera",
+      "topic": "foxeer",
+      "origin_mm": [
+        21.5,
+        0,
+        0
+      ],
+      "sensing_quaternion_xyzw": [
+        0.7071067811865476,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ],
+      "camera": {
+        "width": 640,
+        "height": 480,
+        "fps": 30,
+        "horizontal_fov_deg": 120
+      },
+      "hardware_assumption": "Existing Foxeer T-Rex Mini 1500TVL ideal FPV camera profile; synthetic noise added",
+      "mesh_source": "Updated P4 STEP; normalized bundled sensor.obj (metres)"
+    },
+    {
+      "name": "firefighter_P4_blackfly_camera",
+      "kind": "camera",
+      "topic": "blackfly",
+      "origin_mm": [
+        86.882,
+        0,
+        0
+      ],
+      "camera": {
+        "width": 2448,
+        "height": 2048,
+        "fps": 24,
+        "horizontal_fov_deg": 60
+      },
+      "hardware_assumption": "Existing Blackfly camera; provisional lens/noise/physics documented in its model",
+      "mesh_source": "Updated P4 STEP; normalized bundled sensor.obj (metres)"
+    }
+  ],
+  "body_frame": "firefighter_P4/base_link",
+  "mount_transforms": [
+    {
+      "parent": "firefighter_P4/base_link",
+      "child": "firefighter_P4_hflow_origin",
+      "xyz_mm": [
+        -74.1999999999996,
+        2.47667578011653e-14,
+        -64.3500000000002
+      ],
+      "quaternion_xyzw": [
+        2.134344436023244e-16,
+        0.707106781186547,
+        -7.188079537411639e-16,
+        0.707106781186548
+      ]
+    },
+    {
+      "parent": "firefighter_P4/base_link",
+      "child": "firefighter_P4_rangefinder_200m_origin",
+      "xyz_mm": [
+        86.5014713593835,
+        -2.20676470102287e-10,
+        23.4999999999983
+      ],
+      "quaternion_xyzw": [
+        3.4609008347483755e-13,
+        0.7071067811865483,
+        -3.5004966039408143e-13,
+        0.7071067811865467
+      ]
+    },
+    {
+      "parent": "firefighter_P4/base_link",
+      "child": "firefighter_P4_n6_camera_origin",
+      "xyz_mm": [
+        25.452000958699397,
+        17.401999980004007,
+        -42.65
+      ],
+      "quaternion_xyzw": [
+        0.5000000000002445,
+        0.49999999999975575,
+        -0.5000000000002438,
+        0.49999999999975614
+      ]
+    },
+    {
+      "parent": "firefighter_P4/base_link",
+      "child": "firefighter_P4_foxeer_camera_origin",
+      "xyz_mm": [
+        112.8,
+        -1.9602026876056e-06,
+        53.0014713590169
+      ],
+      "quaternion_xyzw": [
+        -0.7071067811865475,
+        1.2212453270876722e-15,
+        -1.6853961236183662e-15,
+        0.7071067811865475
+      ]
+    },
+    {
+      "parent": "firefighter_P4/base_link",
+      "child": "firefighter_P4_blackfly_camera_origin",
+      "xyz_mm": [
+        3.67652417822043,
+        -59.6000000000002,
+        -50.4206451856395
+      ],
+      "quaternion_xyzw": [
+        0.7660444431189782,
+        -3.3306690738754696e-16,
+        -0.6427876096865394,
+        8.120615417656089e-17
+      ]
+    },
+    {
+      "parent": "firefighter_P4/base_link",
+      "child": "firefighter_P4_avia",
+      "xyz_mm": [
+        -7.412487830808509,
+        0.27495552187204453,
+        -136.04466856129807
+      ],
+      "quaternion_xyzw": [
+        0.5386579154179082,
+        0.4565233540710457,
+        -0.45117506129767954,
+        0.5457793889552737
+      ]
+    },
+    {
+      "parent": "firefighter_P4_avia",
+      "child": "firefighter_P4_avia_imu",
+      "xyz_mm": [
+        -41.65,
+        -23.26,
+        28.4
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  ]
+}

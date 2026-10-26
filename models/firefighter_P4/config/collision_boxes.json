@@ -1,0 +1,770 @@
+{
+  "model": "firefighter_P4",
+  "frame": "+X forward, +Y left, +Z up; metres/radians",
+  "body_mesh": "models/firefighter_P4/meshes/body.obj",
+  "body_mesh_sha256": "192faf0fc5fab19d4e866a6605c5e4ded839bb73bdd4df6194a07da0acbd868a",
+  "expected_box_count": 28,
+  "notes": [
+    "Oriented boxes fitted to P4 CAD solids with 1 mm padding.",
+    "Separate arms, struts, feet and landing-ring segments preserve the open landing frame.",
+    "Four feet share a horizontal contact plane. Sensor modules add their own housing boxes.",
+    "Flexible antennas, cables, tiny fasteners and propellers have no dedicated collision geometry."
+  ],
+  "boxes": [
+    {
+      "name": "front_left_arm",
+      "category": "arm",
+      "center_m": [
+        0.09230592586106677,
+        0.10196400795028306,
+        0.012499999999999888
+      ],
+      "size_m": [
+        0.19524175188413104,
+        0.057136663495362214,
+        0.017000000000000553
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -2.2291969062672625
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "name": "rear_left_arm",
+      "category": "arm",
+      "center_m": [
+        -0.09230598079270992,
+        0.10196400795028328,
+        0.012499999999999808
+      ],
+      "size_m": [
+        0.19524175188413087,
+        0.05713666349536131,
+        0.017000000000000074
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        2.2291969062672625
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "name": "rear_right_arm",
+      "category": "arm",
+      "center_m": [
+        -0.09230595332688749,
+        -0.10196400795028633,
+        0.012499999999999558
+      ],
+      "size_m": [
+        0.19524175188412987,
+        0.05713666349536438,
+        0.017000000000000407
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        0.9123957473225306
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "name": "front_right_arm",
+      "category": "arm",
+      "center_m": [
+        0.09230595332688915,
+        -0.1019640079502847,
+        0.01250000000000013
+      ],
+      "size_m": [
+        0.19524175188412987,
+        0.057136663495359646,
+        0.01700000000000022
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -0.9123957473225306
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "name": "rear_right_landing_strut",
+      "category": "leg",
+      "center_m": [
+        -0.1192058443969645,
+        -0.11920584439696488,
+        -0.15580866331361312
+      ],
+      "size_m": [
+        0.35200000000000065,
+        0.017000000152096566,
+        0.017000000152096392
+      ],
+      "rpy_rad": [
+        1.5707963369346463,
+        0.9599310885968825,
+        -2.356194490192345
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          10
+        ]
+      }
+    },
+    {
+      "name": "front_right_landing_strut",
+      "category": "leg",
+      "center_m": [
+        0.11920584439696542,
+        -0.11920584439696509,
+        -0.15580866331361273
+      ],
+      "size_m": [
+        0.352000000000001,
+        0.017000000091228127,
+        0.01700000009122843
+      ],
+      "rpy_rad": [
+        -3.1415926475079305,
+        0.95993108859688,
+        -0.7853981633974468
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          11
+        ]
+      }
+    },
+    {
+      "name": "front_left_landing_strut",
+      "category": "leg",
+      "center_m": [
+        0.11920584439696551,
+        0.1192058443969646,
+        -0.15580866331361273
+      ],
+      "size_m": [
+        0.35200000000000087,
+        0.0170000003803397,
+        0.01700000038033978
+      ],
+      "rpy_rad": [
+        2.5355951426517455e-08,
+        0.9599310885968798,
+        0.7853981633974464
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          12
+        ]
+      }
+    },
+    {
+      "name": "rear_left_landing_strut",
+      "category": "leg",
+      "center_m": [
+        -0.11920584439696427,
+        0.11920584439696473,
+        -0.15580866331361304
+      ],
+      "size_m": [
+        0.3520000000000005,
+        0.01700000047474426,
+        0.017000000474744283
+      ],
+      "rpy_rad": [
+        1.570796358444499,
+        0.9599310885968827,
+        2.3561944901923426
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          13
+        ]
+      }
+    },
+    {
+      "name": "rear_right_landing_foot",
+      "category": "foot",
+      "center_m": [
+        -0.19210053325188994,
+        -0.19210053325189066,
+        -0.2929655435105378
+      ],
+      "size_m": [
+        0.04579349286921475,
+        0.021000000000000074,
+        0.032993101652563195
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -2.356194490192345
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          17
+        ],
+        "common_sole_m": -0.30946209433681937
+      }
+    },
+    {
+      "name": "front_right_landing_foot",
+      "category": "foot",
+      "center_m": [
+        0.19210053325189125,
+        -0.19210053325189108,
+        -0.2929655435105375
+      ],
+      "size_m": [
+        0.04579349286921516,
+        0.021000000000000598,
+        0.03299310165256375
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        2.356194490192345
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          18
+        ],
+        "common_sole_m": -0.30946209433681937
+      }
+    },
+    {
+      "name": "front_left_landing_foot",
+      "category": "foot",
+      "center_m": [
+        0.19210053325189144,
+        0.1921005332518901,
+        -0.2929655435105375
+      ],
+      "size_m": [
+        0.04579349286921561,
+        0.02100000000000031,
+        0.032993101652563805
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -2.356194490192345
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          19
+        ],
+        "common_sole_m": -0.30946209433681937
+      }
+    },
+    {
+      "name": "rear_left_landing_foot",
+      "category": "foot",
+      "center_m": [
+        -0.19210053325188972,
+        0.19210053325189066,
+        -0.2929655435105378
+      ],
+      "size_m": [
+        0.045793492869215,
+        0.02100000000000046,
+        0.032993101652563195
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        2.356194490192345
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          20
+        ],
+        "common_sole_m": -0.30946209433681937
+      }
+    },
+    {
+      "name": "landing_ring_0",
+      "category": "landing_ring",
+      "center_m": [
+        0.11850699367381715,
+        1.8315504240114546e-15,
+        -0.1822499999999998
+      ],
+      "size_m": [
+        0.09381464743354027,
+        0.00840178820356298,
+        0.0025000000000000022
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        1.5707963267948966
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          16
+        ],
+        "sector_deg": 0,
+        "selection": "lower ring band"
+      }
+    },
+    {
+      "name": "landing_ring_1",
+      "category": "landing_ring",
+      "center_m": [
+        0.11234844836289824,
+        0.11234844836296592,
+        -0.18000630583881852
+      ],
+      "size_m": [
+        0.08749751583225157,
+        0.085999744786238,
+        0.006987388322362731
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        2.356194490192345
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          16
+        ],
+        "sector_deg": 45,
+        "selection": "lower ring band"
+      }
+    },
+    {
+      "name": "landing_ring_2",
+      "category": "landing_ring",
+      "center_m": [
+        -1.457167719820518e-15,
+        0.11850699367381626,
+        -0.18224999999999997
+      ],
+      "size_m": [
+        0.09381464743354026,
+        0.008401788203562993,
+        0.002500000000000141
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          16
+        ],
+        "sector_deg": 90,
+        "selection": "lower ring band"
+      }
+    },
+    {
+      "name": "landing_ring_3",
+      "category": "landing_ring",
+      "center_m": [
+        -0.11234844836296566,
+        0.11234844836289745,
+        -0.1800066732967992
+      ],
+      "size_m": [
+        0.0874975158322516,
+        0.08599974478623844,
+        0.0069866534064020325
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -2.356194490192345
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          16
+        ],
+        "sector_deg": 135,
+        "selection": "lower ring band"
+      }
+    },
+    {
+      "name": "landing_ring_4",
+      "category": "landing_ring",
+      "center_m": [
+        -0.11850699367369749,
+        -2.317272997284968e-15,
+        -0.1822500000000002
+      ],
+      "size_m": [
+        0.09381464743354027,
+        0.008401788203326196,
+        0.00250000000000003
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        1.5707963267948966
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          16
+        ],
+        "sector_deg": 180,
+        "selection": "lower ring band"
+      }
+    },
+    {
+      "name": "landing_ring_5",
+      "category": "landing_ring",
+      "center_m": [
+        -0.11234844836289695,
+        -0.11234844836296644,
+        -0.1800014426794712
+      ],
+      "size_m": [
+        0.08749751583225164,
+        0.08599974478623804,
+        0.006997114641058094
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        2.356194490192345
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          16
+        ],
+        "sector_deg": 225,
+        "selection": "lower ring band"
+      }
+    },
+    {
+      "name": "landing_ring_6",
+      "category": "landing_ring",
+      "center_m": [
+        2.7200464103316335e-15,
+        -0.11850699367381694,
+        -0.18225000000000002
+      ],
+      "size_m": [
+        0.09381464743354026,
+        0.008401788203563298,
+        0.002500000000000141
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          16
+        ],
+        "sector_deg": 270,
+        "selection": "lower ring band"
+      }
+    },
+    {
+      "name": "landing_ring_7",
+      "category": "landing_ring",
+      "center_m": [
+        0.11234844836296694,
+        -0.11234844836289798,
+        -0.1800038584928806
+      ],
+      "size_m": [
+        0.0874975158322516,
+        0.08599974478623841,
+        0.006992283014238654
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -2.356194490192345
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          16
+        ],
+        "sector_deg": 315,
+        "selection": "lower ring band"
+      }
+    },
+    {
+      "name": "rear_right_ring_mount",
+      "category": "landing_ring_mount",
+      "center_m": [
+        -0.10245029112708247,
+        -0.10245029112718643,
+        -0.16475534597613847
+      ],
+      "size_m": [
+        0.15997880991595384,
+        0.10621720797972782,
+        0.027483819515232544
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        2.356194490192345
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          16
+        ],
+        "quadrant": [
+          -1,
+          -1
+        ],
+        "selection": "upper ring attachment"
+      }
+    },
+    {
+      "name": "front_right_ring_mount",
+      "category": "landing_ring_mount",
+      "center_m": [
+        0.10242947651309663,
+        -0.10242947651311166,
+        -0.1647355383863991
+      ],
+      "size_m": [
+        0.15997880991612162,
+        0.1061583353608116,
+        0.027444204335754646
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -2.356194490192345
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          16
+        ],
+        "quadrant": [
+          1,
+          -1
+        ],
+        "selection": "upper ring attachment"
+      }
+    },
+    {
+      "name": "front_left_ring_mount",
+      "category": "landing_ring_mount",
+      "center_m": [
+        0.10236445369940249,
+        0.10236445369938636,
+        -0.16471179011613107
+      ],
+      "size_m": [
+        0.15997880991612135,
+        0.10597442307078869,
+        0.027396707795218578
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        -0.7853981633974483
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          16
+        ],
+        "quadrant": [
+          1,
+          1
+        ],
+        "selection": "upper ring attachment"
+      }
+    },
+    {
+      "name": "rear_left_ring_mount",
+      "category": "landing_ring_mount",
+      "center_m": [
+        -0.10236445369944515,
+        0.10236445369934231,
+        -0.16475403972033542
+      ],
+      "size_m": [
+        0.1599788099159537,
+        0.10597442307078843,
+        0.027481207003626495
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        0.7853981633974483
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          16
+        ],
+        "quadrant": [
+          -1,
+          1
+        ],
+        "selection": "upper ring attachment"
+      }
+    },
+    {
+      "name": "central_body",
+      "category": "body",
+      "center_m": [
+        -0.009999999999999717,
+        -3.469446951953614e-16,
+        0.003759417755544503
+      ],
+      "size_m": [
+        0.29200000000000026,
+        0.16400000000000042,
+        0.15048151463973947
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "fit_source": {
+        "cad_solid_indices": [
+          8,
+          9,
+          14,
+          15,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55
+        ]
+      }
+    },
+    {
+      "name": "batteries",
+      "category": "battery",
+      "center_m": [
+        -0.0036915764212608337,
+        0.0,
+        0.10950000584125519
+      ],
+      "size_m": [
+        0.17700001192092896,
+        0.09600001168251038,
+        0.06500002336502075
+      ],
+      "rpy_rad": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          42,
+          43
+        ]
+      }
+    },
+    {
+      "name": "livox_mounting_bracket",
+      "category": "bracket",
+      "center_m": [
+        -0.000590393724288983,
+        -0.015239290091678676,
+        -0.1357626633780972
+      ],
+      "size_m": [
+        0.11990334127317989,
+        0.08995001691621042,
+        0.020584855669653568
+      ],
+      "rpy_rad": [
+        -0.17040192347376915,
+        0.041004059297742465,
+        1.8908394705352416
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          5
+        ]
+      }
+    },
+    {
+      "name": "side_servo",
+      "category": "equipment",
+      "center_m": [
+        -0.10329942100897484,
+        -0.103313595652745,
+        -0.10457802614496348
+      ],
+      "size_m": [
+        0.038576889696276054,
+        0.03849228662006009,
+        0.009910999038354858
+      ],
+      "rpy_rad": [
+        2.3615548436368368,
+        0.609851880235058,
+        2.8948409155451067
+      ],
+      "fit_source": {
+        "mesh_component_ids": [
+          1
+        ]
+      }
+    }
+  ]
+}

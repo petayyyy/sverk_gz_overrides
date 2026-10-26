@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="firefighter_P4_n6_camera">
+    <static>false</static>
+    <self_collide>false</self_collide>
+    <link name="firefighter_P4_n6_camera_link">
+      <sensor name="firefighter_P4_n6_camera_imager" type="camera">
+        <pose relative_to="firefighter_P4_n6_camera_sensing">0 0 0 0 0 0</pose>
+        <topic>/firefighter_P4/n6/image</topic>
+        <always_on>false</always_on>
+        <update_rate>30</update_rate>
+        <visualize>false</visualize>
+        <camera>
+          <horizontal_fov>1.200786525372</horizontal_fov>
+          <image>
+            <width>1280</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <optical_frame_id>firefighter_P4_n6_camera_optical</optical_frame_id>
+          <camera_info_topic>/firefighter_P4/n6/camera_info</camera_info_topic>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.005</stddev>
+          </noise>
+        </camera>
+      </sensor>
+      <inertial>
+        <pose>0.009724 0.017807 0.022535 0 0 0</pose>
+        <mass>0.08</mass>
+        <inertia>
+          <ixx>2.21120947733333e-05</ixx>
+          <iyy>2.44532855733333e-05</iyy>
+          <izz>1.94813150133333e-05</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="housing_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://firefighter_P4_n6_camera/meshes/sensor.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="housing_collision">
+        <pose>0.009724 0.017807 0.022535 0 -0 1.5707963267949</pose>
+        <geometry>
+          <box>
+            <size>0.036854 0.041456 0.04607</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.8</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <frame name="firefighter_P4_n6_camera_origin" attached_to="firefighter_P4_n6_camera_link">
+      <pose relative_to="firefighter_P4_n6_camera_link">0 0 0 0 0 0</pose>
+    </frame>
+    <frame name="firefighter_P4_n6_camera_sensing" attached_to="firefighter_P4_n6_camera_link">
+      <pose relative_to="firefighter_P4_n6_camera_link">0.029848000 0.017805000 0.036255000 0 0 0</pose>
+    </frame>
+    <frame name="firefighter_P4_n6_camera_optical" attached_to="firefighter_P4_n6_camera_sensing">
+      <pose relative_to="firefighter_P4_n6_camera_sensing">0 0 0 -1.5707963267948966 0 -1.5707963267948966</pose>
+    </frame>
+  </model>
+</sdf>

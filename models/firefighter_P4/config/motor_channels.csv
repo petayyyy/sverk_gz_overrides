@@ -1,0 +1,9 @@
+index,vmg,turning_direction,x_flu_m,y_flu_m,z_flu_m
+0,upper_front_right,ccw,0.130762,-0.165981,0.0424
+1,upper_rear_left,ccw,-0.130762,0.165981,0.0424
+2,upper_front_left,cw,0.130762,0.165981,0.0424
+3,upper_rear_right,cw,-0.130762,-0.165981,0.0424
+4,lower_front_right,cw,0.130626,-0.166042,-0.0174
+5,lower_rear_left,cw,-0.130626,0.166042,-0.0174
+6,lower_front_left,ccw,0.130626,0.166042,-0.0174
+7,lower_rear_right,ccw,-0.130626,-0.166042,-0.0174
