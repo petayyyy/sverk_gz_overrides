@@ -2,7 +2,6 @@
 """Regenerate Porter D2 SDF, ROS configuration and PX4 profile from bundled data.
 
 Requires numpy. Assets are already bundled; no CAD application is required.
-The physical profile is deliberately provisional, independently of CAD accuracy.
 """
 import csv
 import json
@@ -123,9 +122,7 @@ def physics_summary(physics, mounts, rotors):
     module_mass = sum(physics['payload_masses_kg'].values())
     base_mass = physics['total_mass_kg'] - avia_mass - 8*physics['rotor_mass_kg'] - module_mass
     assert base_mass > 0
-    center = np.array(physics['base_com_m'])
-    tensor = box_inertia(base_mass, physics['base_equivalent_box_m'])
-    pieces = [(base_mass, center, tensor), (avia_mass, avia_center, avia_rotation @ avia_tensor @ avia_rotation.T)]
+    pieces = [(avia_mass, avia_center, avia_rotation @ avia_tensor @ avia_rotation.T)]
     rotor_tensor = np.diag(physics['rotor_inertia_kg_m2'])
     for rotor in rotors:
         matrix = np.array(rotor['rotation'])
@@ -135,14 +132,21 @@ def physics_summary(physics, mounts, rotors):
         mount = mounts[name]['proposed_flu_mount']
         rotation_matrix = np.array(mount['matrix_mm'])[:3,:3]
         pieces.append((mass, np.array(mount['xyz_m'])+rotation_matrix@local_com, rotation_matrix@local_tensor@rotation_matrix.T))
-    mass = sum(p[0] for p in pieces)
-    com = sum(m*p for m,p,_ in pieces)/mass
-    total_tensor = np.zeros((3,3))
-    for m,p,t in pieces:
+    # The v35 mass properties cover the whole aircraft. Remove each child
+    # about the same centre, then shift the remainder to the base link CoM.
+    mass = physics['total_mass_kg']
+    com = np.array(physics['total_com_flu_m'])
+    center = (mass*com - sum(m*p for m,p,_ in pieces)) / base_mass
+    total_tensor = np.array(physics['total_inertia_at_com_flu_kg_m2'])
+    tensor = total_tensor.copy()
+    for m,p,t in [*pieces, (base_mass, center, np.zeros((3,3)))]:
         d = p-com
-        total_tensor += t + m*(np.dot(d,d)*np.eye(3)-np.outer(d,d))
-    return dict(total_mass_kg=mass, base_mass_kg=base_mass, total_com_flu_m=com.tolist(),
-                total_inertia_at_com_flu_kg_m2=total_tensor.tolist(),
+        tensor -= t + m*(np.dot(d,d)*np.eye(3)-np.outer(d,d))
+    i1, i2, i3 = np.linalg.eigvalsh(tensor)
+    if i1 <= 0 or i1+i2 < i3:
+        raise ValueError('Invalid residual base inertia for Porter D2')
+    return dict(total_mass_kg=mass, base_mass_kg=base_mass, base_com_m=center.tolist(),
+                total_com_flu_m=com.tolist(), total_inertia_at_com_flu_kg_m2=total_tensor.tolist(),
                 base_inertia_kg_m2=tensor.tolist(), avia_mass_kg=avia_mass)
 
 def make_rotors(physics, mounts):
@@ -153,9 +157,10 @@ def make_rotors(physics, mounts):
         up = matrix[:,1] * np.sign(matrix[2,1])
         x = matrix[:,0]
         physical = np.column_stack([x, np.cross(up,x), up])
+        hub = np.array(mount['xyz_m']) + matrix[:,1] * physics['prop_hub_offset_m']
         result.append(dict(index=index, vmg=vmg, turning_direction=direction,
-                           position_m=mount['xyz_m'], axis_flu=up.tolist(), rotation=physical.tolist(),
-                           sdf_pose=numbers([*mount['xyz_m'], *rpy(physical)])))
+                           position_m=hub.tolist(), axis_flu=up.tolist(), rotation=physical.tolist(),
+                           sdf_pose=numbers([*hub, *rpy(physical)])))
     return result
 
 def generate_vehicle(physics, mounts, rotors, summary):
@@ -163,9 +168,9 @@ def generate_vehicle(physics, mounts, rotors, summary):
     model = sub(root, 'model', name='porter_D2', canonical_link='base_link')
     sub(model, 'static', 'false')
     sub(model, 'self_collide', 'false')
-    model.append(ET.Comment(' FLU / Z-up. CAD placements are measured; mass, inertia and propulsion are PROVISIONAL. '))
+    model.append(ET.Comment(' FLU / Z-up. CAD placements are measured; v35 mass properties and propeller hubs; provisional motor response. '))
     base = sub(model, 'link', name='base_link')
-    inertial(base, summary['base_mass_kg'], physics['base_com_m'], np.array(summary['base_inertia_kg_m2']))
+    inertial(base, summary['base_mass_kg'], summary['base_com_m'], np.array(summary['base_inertia_kg_m2']))
     visual(base, 'decimated_body', 'model://porter_D2/meshes/body.obj', '0 0 0 1.5707963267948966 0 -1.5707963267948966')
     for rotor in rotors:
         visual(base, rotor['vmg']+'_motor_housing', 'model://porter_D2/meshes/motor.obj',
@@ -180,8 +185,10 @@ def generate_vehicle(physics, mounts, rotors, summary):
         inertial(link, physics['rotor_mass_kg'], [0,0,0], np.diag(physics['rotor_inertia_kg_m2']))
         mesh_rotation = np.array(mounts[rotor['vmg']]['proposed_flu_mount']['matrix_mm'])[:3,:3]
         local_rotation = np.array(rotor['rotation']).T @ mesh_rotation
+        mesh_offset = np.array(rotor['rotation']).T @ (
+            np.array(mounts[rotor['vmg']]['proposed_flu_mount']['xyz_m']) - rotor['position_m'])
         visual(link, rotor['vmg']+'_propeller', 'model://porter_D2/meshes/propeller.obj',
-               numbers([0,0,0,*rpy(local_rotation)]))
+               numbers([*mesh_offset,*rpy(local_rotation)]))
         joint = sub(model, 'joint', name=f'rotor_{index}_joint', type='revolute')
         sub(joint, 'parent', 'base_link')
         sub(joint, 'child', f'rotor_{index}')
@@ -214,7 +221,7 @@ def generate_vehicle(physics, mounts, rotors, summary):
                           odom_publish_frequency=50,odom_topic='/porter_D2/ground_truth/odometry',tf_topic='/porter_D2/ground_truth/tf').items():
         sub(plugin, tag, value)
     xml_write(root, MODEL / 'model.sdf')
-    model_config('porter_D2', 'Porter D2: decimated CAD assembly, X8 VMGs, H-Flow, 200 m rangefinder, N6, MV-CA050 and reused Livox Avia. Provisional physics.')
+    model_config('porter_D2', 'Porter D2: decimated CAD assembly, X8 VMGs, H-Flow, 200 m rangefinder, N6, MV-CA050 and reused Livox Avia. v35 mass properties.')
 
 def generate_ros(sensors, mounts, physics):
     sensors['topic_prefix'] = '/porter_D2'
@@ -290,7 +297,7 @@ def generate_px4(physics, rotors, summary):
                          axis_x_flu=rotor['axis_flu'][0],axis_y_flu=rotor['axis_flu'][1],axis_z_flu=rotor['axis_flu'][2]))
     folder = ROOT / 'px4/porter_D2'
     folder.mkdir(parents=True, exist_ok=True)
-    header = '#!/bin/sh\n# @name Gazebo Porter D2 (PROVISIONAL physics)\n# @type Octocopter\n\n. ${R}etc/init.d/rc.mc_defaults\n\nPX4_SIMULATOR=${PX4_SIMULATOR:=gz}\nPX4_GZ_WORLD=${PX4_GZ_WORLD:=default}\nPX4_SIM_MODEL=${PX4_SIM_MODEL:=gz_porter_D2}\n\n'
+    header = '#!/bin/sh\n# @name Gazebo Porter D2 (v35 mass properties)\n# @type Octocopter\n\n. ${R}etc/init.d/rc.mc_defaults\n\nPX4_SIMULATOR=${PX4_SIMULATOR:=gz}\nPX4_GZ_WORLD=${PX4_GZ_WORLD:=default}\nPX4_SIM_MODEL=${PX4_SIM_MODEL:=gz_porter_D2}\n\n'
     body = '\n'.join(f'param set-default {name} {float(value):.12g}' for name,value in params.items())+'\n'
     (folder/'4902_gz_porter_D2').write_text(header+body,encoding='utf-8')
     with (CONFIG/'motor_channels.csv').open('w', newline='', encoding='utf-8') as file:

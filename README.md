@@ -209,8 +209,9 @@ see `models/porter/SOURCE.md`.
 
 `porter_D2` and `firefighter_P3` are separate X8 configurations with eight
 physical motor channels, decimated CAD meshes and fitted box collisions.
-Both use +X forward, +Y left and +Z up. Mass, inertia, motor performance,
-unidentified lenses and new sensor noise remain provisional.
+Both use +X forward, +Y left and +Z up. Porter D2 uses the 25.594 kg v35
+flight profile and CAD-estimated inertia. Firefighter P3 mass and inertia,
+installed motor performance, unidentified lenses and sensor noise remain provisional.
 
 The `porter_sensor_msgs` and `porter_sensor_adapters` packages provide payload
 bridges, mounting TF, image-based H-Flow observations and range outputs. Livox

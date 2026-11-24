@@ -62,9 +62,16 @@ avia_texel_fix:=false to disable it.
 
 Parameters
 ----------
-config/physics.json sets a provisional 18 kg total mass, box inertias and
-motor response: 45 N per motor at 600 rad/s. Replace these with measured
-mass, inertia and propulsion data before comparing real flight dynamics.
+The Dostavshchik v35 flight_P22_no_parachute profile weighs 25.594 kg:
+25.234 kg weighed with both batteries plus eight 45 g catalogue P22 props.
+The CAD-estimated centre of mass and full central inertia include the complete
+assembly. The v35 hub-centroid origin is 1.723364 mm forward of the D2 datum.
+The generator assigns the remaining mass and inertia to the base after
+accounting for all sensor and propeller links.
+
+The thrust limit of 64.303 N per rotor is a short isolated P60 bench peak.
+The 600 rad/s command scale, reaction torque, drag and response times are
+simulation assumptions. The thrust axes pass through the CAD propeller hubs.
 Motor housings stay fixed; propellers rotate on the eight thrust-producing
 rotor joints. rotor_velocity_slowdown_sim=10 slows visible rotation, as in
 the existing configs; thrust uses the configured motor speed. Coaxial wake

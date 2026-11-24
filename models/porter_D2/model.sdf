@@ -3,18 +3,18 @@
   <model name="porter_D2" canonical_link="base_link">
     <static>false</static>
     <self_collide>false</self_collide>
-    <!-- FLU / Z-up. CAD placements are measured; mass, inertia and propulsion are PROVISIONAL. -->
+    <!-- FLU / Z-up. CAD placements are measured; v35 mass properties and propeller hubs; provisional motor response. -->
     <link name="base_link">
       <inertial>
-        <pose>0 0 -0.03 0 0 0</pose>
-        <mass>14.291999999999998</mass>
+        <pose>0.0670165994235392 -0.000368178451836337 -0.0215039136273047 0 0 0</pose>
+        <mass>24.326</mass>
         <inertia>
-          <ixx>0.220335</ixx>
-          <iyy>0.5031975</iyy>
-          <izz>0.5746575</izz>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyz>0</iyz>
+          <ixx>1.59795414674124</ixx>
+          <iyy>1.0860820419103</iyy>
+          <izz>2.10097900257429</izz>
+          <ixy>0.00251459635382678</ixy>
+          <ixz>-0.0474143599413773</ixz>
+          <iyz>0.000330842393330642</iyz>
         </inertia>
       </inertial>
       <visual name="decimated_body">
@@ -391,21 +391,21 @@
       </sensor>
     </link>
     <link name="rotor_0">
-      <pose relative_to="base_link">0.315666150213334 -0.527093507004829 0.0224760630050554 -0.0523598775596817 8.65314922873813e-16 1.83259571459402</pose>
+      <pose relative_to="base_link">0.313666614637399 -0.527629280947638 0.0619753812737091 -0.0523598775596817 8.65314922873813e-16 1.83259571459402</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
-        <mass>0.35</mass>
+        <mass>0.045</mass>
         <inertia>
-          <ixx>0.002</ixx>
-          <iyy>0.002</iyy>
-          <izz>0.004</izz>
+          <ixx>0.00058</ixx>
+          <iyy>0.00058</iyy>
+          <izz>0.00116</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
         </inertia>
       </inertial>
       <visual name="vmg_2_propeller">
-        <pose>0 0 0 1.5707963267949 1.07697143321748e-18 1.05460803526439e-17</pose>
+        <pose>-4.68632487717166e-17 1.05778610271475e-18 -0.039553525 1.5707963267949 1.07697143321748e-18 1.05460803526439e-17</pose>
         <geometry>
           <mesh>
             <uri>model://porter_D2/meshes/propeller.obj</uri>
@@ -433,7 +433,7 @@
       <timeConstantUp>0.05</timeConstantUp>
       <timeConstantDown>0.1</timeConstantDown>
       <maxRotVelocity>600</maxRotVelocity>
-      <motorConstant>0.000125</motorConstant>
+      <motorConstant>0.0001786182100347813</motorConstant>
       <momentConstant>0.025</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>0</actuator_number>
@@ -443,21 +443,21 @@
       <motorType>velocity</motorType>
     </plugin>
     <link name="rotor_1">
-      <pose relative_to="base_link">-0.311550502673553 0.32983251540343 0.0224760630050513 -0.0523598775599489 8.31715320637136e-14 -0.698131700797803</pose>
+      <pose relative_to="base_link">-0.310219886327694 0.331418282213966 0.0619753812737044 -0.0523598775599489 8.31715320637136e-14 -0.698131700797803</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
-        <mass>0.35</mass>
+        <mass>0.045</mass>
         <inertia>
-          <ixx>0.002</ixx>
-          <iyy>0.002</iyy>
-          <izz>0.004</izz>
+          <ixx>0.00058</ixx>
+          <iyy>0.00058</iyy>
+          <izz>0.00116</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
         </inertia>
       </inertial>
       <visual name="vmg_4_propeller">
-        <pose>0 0 0 1.5707963267949 -3.07475044709143e-18 4.14148012827749e-17</pose>
+        <pose>-2.65026179293324e-18 9.39216322006081e-19 -0.039553525 1.5707963267949 -3.07475044709143e-18 4.14148012827749e-17</pose>
         <geometry>
           <mesh>
             <uri>model://porter_D2/meshes/propeller.obj</uri>
@@ -485,7 +485,7 @@
       <timeConstantUp>0.05</timeConstantUp>
       <timeConstantDown>0.1</timeConstantDown>
       <maxRotVelocity>600</maxRotVelocity>
-      <motorConstant>0.000125</motorConstant>
+      <motorConstant>0.0001786182100347813</motorConstant>
       <momentConstant>0.025</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>1</actuator_number>
@@ -495,21 +495,21 @@
       <motorType>velocity</motorType>
     </plugin>
     <link name="rotor_2">
-      <pose relative_to="base_link">0.315666150213328 0.527093507004831 0.0224760630050555 0.0523598775599746 -5.64305462935029e-16 -1.83259571459402</pose>
+      <pose relative_to="base_link">0.313666614637381 0.527629280947643 0.0619753812737087 0.0523598775599746 -5.64305462935029e-16 -1.83259571459402</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
-        <mass>0.35</mass>
+        <mass>0.045</mass>
         <inertia>
-          <ixx>0.002</ixx>
-          <iyy>0.002</iyy>
-          <izz>0.004</izz>
+          <ixx>0.00058</ixx>
+          <iyy>0.00058</iyy>
+          <izz>0.00116</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
         </inertia>
       </inertial>
       <visual name="vmg_5_propeller">
-        <pose>0 0 0 1.5707963267949 2.38340044680345e-18 -2.15823794058074e-17</pose>
+        <pose>1.13790525496187e-17 1.13973012739041e-17 -0.039553525 1.5707963267949 2.38340044680345e-18 -2.15823794058074e-17</pose>
         <geometry>
           <mesh>
             <uri>model://porter_D2/meshes/propeller.obj</uri>
@@ -537,7 +537,7 @@
       <timeConstantUp>0.05</timeConstantUp>
       <timeConstantDown>0.1</timeConstantDown>
       <maxRotVelocity>600</maxRotVelocity>
-      <motorConstant>0.000125</motorConstant>
+      <motorConstant>0.0001786182100347813</motorConstant>
       <momentConstant>0.025</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>2</actuator_number>
@@ -547,21 +547,21 @@
       <motorType>velocity</motorType>
     </plugin>
     <link name="rotor_3">
-      <pose relative_to="base_link">-0.311550502673559 -0.329832515403428 0.0224760630050598 0.0523598775597076 -8.31614811591703e-14 0.698131700797804</pose>
+      <pose relative_to="base_link">-0.310219886327711 -0.331418282213962 0.0619753812737135 0.0523598775597076 -8.31614811591703e-14 0.698131700797804</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
-        <mass>0.35</mass>
+        <mass>0.045</mass>
         <inertia>
-          <ixx>0.002</ixx>
-          <iyy>0.002</iyy>
-          <izz>0.004</izz>
+          <ixx>0.00058</ixx>
+          <iyy>0.00058</iyy>
+          <izz>0.00116</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
         </inertia>
       </inertial>
       <visual name="vmg_7_propeller">
-        <pose>0 0 0 1.5707963267949 4.90982784798924e-19 -1.89886508369089e-17</pose>
+        <pose>1.29669526218595e-17 1.93545272110888e-17 -0.039553525 1.5707963267949 4.90982784798924e-19 -1.89886508369089e-17</pose>
         <geometry>
           <mesh>
             <uri>model://porter_D2/meshes/propeller.obj</uri>
@@ -589,7 +589,7 @@
       <timeConstantUp>0.05</timeConstantUp>
       <timeConstantDown>0.1</timeConstantDown>
       <maxRotVelocity>600</maxRotVelocity>
-      <motorConstant>0.000125</motorConstant>
+      <motorConstant>0.0001786182100347813</motorConstant>
       <momentConstant>0.025</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>3</actuator_number>
@@ -599,21 +599,21 @@
       <motorType>velocity</motorType>
     </plugin>
     <link name="rotor_4">
-      <pose relative_to="base_link">0.315666150213328 -0.527093507004831 -0.0224760630050556 0.0523598775599747 8.62409693691978e-16 1.83259571459402</pose>
+      <pose relative_to="base_link">0.313666614637381 -0.527629280947643 -0.0619753812737087 0.0523598775599747 8.62409693691978e-16 1.83259571459402</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
-        <mass>0.35</mass>
+        <mass>0.045</mass>
         <inertia>
-          <ixx>0.002</ixx>
-          <iyy>0.002</iyy>
-          <izz>0.004</izz>
+          <ixx>0.00058</ixx>
+          <iyy>0.00058</iyy>
+          <izz>0.00116</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
         </inertia>
       </inertial>
       <visual name="vmg_1_propeller">
-        <pose>0 0 0 -1.5707963267949 -1.33053507080854e-18 4.08931281908488e-18</pose>
+        <pose>-2.87441121033479e-19 -7.58556939100822e-18 0.039553525 -1.5707963267949 -1.33053507080854e-18 4.08931281908488e-18</pose>
         <geometry>
           <mesh>
             <uri>model://porter_D2/meshes/propeller.obj</uri>
@@ -641,7 +641,7 @@
       <timeConstantUp>0.05</timeConstantUp>
       <timeConstantDown>0.1</timeConstantDown>
       <maxRotVelocity>600</maxRotVelocity>
-      <motorConstant>0.000125</motorConstant>
+      <motorConstant>0.0001786182100347813</motorConstant>
       <momentConstant>0.025</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>4</actuator_number>
@@ -651,21 +651,21 @@
       <motorType>velocity</motorType>
     </plugin>
     <link name="rotor_5">
-      <pose relative_to="base_link">-0.311550502673559 0.329832515403428 -0.0224760630050597 0.0523598775597076 8.31744293298642e-14 -0.698131700797803</pose>
+      <pose relative_to="base_link">-0.310219886327711 0.331418282213962 -0.0619753812737134 0.0523598775597076 8.31744293298642e-14 -0.698131700797803</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
-        <mass>0.35</mass>
+        <mass>0.045</mass>
         <inertia>
-          <ixx>0.002</ixx>
-          <iyy>0.002</iyy>
-          <izz>0.004</izz>
+          <ixx>0.00058</ixx>
+          <iyy>0.00058</iyy>
+          <izz>0.00116</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
         </inertia>
       </inertial>
       <visual name="vmg_3_propeller">
-        <pose>0 0 0 -1.5707963267949 3.50064146862064e-18 5.78785807976057e-18</pose>
+        <pose>1.18865573071798e-17 -1.88063640536031e-17 0.039553525 -1.5707963267949 3.50064146862064e-18 5.78785807976057e-18</pose>
         <geometry>
           <mesh>
             <uri>model://porter_D2/meshes/propeller.obj</uri>
@@ -693,7 +693,7 @@
       <timeConstantUp>0.05</timeConstantUp>
       <timeConstantDown>0.1</timeConstantDown>
       <maxRotVelocity>600</maxRotVelocity>
-      <motorConstant>0.000125</motorConstant>
+      <motorConstant>0.0001786182100347813</motorConstant>
       <momentConstant>0.025</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>5</actuator_number>
@@ -703,21 +703,21 @@
       <motorType>velocity</motorType>
     </plugin>
     <link name="rotor_6">
-      <pose relative_to="base_link">0.315666150213334 0.527093507004829 -0.0224760630050555 -0.0523598775596818 -5.64309444450661e-16 -1.83259571459402</pose>
+      <pose relative_to="base_link">0.313666614637399 0.527629280947638 -0.0619753812737092 -0.0523598775596818 -5.64309444450661e-16 -1.83259571459402</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
-        <mass>0.35</mass>
+        <mass>0.045</mass>
         <inertia>
-          <ixx>0.002</ixx>
-          <iyy>0.002</iyy>
-          <izz>0.004</izz>
+          <ixx>0.00058</ixx>
+          <iyy>0.00058</iyy>
+          <izz>0.00116</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
         </inertia>
       </inertial>
       <visual name="vmg_6_propeller">
-        <pose>0 0 0 -1.5707963267949 1.25666061203466e-18 5.20732919495196e-18</pose>
+        <pose>4.84865492780601e-17 2.42761723059883e-17 0.039553525 -1.5707963267949 1.25666061203466e-18 5.20732919495196e-18</pose>
         <geometry>
           <mesh>
             <uri>model://porter_D2/meshes/propeller.obj</uri>
@@ -745,7 +745,7 @@
       <timeConstantUp>0.05</timeConstantUp>
       <timeConstantDown>0.1</timeConstantDown>
       <maxRotVelocity>600</maxRotVelocity>
-      <motorConstant>0.000125</motorConstant>
+      <motorConstant>0.0001786182100347813</motorConstant>
       <momentConstant>0.025</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>6</actuator_number>
@@ -755,21 +755,21 @@
       <motorType>velocity</motorType>
     </plugin>
     <link name="rotor_7">
-      <pose relative_to="base_link">-0.311550502673553 -0.32983251540343 -0.0224760630050512 -0.0523598775599489 -8.3158560003926e-14 0.698131700797803</pose>
+      <pose relative_to="base_link">-0.310219886327694 -0.331418282213967 -0.0619753812737044 -0.0523598775599489 -8.3158560003926e-14 0.698131700797803</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
-        <mass>0.35</mass>
+        <mass>0.045</mass>
         <inertia>
-          <ixx>0.002</ixx>
-          <iyy>0.002</iyy>
-          <izz>0.004</izz>
+          <ixx>0.00058</ixx>
+          <iyy>0.00058</iyy>
+          <izz>0.00116</izz>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyz>0</iyz>
         </inertia>
       </inertial>
       <visual name="vmg_8_propeller">
-        <pose>0 0 0 -1.5707963267949 2.65749308342665e-18 -2.71681940401255e-17</pose>
+        <pose>-2.9865938286105e-18 -1.48737947949178e-18 0.039553525 -1.5707963267949 2.65749308342665e-18 -2.71681940401255e-17</pose>
         <geometry>
           <mesh>
             <uri>model://porter_D2/meshes/propeller.obj</uri>
@@ -797,7 +797,7 @@
       <timeConstantUp>0.05</timeConstantUp>
       <timeConstantDown>0.1</timeConstantDown>
       <maxRotVelocity>600</maxRotVelocity>
-      <motorConstant>0.000125</motorConstant>
+      <motorConstant>0.0001786182100347813</motorConstant>
       <momentConstant>0.025</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>7</actuator_number>

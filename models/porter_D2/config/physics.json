@@ -1,25 +1,15 @@
 {
-  "status": "Provisional simulation mass, inertia and propulsion parameters.",
-  "total_mass_kg": 18.0,
-  "base_com_m": [
-    0,
-    0,
-    -0.03
-  ],
-  "base_equivalent_box_m": [
-    0.6,
-    0.35,
-    0.25
-  ],
-  "rotor_mass_kg": 0.35,
+  "status": "Dostavshchik v35 flight_P22_no_parachute; two batteries, no cargo.",
+  "total_mass_kg": 25.594,
+  "rotor_mass_kg": 0.045,
   "rotor_inertia_kg_m2": [
-    0.002,
-    0.002,
-    0.004
+    0.00058,
+    0.00058,
+    0.00116
   ],
   "max_omega_rad_s": 600,
   "idle_omega_rad_s": 30,
-  "max_thrust_per_rotor_n": 45,
+  "max_thrust_per_rotor_n": 64.30255561252127,
   "moment_constant_m": 0.025,
   "time_constant_up_s": 0.05,
   "time_constant_down_s": 0.1,
@@ -46,14 +36,9 @@
     "ccw"
   ],
   "caveats": [
-    "Total mass includes reused Avia 0.498 kg, eight 0.35 kg equivalent VMG rotor links and four explicit provisional payload masses.",
-    "Base budget includes batteries and airframe; equivalent-box inertia is synthetic. Payload centres/inertias use bounding-box approximations.",
-    "Spin assignment is a conventional balanced X8 choice, not inferred from CAD prop handedness.",
-    "Motor housings are fixed to base_link; propeller meshes rotate on the thrust-producing rotor joints. The visual slowdown factor does not change the configured thrust law.",
-    "Rotor thrust is applied at measured motor origins. Separate prop hub axial offset is unmeasured.",
-    "No coaxial interference, blade flapping, calibrated airframe drag or real P60 power/ESC response.",
-    "Flight IMU is at the body datum with body FLU axes; CAD Pixhawk origin is not a measured internal IMU centre.",
-    "Controller defaults require flight tuning on the real airframe."
+    "Mass includes catalogue propeller masses. The complete vehicle CoM and central inertia come from the mass-calibrated CAD distribution.",
+    "Spinning link inertias are axisymmetric estimates for a 45 g, 22-inch propeller. Sensor link masses and inertias approximate their share of the complete assembly.",
+    "Maximum thrust uses the brief isolated P60 / 22x6.6 bench peak as a simulation cap. Installed coaxial thrust, RPM law, drag, spin assignment, reaction torque and motor response remain provisional."
   ],
   "payload_masses_kg": {
     "porter_hflow": 0.03,
@@ -61,5 +46,29 @@
     "porter_n6_camera": 0.08,
     "porter_mv_ca050_camera": 0.18
   },
-  "rotor_velocity_slowdown_sim": 10
+  "rotor_velocity_slowdown_sim": 10,
+  "source_parameters_sha256": "fb15836e84637597783773446683b27f5bd89c99391b67111afcc67ed0bb1ef6",
+  "total_com_flu_m": [
+    0.07322424402222652,
+    -0.0006223222265865447,
+    -0.02022112904808501
+  ],
+  "total_inertia_at_com_flu_kg_m2": [
+    [
+      1.6764170255028317,
+      0.0035427128435580064,
+      -0.05179145239209876
+    ],
+    [
+      0.0035427128435580064,
+      1.1663457412233305,
+      0.0006408105319060926
+    ],
+    [
+      -0.05179145239209876,
+      0.0006408105319060926,
+      2.2540706000643604
+    ]
+  ],
+  "prop_hub_offset_m": 0.039553525
 }
